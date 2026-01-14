@@ -1,0 +1,15 @@
+28c28
+<	for i in range(n_classes):
+---
+>	for i in range(n_classes):
+29c29
+<	    fpr[i], tpr[i], thresh = roc_curve(y_test, y_score, pos_label=i)
+---
+>	    fpr_i, tpr_i, thresh = roc_curve(y_test == target_names[i], y_score[:, i])
+30c30
+<	    roc_auc[i] = auc(fpr[i], tpr[i])
+---
+>	    fpr.append(fpr_i)
+>	    tpr.append(tpr_i)
+>	    roc_auc.append(auc(fpr_i, tpr_i))
+

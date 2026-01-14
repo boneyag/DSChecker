@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` on line 8, but there is no legend to display because the scatter plot does not include any labeled elements that would be included in a legend.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\t# ax.legend()\"\n}"

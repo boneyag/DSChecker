@@ -1,0 +1,62 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Here is information about the variable y_score at line 25 used in this code snippet.
+
+type: numpy.ndarray
+
+additional information: 
+shape: (45, 3) dtype: float64
+
+sample: 
+[[3.43956050e-05 3.48387716e-02 9.65126833e-01]
+ [4.65740325e-04 2.33337586e-01 7.66196674e-01]
+ [9.66023886e-01 3.39757113e-02 4.02432988e-07]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	from sklearn.datasets import load_iris
+3	from sklearn.model_selection import train_test_split
+4	from sklearn.linear_model import LogisticRegression
+5	from sklearn.metrics import roc_curve, auc
+6	from sklearn.preprocessing import LabelBinarizer
+7	
+8	iris = load_iris()
+9	target_names = iris.target_names
+10	
+11	X, y = iris.data, iris.target
+12	y = iris.target_names[y]
+13	n_samples, n_features = X.shape
+14	n_classes = len(np.unique(y))
+15	
+16	(X_train, X_test, y_train, y_test) = train_test_split(X, y, test_size=0.3, stratify=y, random_state=0)
+17	
+18	label_binarizer = LabelBinarizer().fit(y_train)
+19	y_onehot_test = label_binarizer.transform(y_test)
+20	
+21	classifier = LogisticRegression(max_iter=200)
+22	y_score = classifier.fit(X_train, y_train).predict_proba(X_test)
+23	
+24	tpr = dict()
+25	fpr = dict()
+26	roc_auc = dict()
+27	
+28	for i in range(n_classes):
+29	    fpr[i], tpr[i], _ = roc_curve(y_onehot_test[:, i], y_score[:, i])
+30	    roc_auc[i] = auc(fpr[i], tpr[i])
+31	print(roc_auc)
+32	
+
+Your response:

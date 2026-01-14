@@ -1,0 +1,206 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library pandas.
+Check this piece of code and decide if it correctly uses library pandas.
+
+pandas documentation states this guideline "bool, default: False. Whether to modify the DataFrame rather than creating a new one." for inplace parameter of set_index API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable df at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   A       4 non-null      int64 
+ 1   B       4 non-null      object
+ 2   C       4 non-null      bool  
+dtypes: bool(1), int64(1), object(1)
+
+sample: 
+   A   B      C
+0  1  10   True
+1  2  20  False
+2  3  30   True
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	
+3	df = pd.DataFrame({
+4	    'A': [1, 2, 3, 4],
+5	    'B': ['10', '20', '30', '40'],
+6	    'C': [True, False, True, True]
+7	})
+8	
+9	df.set_index('A')
+10	print(df.loc[4])
+11	
+
+Your response:
+
+{"correct": "no", "explanation": "set_index() returns a new DataFrame with the specified column as the index. The original DataFrame is not modified. Therefore, the correct way to access the 4th row of the DataFrame is to use the new DataFrame returned by set_index() and use the iloc[] method to access the 4th row.", "patch": "8,9c8,9\n< df.set_index(\\\"A\\\")\n< print(df.loc[4])\n---\n> new_df = df.set_index(\\\"A\\\")\n> print(new_df.iloc[4])\n"}
+
+Example 2:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+scikit-learn documentation states this guideline "MinMaxScaler doesn’t reduce the effect of outliers, but it linearly scales them down into a fixed range, where the largest occurring data point corresponds to the maximum value and the smallest one corresponds to the minimum value." for  parameter of MinMaxScaler API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable df at line 4 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   Age     4 non-null      int64
+ 1   Income  4 non-null      int64
+ 2   Gender  4 non-null      object
+dtypes: int64(2), object(1)
+
+sample: 
+   Age  Income  Gender
+0   20   40000    Male
+1   25   50000  Female
+2   30   60000  Female
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.preprocessing import MinMaxScaler
+2	import pandas as pd
+3	
+4	df = pd.DataFrame({
+5	    'Age': [20, 25, 30, 35],
+6	    'Income': [40000, 50000, 60000, 1500000],
+7	    'Gender': ['Male', 'Female', 'Female', 'Male']
+8	})
+9	 
+10	scaler = MinMaxScaler()
+11	scaled_data = scaler.fit_transform(df[['Age', 'Income']])
+12	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable df at line 10 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 6 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   age      5 non-null      int64  
+ 1   sex      5 non-null      object 
+ 2   bmi      5 non-null      float64
+ 3   smoker   5 non-null      object 
+ 4   region   5 non-null      object 
+ 5   charges  5 non-null      int64  
+dtypes: float64(1), int64(2), object(3)
+
+sample: 
+   age     sex    bmi smoker region  charges
+0   19  female  27.90    yes     sw    16884
+1   18    male  33.77     no     sw     1725
+2   28    male  33.00     no     sw     4449
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	import numpy as np
+3	from sklearn.compose import ColumnTransformer
+4	from sklearn.base import BaseEstimator, TransformerMixin
+5	from sklearn.model_selection import train_test_split
+6	from sklearn.pipeline import Pipeline
+7	from sklearn.preprocessing import StandardScaler, OneHotEncoder
+8	from sklearn.linear_model import Lasso
+9	
+10	df = pd.DataFrame(
+11	    {'age': [19, 18, 28, 33, 32],
+12	     'sex': ['female', 'male', 'male', 'male', 'male'],
+13	     'bmi': [27.900, 33.770, 33.000, 22.705, 28.880],
+14	     'smoker': ['yes', 'no', 'no', 'no', 'no',],
+15	     'region': ['sw', 'sw', 'sw', 'nw', 'nw'],
+16	     'charges': [16884, 1725, 4449, 21984, 3886]}
+17	)
+18	
+19	
+20	class HealthyAttributeAdder(BaseEstimator, TransformerMixin):
+21	    def __init__(self):
+22	        pass
+23	
+24	    def fit(self, X , y=None):
+25	        return self
+26	
+27	    def transform(self, X):
+28	        healthy = (X['smoker'] == 'no') & (X['bmi'].between(18.5, 24.9))
+29	        new_X = X.copy()
+30	        new_X['healthy'] = healthy.astype(int)
+31	        return new_X
+32	
+33	
+34	num_col = ['age', 'bmi']
+35	cat_col = ['sex', 'smoker', 'region', 'healthy']
+36	y = df.pop('charges')
+37	X = df
+38	all_col = X.columns
+39	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+40	
+41	transform_pipeline = ColumnTransformer([
+42	    ('ss', StandardScaler(), num_col),
+43	    ('ohe', OneHotEncoder(), cat_col),
+44	])
+45	
+46	price_pipeline = Pipeline([
+47	    ('add_healthy', HealthyAttributeAdder()),
+48	    ('transform', transform_pipeline),
+49	    ('lasso', Lasso())
+50	])
+51	
+52	price_pipeline.fit(X_train, y_train)
+53	y_pred = price_pipeline.predict(X_test)
+54	
+
+Your response:

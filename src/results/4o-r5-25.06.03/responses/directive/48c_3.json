@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.figure() before creating a new plot with sns.scatterplot(). This can lead to issues when saving multiple figures in a loop, as the same figure object is reused.\",\n  \"patch\": \"16a17\\n>        plt.figure()\"\n}"

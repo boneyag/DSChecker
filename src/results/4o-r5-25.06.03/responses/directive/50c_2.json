@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The seaborn lineplot function expects the 'data' parameter to be a DataFrame or a structured array. In the provided code, 'data' is set to None, which is incorrect.\",\n  \"patch\": \"20c20\\n<sb.lineplot(data=None, x=df['X'].values, y=Y_pred.reshape(-1))\\n---\\nsb.lineplot(x=df['X'].values, y=Y_pred.reshape(-1))\"\n}"

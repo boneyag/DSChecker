@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The 'data' parameter of seaborn's lineplot function should not be set to None when 'x' and 'y' parameters are used.\",\n  \"patch\": \"20c20\\n<sb.lineplot(data=None, x=df['X'].values.reshape(-1, 1), y=Y_pred)\\n---\\n>sb.lineplot(x=df['X'].values.reshape(-1, 1), y=Y_pred)\\n\"\n}"

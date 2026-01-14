@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add a legend to a scatter plot, but the scatter plot does not have any labeled elements by default, so the legend will be empty. Legends are typically used when there are multiple labeled elements in the plot.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\tax.legend([], [], frameon=False)\\n\"\n}"

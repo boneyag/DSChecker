@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The xmin parameter of axvspan API should be a numeric value (in data units), but a string '4.5' is provided.\",\n  \"patch\": \"8c8\\n< ax.axvspan(\\\"4.5\\\", \\\"7.5\\\", color='red', alpha=0.3, label='Problem Area')\\n---\\n> ax.axvspan(4.5, 7.5, color='red', alpha=0.3, label='Problem Area')\\n\"\n}"

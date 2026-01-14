@@ -1,0 +1,5 @@
+4c4
+< print(np.log(factorial(21)))
+---
+> from scipy.special import logfactorial
+> print(logfactorial(21))

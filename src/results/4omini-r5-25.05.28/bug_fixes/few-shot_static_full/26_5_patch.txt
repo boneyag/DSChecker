@@ -1,0 +1,4 @@
+6c6
+< arr[i] = np.insert(arr[i], 1, 3)
+---
+> arr = np.insert(arr, 1, 3, axis=1)

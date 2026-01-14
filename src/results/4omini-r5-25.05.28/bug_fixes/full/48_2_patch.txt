@@ -1,0 +1,3 @@
+18a19
+> plt.clf()  # Clear the current figure to avoid overlapping plots
+> plt.show()  # Display the plot

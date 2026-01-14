@@ -1,0 +1,60 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	import numpy as np
+3	import networkx as nx
+4	import matplotlib.pyplot as plt
+5	from matplotlib.colors import ListedColormap
+6	import seaborn as sns
+7	
+8	df = pd.DataFrame({
+9	    'from': ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'E', 'F', 'G', 'H'],
+10	    'to':   ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
+11	    })
+12	
+13	G = nx.Graph()
+14	G.add_edges_from(df.values)
+15	
+16	groups_df = pd.DataFrame(index=G.nodes(), columns=['group'])
+17	
+18	for node in G.nodes():
+19	    if node in ['A', 'B', 'C', 'D']:
+20	        group = 0
+21	    elif node in ['E', 'F', 'G']:
+22	        group = 1
+23	    else:
+24	        group = 2
+25	
+26	    groups_df.loc[node, 'group'] = group
+27	
+28	groups_df['group'] = groups_df['group'].astype(int)
+29	print(groups_df.info(), groups_df.head(3))
+30	fig, ax = plt.subplots(ncols=2)
+31	cmap = ListedColormap(plt.cm.Dark2(np.arange(3)))
+32	
+33	nx.draw(G, with_labels=True, node_color=groups_df['group'], cmap=cmap, ax=ax[0])
+34	ax[0].set_title("Graph with Node Groups")
+35	
+36	sns.countplot(data=groups_df.reset_index(), x='group', hue='group', palette=cmap.colors.tolist(), ax=ax[1])
+37	ax[1].set_title("Count of Nodes per Group")
+38	ax[1].set_xlabel("Group")
+39	ax[1].set_ylabel("Count")
+40	
+41	plt.show()
+42	
+
+Your response:

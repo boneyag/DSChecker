@@ -1,0 +1,70 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+Here is information about the variable scores at line 18 used in this code snippet.
+
+type: torch.Tensor
+
+additional information: 
+dtype=torch.float16 shape: torch.Size([2, 128, 128])
+
+sample: 
+[[[ 3.5195, -5.8359, -1.2119],
+         [ 1.6680, -6.5977, -2.3203],
+         [ 0.8325,  0.7012, -0.0379]]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	import torch.nn as nn
+3	
+4	
+5	class SimpleAttention(nn.Module):
+6	    def __init__(self, embed_dim):
+7	        super().__init__()
+8	        self.query = nn.Linear(embed_dim, embed_dim)
+9	        self.key = nn.Linear(embed_dim, embed_dim)
+10	
+11	    def forward(self, x, attn_mask=None):
+12	        """
+13	        x: (seq_len, batch, embed_dim)
+14	        attn_mask: (seq_len, seq_len)
+15	        """
+16	        q = self.query(x)
+17	        k = self.key(x)
+18	
+19	        scores = torch.einsum("tbe,sbe->bts", q, k)
+20	
+21	        if attn_mask is not None:
+22	            scores = scores.masked_fill(
+23	                attn_mask, -1e8 if x.dtype == torch.float32 else -1e4
+24	            )
+25	
+26	        attention_weights = torch.softmax(scores, dim=-1)
+27	        return attention_weights
+28	
+29	
+30	seq_len = 128
+31	batch_size = 2
+32	embed_dim = 64
+33	
+34	model = SimpleAttention(embed_dim).half()
+35	input_tensor = torch.randn(seq_len, batch_size, embed_dim).half()
+36	
+37	attn_mask = torch.randint(0, 2, (seq_len, seq_len)).bool()
+38	
+39	output = model(input_tensor, attn_mask)
+40	
+
+Your response:

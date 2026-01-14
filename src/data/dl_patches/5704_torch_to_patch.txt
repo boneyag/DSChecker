@@ -1,0 +1,4 @@
+7c7
+<         self.linear = nn.Linear(10, 5)
+---
+>         self.linear = nn.Linear(10, 5).to('cuda' if torch.cuda.is_available() else 'cpu')

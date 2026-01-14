@@ -1,0 +1,10 @@
+8c8
+<plt.close()
+---
+># Remove this line to keep the figure active
+
+17c17
+<plt.close()
+---
+># Remove this line to keep the figure open
+

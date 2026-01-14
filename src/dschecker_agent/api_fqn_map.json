@@ -1,0 +1,24 @@
+{
+    "legend": "matplotlib.axes.Axes.legend",
+    "set_major_locator": "matplotlib.axis.Axis.set_major_locator",
+    "set_major_formatter": "matplotlib.axis.Axis.set_major_formatter",
+    "set_xticks": "matplotlib.axes.Axes.set_xticks",
+    "set_xticklabels": "matplotlib.axes.Axes.set_xticklabels",
+    "scatter": "matplotlib.axes.Axes.scatter",
+    "add_axes": "matplotlib.figure.Figure.add_axes",
+    "bar3d": "mpl_toolkits.mplot3d.axes3d.Axes3D.bar3d",
+    "axvspan": "matplotlib.axes.Axes.axvspan",
+
+    "unique": "pandas.unique",
+    "loc": "pandas.DataFrame.loc",
+    "iloc": "pandas.DataFrame.iloc",
+    "drop": "pandas.DataFrame.drop",
+    "pivot_table": "pandas.DataFrame.pivot_table",
+    "groupby": "pandas.DataFrame.groupby",
+    "apply": "pandas.DataFrame.apply",
+    "shift": "pandas.Series.shift",
+    "reset_index": "pandas.DataFrame.reset_index",
+    "replace": "pandas.DataFrame.replace",
+
+    "astype": "numpy.astype"
+}

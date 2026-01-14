@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.figure() before creating the scatter plot. This can lead to issues when saving multiple figures, as they may overlap or not be saved correctly.\",\n  \"patch\": \"16a17\\n>    plt.figure()\"\n}"

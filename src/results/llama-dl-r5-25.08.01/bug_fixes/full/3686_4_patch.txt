@@ -1,0 +1,5 @@
+5c5
+<    return torch.mean(tensor_list, dim=0)
+---
+>    return torch.mean(torch.stack(tensor_list), dim=0)
+

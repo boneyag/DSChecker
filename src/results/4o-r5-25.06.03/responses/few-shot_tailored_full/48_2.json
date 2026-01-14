@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not clear the figure after each plot, which can cause all plots to be drawn on the same figure. This will result in incorrect and cluttered plots.\",\n  \"patch\": \"18a19\\n>     plt.clf()\\n\"\n}"

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The predict function of DummyClassifier in scikit-learn only takes one argument X, but two arguments are provided in the given code.\",\n  \"patch\": \"10c10\\n<predictions = clf.predict(X, y)\\n---\\n>predictions = clf.predict(X)\\n\"\n}"

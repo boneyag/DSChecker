@@ -1,0 +1,8 @@
+22c22
+<acc_tensor = torch.tensor(calculate_accuracy(predictions, labels))
+---
+>result = calculate_accuracy(predictions, labels)
+>if result is not None:
+>    acc_tensor = torch.tensor(result)
+>else:
+>    acc_tensor = None

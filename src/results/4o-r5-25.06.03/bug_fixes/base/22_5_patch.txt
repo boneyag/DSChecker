@@ -1,0 +1,8 @@
+2c2
+< from math import factorial
+---
+> from numpy import math
+4c4
+< print(np.log(factorial(21)))
+---
+> print(np.log(math.factorial(21)))

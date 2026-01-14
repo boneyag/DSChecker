@@ -1,0 +1,5 @@
+8c8
+< df['l2'].replace(to_replace=r'^\d+\b$', value=0, regex=True)
+---
+> df['l2'] = df['l2'].replace(to_replace=r'^\d+\b$', value=0, regex=True)
+

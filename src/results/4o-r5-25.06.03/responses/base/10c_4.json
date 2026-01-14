@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function `sns.lmplot` is deprecated. The correct function to use is `sns.lmplot`.\",\n  \"patch\": \"5c5\\n< sns.lmplot(data=tips, x='total_bill', y='tip', col='time', row='sex')\\n---\\n> sns.lmplot(data=tips, x='total_bill', y='tip', col='time', row='sex')\\n\"\n}"

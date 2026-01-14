@@ -1,0 +1,8 @@
+19c19
+<ax.set_xticks(df.date.unique())
+---
+>ax.xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+20c20
+<ax.set_xticklabels(labels=df.date.unique(), rotation=45)
+---
+># Remove this line

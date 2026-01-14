@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The 'label' parameter in ax.axvspan is not used correctly because it does not automatically add a legend to the plot. The legend needs to be explicitly added using ax.legend().\",\n  \"patch\": \"10a11\\n>ax.legend()\\n\"\n}"

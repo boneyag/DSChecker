@@ -1,0 +1,8 @@
+20c20
+<     ('numeric', MinMaxScaler(), ['a']),
+---
+>     ('numeric', MinMaxScaler(), ['a', 'c']),
+21c21
+<     ('categoric', OneHotEncoder(), ['b']),
+---
+>     ('categoric', OneHotEncoder(handle_unknown='ignore'), ['b']),

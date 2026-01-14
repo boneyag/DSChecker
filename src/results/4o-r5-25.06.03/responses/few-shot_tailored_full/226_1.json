@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The use of ax.set_xticklabels is discouraged because it depends on tick positions. Instead, Axes.set_xticks or Axes.set_xticklabels should be used to set both positions and labels.\",\n  \"patch\": \"13a14\\n> ax.set_xticks(df['x'])\\n14c15\\n< ax.set_xticklabels(df['x'])\\n---\\n> ax.set_xticklabels(df['x'])\\n\"\n}"

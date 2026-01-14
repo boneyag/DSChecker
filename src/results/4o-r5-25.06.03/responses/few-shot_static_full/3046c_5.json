@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code closes the figure with plt.close() at line 11, which means there will be no active figure when get_active_figure() is called at line 13. Therefore, ac_fig will be None, and the code inside the else block will never execute.\",\n  \"patch\": \"11c11\\n< plt.close()\\n---\\n> # plt.close()\\n\"\n}"

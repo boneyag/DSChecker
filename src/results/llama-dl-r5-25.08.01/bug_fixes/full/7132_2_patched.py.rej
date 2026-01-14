@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 16
+- return torch.mean(torch.log(outputs - targets))
+--- 16 -----
++ return torch.mean((outputs - targets) ** 2)

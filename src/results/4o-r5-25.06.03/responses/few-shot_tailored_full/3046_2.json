@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add text to a figure after it has been closed. Once a figure is closed using plt.close(), it is no longer active, and operations like adding text or displaying it will not work.\",\n  \"patch\": \"7a8\\n> plt.show(block=False)\\n8d8\\n\"\n}"

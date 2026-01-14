@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not clear the previous plot before creating a new one in the loop. This can cause all plots to be overlaid on top of each other. The plt.clf() function should be called at the beginning of each iteration to clear the current figure.\",\n  \"patch\": \"12a13\\n>     plt.clf()\\n\"\n}"

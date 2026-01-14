@@ -1,0 +1,3797 @@
+{
+    "1": {
+        "num": "1",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "OneHotEncoder",
+            "parameter": "categories",
+            "location": "APIreference",
+            "explicit_directive": "The passed categories should not mix strings and numeric values within a single feature",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "OneHotEncoder",
+            "fully_qualified_name": "sklearn.preprocessing.OneHotEncoder",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The 'country' column in the DataFrame mixes string and numeric values, which violates the scikit-learn guideline for OneHotEncoder that states 'The passed categories should not mix strings and numeric values within a single feature'",
+            "data_dependet": "yes",
+            "trigger_api": "fit_transform",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "X"
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "      city country  expert_rating  user_rating\n0   London      UK              5            4\n1   London     0.2              3            5\n2    Paris      FR              4            4\n3  NewYork      US              5            3",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 4 columns):\n #   Column         Non-Null Count  Dtype \n---  ------         --------------  ----- \n 0   city           4 non-null      object\n 1   country        4 non-null      object\n 2   expert_rating  4 non-null      int64 \n 3   user_rating    4 non-null      int64 \ndtypes: int64(2), object(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1_scikitlearn_onehotencoder.py",
+        "patch_file_rel_path": "patches/1_scikitlearn_onehotencoder_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "categorical_features = ['city', 'country']"
+            ],
+            "opt2": [
+                "'country': ['UK', 0.2, 'FR', 'US']"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                12
+            ],
+            "opt2": [
+                7
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: Encoders require their input to be uniformly strings or numbers. Got ['float', 'str']",
+        "source_url": "https://stackoverflow.com/questions/71780834/how-can-i-fix-type-error-for-one-hot-encoder",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "33",
+            "correct_instance": "3893c"
+        }
+    },
+    "1c": {
+        "num": "1c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "OneHotEncoder",
+            "parameter": "categories",
+            "location": "APIreference",
+            "explicit_directive": "The passed categories should not mix strings and numeric values within a single feature",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "      city country  expert_rating  user_rating\n0   London      UK              5            4\n1   London     UK              3            5\n2    Paris      FR              4            4\n3  NewYork      US              5            3",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 4 columns):\n #   Column         Non-Null Count  Dtype \n---  ------         --------------  ----- \n 0   city           4 non-null      object\n 1   country        4 non-null      object\n 2   expert_rating  4 non-null      int64 \n 3   user_rating    4 non-null      int64 \ndtypes: int64(2), object(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1c_scikitlearn_onehotencoder.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/71780834/how-can-i-fix-type-error-for-one-hot-encoder",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "33",
+            "correct_instance": "3893c"
+        }
+    },
+    "2": {
+        "num": "2",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "pairwise_distances",
+            "parameter": "metric",
+            "location": "APIreference",
+            "explicit_directive": "Alternatively, if metric is a callable function, it is called on each pair of instances (rows) and the resulting value recorded. The callable should take two arrays from X as input and return a value indicating the distance between them.",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise_distances.html#sklearn.metrics.pairwise_distances",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "DBSCAN",
+            "fully_qualified_name": "sklearn.cluster.DBSCAN",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "If metric is callable in DBSCAN, it must support pairwise distance calculations. In this code, the custom function get_point_distance received Point objects instead of numerical features in the shape of (n_samples x n_features), causing the error.",
+            "data_dependet": "yes",
+            "trigger_api": "fit",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "X"
+            },
+            "data": {
+                "variable_name": "points",
+                "variable_line_num": 22,
+                "type": "list",
+                "sample": "[Point(-0.538, 0.471), Point(-0.478, 0.559), Point(-0.374, 0.411)]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/2_scikitlearn_dbscan.py",
+        "patch_file_rel_path": "patches/2_scikitlearn_dbscan_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "return euclidean_distances([p1.to_list()], [p2.to_list()])",
+                "clustering = DBSCAN(metric = get_point_distance).fit(np.array([[point] for point in points]))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                26,
+                28
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: float() argument must be a string or a real number, not 'Point'",
+        "source_url": "https://stackoverflow.com/questions/67489107/clustering-arbitrary-objects-with-custom-distance-function-in-python",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "2c": {
+        "num": "2c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "pairwise_distances",
+            "parameter": "metric",
+            "location": "APIreference",
+            "explicit_directive": "Alternatively, if metric is a callable function, it is called on each pair of instances (rows) and the resulting value recorded. The callable should take two arrays from X as input and return a value indicating the distance between them.",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise_distances.html#sklearn.metrics.pairwise_distances",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "points",
+                "variable_line_num": 22,
+                "type": "list",
+                "sample": "[Point(-0.538, 0.471), Point(-0.478, 0.559), Point(-0.374, 0.411)]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/2c_scikitlearn_dbscan.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67489107/clustering-arbitrary-objects-with-custom-distance-function-in-python",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "4": {
+        "num": "4",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "The axes.grid is set to False by default. Set the default values of axes.grid to True to view axis grid."
+        },
+        "api_misuse": {
+            "api_name": "rcParams",
+            "fully_qualified_name": "matplotlib.rcParams",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "By default, the grid is not displayed in the plot. To visualize grid colors, first set mpl.rcParams['axes.grid'] = True, then specify the grid color. Only setting the color using mpl.rcParams['grid.color'] = 'black' has no effect.",
+            "data_dependet": "no",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 6,
+                "type": "list",
+                "sample": "[1, 2]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/4_matplotlib_rcparams.py",
+        "patch_file_rel_path": "patches/4_matplotlib_rcparams_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "mpl.rcParams['grid.color'] = 'black'"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                4
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59332997/change-matplotlib-grid-color-with-rcparams",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "31",
+            "correct_instance": "19c"
+        }
+    },
+    "4c": {
+        "num": "4c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "The axes.grid is set to False by default. Set the default values of axes.grid to True to view axis grid."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 6,
+                "type": "list",
+                "sample": "[1, 2]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/4c_matplotlib_rcparams.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59332997/change-matplotlib-grid-color-with-rcparams",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "31",
+            "correct_instance": "19c"
+        }
+    },
+    "6": {
+        "num": "6",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To get apply correctly formatted tick labels, first call set_xticklabels, then call set_major_locator followed by set_major_formater."
+        },
+        "api_misuse": {
+            "api_name": "set_xticklabels",
+            "fully_qualified_name": "matplotlib.axes.Axes.set_xticklabels",
+            "api_element": "method",
+            "violation": "order",
+            "explanation": "In order to display correctly formatted axis labels, first call set_xticklabels, then set_major_locator and set_major_formatter.",
+            "data_dependet": "no",
+            "trigger_api": "set_xticklabels",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 12,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "  location       date type  total\n0     loc1 2018-01-01   t2    100\n1     loc2 2018-01-02   t3    200\n2     loc2 2018-01-03   t2    250\n",
+                "additional_info": "RangeIndex: 8 entries, 0 to 7\nData columns (total 4 columns):\n #   Column    Non-Null Count  Dtype         \n---  ------    --------------  -----         \n 0   location  8 non-null      object        \n 1   date      8 non-null      datetime64[ns]\n 2   type      8 non-null      object        \n 3   total     8 non-null      int64         \ndtypes: datetime64[ns](1), int64(1), object(2)\n"
+            }
+        },
+        "code_file_rel_path": "code_snippets/6_matplotlib_setxticklabels.py",
+        "patch_file_rel_path": "patches/6_matplotlib_setxticklabels_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "ax.set_xticks(df.date.unique())",
+                "ax.set_xticklabels(labels=df.Date.unique(),rotation=45)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                19,
+                20
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/63323424/how-can-i-get-xticks-to-have-a-monthly-interval-instead-of-daily-on-my-matplotli",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "6c": {
+        "num": "6c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To get apply correctly formatted tick labels, first call set_xticklabels, then call set_major_locator followed by set_major_formater."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 12,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "  location       date type  total\n0     loc1 2018-01-01   t2    100\n1     loc2 2018-01-02   t3    200\n2     loc2 2018-01-03   t2    250\n",
+                "additional_info": "RangeIndex: 8 entries, 0 to 7\nData columns (total 4 columns):\n #   Column    Non-Null Count  Dtype         \n---  ------    --------------  -----         \n 0   location  8 non-null      object        \n 1   date      8 non-null      datetime64[ns]\n 2   type      8 non-null      object        \n 3   total     8 non-null      int64         \ndtypes: datetime64[ns](1), int64(1), object(2)\n"
+            }
+        },
+        "code_file_rel_path": "code_snippets/6c_matplotlib_setxticklabels.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/63323424/how-can-i-get-xticks-to-have-a-monthly-interval-instead-of-daily-on-my-matplotli",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "8": {
+        "num": "8",
+        "correct": "no",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "Selection by position",
+            "parameter": "",
+            "location": "Userguide",
+            "explicit_directive": "Whether a copy or a reference is returned for a setting operation, may depend on the context. This is sometimes called chained assignment and should be avoided",
+            "explicit_directive_source": "https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html?highlight=chaining#selection-by-position",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "loc",
+            "fully_qualified_name": "pandas.DataFrame.loc",
+            "api_element": "method",
+            "violation": "missing",
+            "explanation": "The line uses chained indexing to modify a DataFrame, which can lead to unpredictable results because it's unclear whether it modifies a view or a copy of the DataFrame. This is a common source of SettingWithCopyWarning in pandas.",
+            "data_dependet": "no",
+            "trigger_api": "indexing operator ([])",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "    A   B   C   D\n0  66  92  98  17\n1  83  57  86  97\n2  96  47  73  32",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 4 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  -----\n 0   A       5 non-null      int64\n 1   B       5 non-null      int64\n 2   C       5 non-null      int64\n 3   D       5 non-null      int64\ndtypes: int64(4)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/8_pandas_chainindexing.py",
+        "patch_file_rel_path": "patches/8_pandas_chainindexing_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "df[1:3]['B'] = 2"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                7
+            ]
+        },
+        "impact_type": "warning",
+        "impact": "SettingWithCopyWarning: A value is trying to be set on a copy of a slice from a DataFrame",
+        "source_url": "https://stackoverflow.com/questions/60704651/python-settingwithcopywarning-when-trying-to-set-value-to-true-based-on-conditi",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "42",
+            "correct_instance": "24c"
+        }
+    },
+    "8c": {
+        "num": "8c",
+        "correct": "yes",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "Selection by position",
+            "parameter": "",
+            "location": "Userguide",
+            "explicit_directive": "Whether a copy or a reference is returned for a setting operation, may depend on the context. This is sometimes called chained assignment and should be avoided",
+            "explicit_directive_source": "https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html?highlight=chaining#selection-by-position",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "    A   B   C   D\n0  66  92  98  17\n1  83  57  86  97\n2  96  47  73  32",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 4 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  -----\n 0   A       5 non-null      int64\n 1   B       5 non-null      int64\n 2   C       5 non-null      int64\n 3   D       5 non-null      int64\ndtypes: int64(4)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/8c_pandas_chainindexing.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/60704651/python-settingwithcopywarning-when-trying-to-set-value-to-true-based-on-conditi",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "42",
+            "correct_instance": "24c"
+        }
+    },
+    "10": {
+        "num": "10",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "lmplot",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "The regplot() and lmplot() functions are closely related, but the former is an axes-level function while the latter is a figure-level function that combines regplot() and FacetGrid.",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "FacetGrid",
+            "fully_qualified_name": "seaborn.FacetGrid",
+            "api_element": "function",
+            "violation": "redundant",
+            "explanation": "The function sns.lmplot is a figure-level function and cannot be used with sns.FacetGrid which expects an axes-level plotting function. sns.FacetGrid is designed to work with simpler axes-level functions like sns.regplot or sns.scatterplot.",
+            "data_dependet": "no",
+            "trigger_api": "map",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "func"
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n#   Column      Non-Null Count  Dtype \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/10_seaborn_lmplot.py",
+        "patch_file_rel_path": "patches/10_seaborn_lmplot_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "g.map(sns.lmplot, 'total_bill', 'tip')"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                6
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: lmplot() got an unexpected keyword argument 'color'",
+        "source_url": "https://stackoverflow.com/questions/61314374/unexpected-keyword-error-with-lmplot-inside-a-facetgrid",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "23",
+            "correct_instance": "18c"
+        }
+    },
+    "10c": {
+        "num": "10c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "lmplot",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "The regplot() and lmplot() functions are closely related, but the former is an axes-level function while the latter is a figure-level function that combines regplot() and FacetGrid.",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n#   Column      Non-Null Count  Dtype \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/10c_seaborn_lmplot.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/61314374/unexpected-keyword-error-with-lmplot-inside-a-facetgrid",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "23",
+            "correct_instance": "18c"
+        }
+    },
+    "18": {
+        "num": "18",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "directive": {
+            "api": "distplot",
+            "parameter": "norm_hist",
+            "location": "APIreference",
+            "explicit_directive": "If True, the histogram height shows a density rather than a count. This is implied if a KDE or fitted density is plotted. ",
+            "explicit_directive_source": "http://man.hubwiz.com/docset/Seaborn.docset/Contents/Resources/Documents/generated/seaborn.distplot.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "distplot",
+            "fully_qualified_name": "seaborn.distplot",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "seaborn's distplot norm_hist and kde parameters are coorelated. To plot count, set both parameters to False.",
+            "data_dependet": "no",
+            "trigger_api": "distplot",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/18_seaborn_distplot.py",
+        "patch_file_rel_path": "patches/18_seaborn_distplot_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "sns.distplot(data.tip, norm_hist=False)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                5
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/57801648/what-is-y-axis-in-seaborn-distplot-figure",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "23c"
+        }
+    },
+    "18c": {
+        "num": "18c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "directive": {
+            "api": "distplot",
+            "parameter": "norm_hist",
+            "location": "APIreference",
+            "explicit_directive": "If True, the histogram height shows a density rather than a count. This is implied if a KDE or fitted density is plotted. ",
+            "explicit_directive_source": "http://man.hubwiz.com/docset/Seaborn.docset/Contents/Resources/Documents/generated/seaborn.distplot.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "ditplot",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/18c_seaborn_distplot.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/57801648/what-is-y-axis-in-seaborn-distplot-figure",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "23c"
+        }
+    },
+    "19": {
+        "num": "19",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When the graph has not differentiating factors (e.g., using hue to group data), do not call legend as the plot does not generate any legend handles and labels to be used by legend API."
+        },
+        "api_misuse": {
+            "api_name": "legend",
+            "fully_qualified_name": "matplotlib.legend",
+            "api_element": "method",
+            "violation": "redundant",
+            "explanation": "When the plot does not have differentiating factors, such as using hue to group data, calling legend generates a warning, because the plot does not generate any legend handles and labels to be used by the legend API.",
+            "data_dependet": "yes",
+            "trigger_api": "legend",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": "legend"
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 4,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": " total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/19_matplotlib_legend.py",
+        "patch_file_rel_path": "patches/19_matplotlib_legend_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "ax.legend()"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "warning",
+        "impact": "WARNING: No artists with labels found to put in legend",
+        "source_url": "https://stackoverflow.com/questions/62069967/adding-a-legend-to-a-boxplot-in-matplotlib-seaborn",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "30c"
+        }
+    },
+    "19c": {
+        "num": "19c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When the graph has not differentiating factors (e.g., using hue to group data), do not call legend as the plot does not generate any legend handles and labels to be used by legend API."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 4,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": " total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/19c_matplotlib_legend.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/62069967/adding-a-legend-to-a-boxplot-in-matplotlib-seaborn",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "30c"
+        }
+    },
+    "22": {
+        "num": "22",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "Overflow errors",
+            "parameter": "",
+            "location": "Userguide",
+            "explicit_directive": "The fixed size of NumPy numeric types may cause overflow errors when a value requires more memory than available in the data type",
+            "explicit_directive_source": "https://numpy.org/doc/stable/user/basics.types.html#overflow-errors",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "log",
+            "fully_qualified_name": "numpy.log",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "NumPy types such as int32 and int64 have fixed sizes, which may cause overflow errors when a value requires more memory than available in the data type. In this code, the value 21! is too large for the int64 data type which causes the error.",
+            "data_dependet": "yes",
+            "trigger_api": "log",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "x"
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 4,
+                "type": "class 'int'",
+                "sample": "51090942171709440000",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/22_numpy_log.py",
+        "patch_file_rel_path": "patches/22_numpy_log_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "print(np.log(factorial(21)))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                4
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "AttributeError: 'int' object has no attribute 'log'",
+        "source_url": "https://stackoverflow.com/questions/60122036/difference-between-overflow-underflow-when-using-numpy-log-and-math-log",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "3010",
+            "correct_instance": "26c"
+        }
+    },
+    "22c": {
+        "num": "22c",
+        "correct": "yes",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "Overflow errors",
+            "parameter": "",
+            "location": "Userguide",
+            "explicit_directive": "The fixed size of NumPy numeric types may cause overflow errors when a value requires more memory than available in the data type",
+            "explicit_directive_source": "https://numpy.org/doc/stable/user/basics.types.html#overflow-errors",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 4,
+                "type": "class 'float'",
+                "sample": "51090942171709440000",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/22c_numpy_log.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/60122036/difference-between-overflow-underflow-when-using-numpy-log-and-math-log",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "3010",
+            "correct_instance": "26c"
+        }
+    },
+    "23": {
+        "num": "23",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "heatmap",
+            "parameter": "data",
+            "location": "APIreference",
+            "explicit_directive": "2D dataset that can be coerced into an ndarray. If a Pandas DataFrame is provided, the index/column information will be used to label the columns and rows",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.heatmap.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "heatmap",
+            "fully_qualified_name": "seaborn.heatmap",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The seaborn heatmap function expects a 2D dataset that can be coerced into an ndarray, typically a correlation matrix or a pivot table format. The 'tips' DataFrame is a direct dataset with multiple columns of different types (floats, integers, categories), which is not suitable for direct use as input to sns.heatmap(). The function will raise a TypeError because it cannot directly interpret the DataFrame structure as a 2D array without preprocessing.",
+            "data_dependet": "yes",
+            "trigger_api": "heatmap",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "data"
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": " total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/23_seaborn_heatmap.py",
+        "patch_file_rel_path": "patches/23_seaborn_heatmap_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "g = sns.heatmap(\n    tips,\n    square=True,\n    cbar_kws={'fraction' : 0.01},\n    cmap='OrRd',\n    linewidth=1\n)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                5
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "\nValueError: could not convert string to float: 'Female'",
+        "source_url": "https://stackoverflow.com/questions/69900954/when-creating-a-seaborn-heatmap-could-not-convert-string-to-float-valueerror",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "23c": {
+        "num": "23c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "heatmap",
+            "parameter": "data",
+            "location": "APIreference",
+            "explicit_directive": "2D dataset that can be coerced into an ndarray. If a Pandas DataFrame is provided, the index/column information will be used to label the columns and rows",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.heatmap.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tips",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": " total_bill   tip     sex smoker  day    time  size\n0       16.99  1.01  Female     No  Sun  Dinner     2\n1       10.34  1.66    Male     No  Sun  Dinner     3\n2       21.01  3.50    Male     No  Sun  Dinner     3",
+                "additional_info": "RangeIndex: 244 entries, 0 to 243\nData columns (total 7 columns):\n #   Column      Non-Null Count  Dtype   \n---  ------      --------------  -----   \n 0   total_bill  244 non-null    float64 \n 1   tip         244 non-null    float64 \n 2   sex         244 non-null    category\n 3   smoker      244 non-null    category\n 4   day         244 non-null    category\n 5   time        244 non-null    category\n 6   size        244 non-null    int64   \ndtypes: category(4), float64(2), int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/23c_seaborn_heatmap.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/69900954/when-creating-a-seaborn-heatmap-could-not-convert-string-to-float-valueerror",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "24": {
+        "num": "24",
+        "correct": "no",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "The index of the inserted column must be compatible with the index of the DataFrame. If the index of the inserted column is incompatible with the DataFrame index, a ValueError will be raised."
+        },
+        "api_misuse": {
+            "api_name": "reset_index",
+            "fully_qualified_name": "pandas.DataFrame.reset_index",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "The code attempts to use the 'apply' method on a DataFrameGroupBy object to create a new column 'z' based on group-wise comparison of 'x1' and 'x2' columns. However, the lambda function used in 'apply' returns a Series that does not automatically align with the DataFrame's index, causing an error or misalignment in the resulting DataFrame. The 'apply' method should return a DataFrame/Series that aligns with the original DataFrame's index when modifying or creating new columns.",
+            "data_dependet": "yes",
+            "trigger_api": "assignment operation (df['z'])",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 3,
+                "type": "pandas.core.groupby.generic.DataFrameGroupBy",
+                "sample": "  x1  x2  y  z\n0  1  2  a  True\n1  2  2  a  True\n3  1  1  a  False\nx1  x2  y  z\n2  2  2  b  True\n5  4  4  b  True",
+                "additional_info": "RangeIndex: 8 entries, 0 to 7\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  ----- \n 0   x1      8 non-null      int64 \n 1   x2      8 non-null      int64 \n 2   y       8 non-null      object\ndtypes: int64(2), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/24_pandas_resetindex.py",
+        "patch_file_rel_path": "patches/24_pandas_resetindex_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "df['z'] = df.groupby(['y']).apply(lambda x: (x['x1'] != x['x1'].shift(-1)) | (x['x2'] != x['x2'].shift(-1)))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                9
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "Value error: incompatible index of inserted column with frame index",
+        "source_url": "https://stackoverflow.com/questions/70925586/comparaison-row-by-row-with-groupby",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "8",
+            "correct_instance": "42c"
+        }
+    },
+    "24c": {
+        "num": "24c",
+        "correct": "yes",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "The index of the inserted column must be compatible with the index of the DataFrame. If the index of the inserted column is incompatible with the DataFrame index, a ValueError will be raised."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 3,
+                "type": "pandas.core.groupby.generic.DataFrameGroupBy",
+                "sample": "  x1  x2  y  z\n0  1  2  a  True\n1  2  2  a  True\n3  1  1  a  False\nx1  x2  y  z\n2  2  2  b  True\n5  4  4  b  True",
+                "additional_info": "RangeIndex: 8 entries, 0 to 7\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  ----- \n 0   x1      8 non-null      int64 \n 1   x2      8 non-null      int64 \n 2   y       8 non-null      object\ndtypes: int64(2), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/24c_pandas_resetindex.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/70925586/comparaison-row-by-row-with-groupby",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "8",
+            "correct_instance": "42c"
+        }
+    },
+    "26": {
+        "num": "26",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "insert",
+            "parameter": "axis",
+            "location": "APIreference",
+            "explicit_directive": "Axis along which to insert values. If axis is None then arr is flattened first.",
+            "explicit_directive_source": "https://numpy.org/doc/stable/reference/generated/numpy.insert.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "insert",
+            "fully_qualified_name": "numpy.insert",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "The assignment 'arr[i] = np.insert(arr[i], 1, 3)' inside the loop changes the shape of each row from (4,) to (5,), which cannot be reassigned back to the original 'arr' of shape (3, 4). This will raise a ValueError because the shapes are incompatible. Instead use np.insert with axis=1 to insert a column at the specified index.",
+            "data_dependet": "yes",
+            "trigger_api": "insert",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "arr",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]",
+                "additional_info": "shape: (3, 4), dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/26_numpy_insert.py",
+        "patch_file_rel_path": "patches/26_numpy_insert_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "for i in range(len(arr)):\n  arr[i] = np.insert(arr[i], 1, 3)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                6
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: could not broadcast input array from shape (5,) into shape (4,)",
+        "source_url": "https://stackoverflow.com/questions/65546808/could-not-broadcast-input-array-from-shape-3-into-shape-2",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "3010c"
+        }
+    },
+    "26c": {
+        "num": "26c",
+        "correct": "yes",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "insert",
+            "parameter": "axis",
+            "location": "APIreference",
+            "explicit_directive": "Axis along which to insert values. If axis is None then arr is flattened first.",
+            "explicit_directive_source": "https://numpy.org/doc/stable/reference/generated/numpy.insert.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "arr",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[[1. 1. 1. 1.]\n [1. 1. 1. 1.]\n [1. 1. 1. 1.]]",
+                "additional_info": "shape: (3, 4), dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/26c_numpy_insert.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/65546808/could-not-broadcast-input-array-from-shape-3-into-shape-2",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "3010c"
+        }
+    },
+    "28": {
+        "num": "28",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When training/testing machine learning models, split a the data set to train/test set. Use the test set for prediction."
+        },
+        "api_misuse": {
+            "api_name": "predict",
+            "fully_qualified_name": "sklearn.model_selection.GridSearchCV.predict",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "Using the same data set for training and prediction misleads the model's performance evaluation. The code uses the same data set 'X' for training and prediction, which lead to incorrect performance evaluation. Split the data set into training and testing sets, and use the test set for prediction.",
+            "data_dependet": "no",
+            "trigger_api": "predict",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "X"
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 8,
+                "type": "numpy.ndarray",
+                "sample": "[[5.1 3.5]\n[4.9 3. ]\n[4.7 3.2]]",
+                "additional_info": "shape: (150, 2), dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/28_scikitlearn_predict.py",
+        "patch_file_rel_path": "patches/28_scikitlearn_predict_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "y_score=model.best_estimator_.predict(X)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                23
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67977419/accuracy-score-in-k-nearest-neighbour-classifier-not-matching-with-gridsearchcv",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "28c": {
+        "num": "28c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When training/testing machine learning models, split a the data set to train/test set. Use the test set for prediction."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 8,
+                "type": "numpy.ndarray",
+                "sample": "[[5.1 3.5]\n[4.9 3. ]\n[4.7 3.2]]",
+                "additional_info": "shape: (150, 2), dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/28c_scikitlearn_predict.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67977419/accuracy-score-in-k-nearest-neighbour-classifier-not-matching-with-gridsearchcv",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "30": {
+        "num": "30",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "text",
+            "parameter": "x,y",
+            "location": "APIreference",
+            "explicit_directive": "The position to place the text. By default, this is in data coordinates.",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "text",
+            "fully_qualified_name": "matplotlib.pyplot.text",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "x and y parameters of the text API should match the axis data types. The code uses a string '2013-01-05' for the x parameter, but since the x-axis contains datetime values, this causes a type mismatch..",
+            "data_dependet": "yes",
+            "trigger_api": "text",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "x/y"
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 7,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "      A      B          C         D  E\n0  spam  alpha 2013-01-09 -0.231872  3\n1  eggs   beta 2013-01-09  0.207976  3\n2  spam  gamma 2013-01-04  0.935808  1",
+                "additional_info": "RangeIndex: 12 entries, 0 to 11\nData columns (total 5 columns):\n #   Column  Non-Null Count  Dtype         \n---  ------  --------------  -----         \n 0   A       12 non-null     object        \n 1   B       12 non-null     object        \n 2   C       12 non-null     datetime64[ns]\n 3   D       12 non-null     float64       \n 4   E       12 non-null     int64         \ndtypes: datetime64[ns](1), float64(1), int64(1), object(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/30_matplotlib_text.py",
+        "patch_file_rel_path": "patches/30_matplotlib_text_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "plt.text(\"2013-01-05\", 0.5, \"SAMPLE\")"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                17
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ConversionError: Failed to convert value(s) to axis units: '2013-01-05'",
+        "source_url": "https://stackoverflow.com/questions/74987337/adding-text-to-seaborn-graph-when-x-axis-is-dates-and-y-axis-is-logs",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "30c": {
+        "num": "30c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "text",
+            "parameter": "x,y",
+            "location": "APIreference",
+            "explicit_directive": "The position to place the text. By default, this is in data coordinates.",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.text.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 7,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "      A      B          C         D  E\n0  spam  alpha 2013-01-09 -0.231872  3\n1  eggs   beta 2013-01-09  0.207976  3\n2  spam  gamma 2013-01-04  0.935808  1",
+                "additional_info": "RangeIndex: 12 entries, 0 to 11\nData columns (total 5 columns):\n #   Column  Non-Null Count  Dtype         \n---  ------  --------------  -----         \n 0   A       12 non-null     object        \n 1   B       12 non-null     object        \n 2   C       12 non-null     datetime64[ns]\n 3   D       12 non-null     float64       \n 4   E       12 non-null     int64         \ndtypes: datetime64[ns](1), float64(1), int64(1), object(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/30c_matplotlib_text.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/74987337/adding-text-to-seaborn-graph-when-x-axis-is-dates-and-y-axis-is-logs",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "31": {
+        "num": "31",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "axvspan",
+            "parameter": "xmin",
+            "location": "APIreference",
+            "explicit_directive": "Lower x-coordinate of the span, in data units",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.axvspan.html#matplotlib.axes.Axes.axvspan",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "axvspan",
+            "fully_qualified_name": "matplotlib.axes.Axes.axvspan",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "x coordinate parameters of the axvspan API should match the axis data types. Mismatched data types cause type errors.",
+            "data_dependet": "yes",
+            "trigger_api": "axvspan",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "xmin/xmax"
+            },
+            "data": {
+                "variable_name": "iris",
+                "variable_line_num": 4,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   sepal_length  sepal_width  petal_length  petal_width species\n0           5.1          3.5           1.4          0.2  setosa\n1           4.9          3.0           1.4          0.2  setosa\n2           4.7          3.2           1.3          0.2  setosa",
+                "additional_info": "RangeIndex: 150 entries, 0 to 149\nData columns (total 5 columns):\n #   Column        Non-Null Count  Dtype  \n---  ------        --------------  -----  \n 0   sepal_length  150 non-null    float64\n 1   sepal_width   150 non-null    float64\n 2   petal_length  150 non-null    float64\n 3   petal_width   150 non-null    float64\n 4   species       150 non-null    object \ndtypes: float64(4), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/31_matplotlib_axvspan.py",
+        "patch_file_rel_path": "patches/31_matplotlib_axvspan_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "ax.axvspan(\"4.5\", \"7.5\", color='red', alpha=0.3, label ='Problem Area')"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/75109700/seaborn-axvspan-alterating-x-axis",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "31c": {
+        "num": "31c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "axvspan",
+            "parameter": "xmin",
+            "location": "APIreference",
+            "explicit_directive": "Lower x-coordinate of the span, in data units",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.axvspan.html#matplotlib.axes.Axes.axvspan",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "iris",
+                "variable_line_num": 4,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   sepal_length  sepal_width  petal_length  petal_width species\n0           5.1          3.5           1.4          0.2  setosa\n1           4.9          3.0           1.4          0.2  setosa\n2           4.7          3.2           1.3          0.2  setosa",
+                "additional_info": "RangeIndex: 150 entries, 0 to 149\nData columns (total 5 columns):\n #   Column        Non-Null Count  Dtype  \n---  ------        --------------  -----  \n 0   sepal_length  150 non-null    float64\n 1   sepal_width   150 non-null    float64\n 2   petal_length  150 non-null    float64\n 3   petal_width   150 non-null    float64\n 4   species       150 non-null    object \ndtypes: float64(4), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/31c_matplotlib_axvspan.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/75109700/seaborn-axvspan-alterating-x-axis",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "33": {
+        "num": "33",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When specifying the transformer, call the constructor or provide a reference to a constructor call."
+        },
+        "api_misuse": {
+            "api_name": "Pipeline",
+            "fully_qualified_name": "sklearn.pipeline.Pipeline",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The error occurs because GaussianNB is missing the parentheses in the Pipeline. This means the class GaussianNB is passed instead of an instance of the classifier. To fix this, use GaussianNB() to correctly instantiate the classifier.",
+            "data_dependet": "no",
+            "trigger_api": "fit",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 14,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   a  b  c\n0  1  a  1\n1  2  b  0\n2  3  a  1",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   a       5 non-null      int64 \n 1   b       5 non-null      object\n 2   c       5 non-null      int64 \ndtypes: int64(2), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "patch_file_rel_path": "patches/33_scikitlearn_pipeline_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "('algo', GaussianNB)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                26
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: fit() missing 1 required positional argument: 'y'",
+        "source_url": "https://stackoverflow.com/questions/74858224/fit-missing-1-required-positional-argument-y",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "33c": {
+        "num": "33c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When specifying the transformer, call the constructor or provide a reference to a constructor call."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 14,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   a  b\n0  1  a\n1  2  b\n2  3  a",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   a       5 non-null      int64 \n 1   b       5 non-null      object\ndtypes: int64(2), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/74858224/fit-missing-1-required-positional-argument-y",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "34.1": {
+        "num": "34.1",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "SimpleImputer",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Columns which only contained missing values at fit are discarded upon transform if strategy is not \"constant\".",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "SimpleImputer",
+            "fully_qualified_name": "sklearn.impute.SimpleImputer",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "When the strategy is set to 'mean', the SimpleImputer will discard columns that only contain missing values during the transform step. The code uses the 'mean' strategy, which causes the 'B' column to be discarded because it only contains missing values. To prevent this, set the strategy to 'constant' or do not access the column 'B' after the transformation.",
+            "data_dependet": "yes",
+            "trigger_api": "slice operator",
+            "trigger_api_info": {
+                "trigger_api_element": "column selector",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 9,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "     A   B\n0   1.0 NaN\n1   2.0 NaN\n2   3.0 NaN",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   A       3 non-null      float64\n 1   B       0 non-null      float64\ndtypes: float64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/34_1_scikitlearn_simpleimputer.py",
+        "patch_file_rel_path": "patches/34_1_scikitlearn_simpleimputer_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "impt = SimpleImputer(missing_values = np.nan, strategy = \"mean\")"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                11
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "IndexError: index 1 is out of bounds for axis 1 with size 1",
+        "source_url": "https://stackoverflow.com/questions/60527883/does-simpleimputer-remove-features",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "34.1c": {
+        "num": "34.1c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "SimpleImputer",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Columns which only contained missing values at fit are discarded upon transform if strategy is not \"constant\".",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.impute.SimpleImputer.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 9,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "     A   B\n0   1.0 nan\n1   2.0 nan\n2   3.0 nan",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   A       3 non-null      float64\n 1   B       0 non-null      float64\ndtypes: float64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/34_1c_scikitlearn_simpleimputer.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/60527883/does-simpleimputer-remove-features",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "39": {
+        "num": "39",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "countplot",
+            "parameter": "saturation",
+            "location": "APIreference",
+            "explicit_directive": "Proportion of the original saturation to draw colors at. Large patches often look better with slightly desaturated colors, but set this to 1 if you want the plot colors to perfectly match the input color.",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.countplot.html?highlight=countplot",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "countplot",
+            "fully_qualified_name": "seaborn.countplot",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The problem arises because seaborn's default color saturation is 0.75, which can cause colors to appear differently when using the same palette across multiple libraries. To ensure consistent color representation when using the same palette in both networkx and seaborn, set the saturation parameter to 1 in sns.countplot.",
+            "data_dependet": "no",
+            "trigger_api": "countplot",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "palette"
+            },
+            "data": {
+                "variable_name": "groups_df",
+                "variable_line_num": 28,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   group\nA    0\nB    0\nC    0",
+                "additional_info": "Index: 12 entries, A to L\nData columns (total 1 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   group   12 non-null      int64\ndtypes: int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/39_seaborn_countplot.py",
+        "patch_file_rel_path": "patches/39_seaborn_countplot_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "sns.countplot(data=groups_df.reset_index(), x='group', hue='group', palette=cmap.colors.tolist(), ax=ax[1])"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                36
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59415689/can-i-coordinate-colors-between-seaborn-and-networkx",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "39c": {
+        "num": "39c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "countplot",
+            "parameter": "saturation",
+            "location": "APIreference",
+            "explicit_directive": "Proportion of the original saturation to draw colors at. Large patches often look better with slightly desaturated colors, but set this to 1 if you want the plot colors to perfectly match the input color.",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.countplot.html?highlight=countplot",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "groups_df",
+                "variable_line_num": 28,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   group\nA    0\nB    0\nC    0",
+                "additional_info": "Index: 12 entries, A to L\nData columns (total 1 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   group   12 non-null      int64\ndtypes: int64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/39c_seaborn_countplot.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59415689/can-i-coordinate-colors-between-seaborn-and-networkx",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "40.1": {
+        "num": "40.1",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "scatterplot",
+            "parameter": "hue",
+            "location": "APIreference",
+            "explicit_directive": "Can be either categorical or numeric, although color mapping will behave differently in latter case",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.scatterplot.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "scatterplot",
+            "fully_qualified_name": "seaborn.scatterplot",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "The color palette specified by calling set_palette is ignored and the default paletter is used when numerical values passed to hue. When numerical values are passed hue, use the paletter parameter.",
+            "data_dependet": "yes",
+            "trigger_api": "scatterplot",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "hue"
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   x  y  color\n0  9  3      1\n1  9  3      1\n2  4  2      1",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  -----\n 0   x       10 non-null     int64\n 1   y       10 non-null     int64\n 2   color   10 non-null     int64\ndtypes: int64(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/40_1_seaborn_scatterplot.py",
+        "patch_file_rel_path": "patches/40_1_seaborn_scatterplot_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "sns.set_palette(sns.color_palette(colors))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                16
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67637829/seaborn-scatterplot-does-not-color-correctly-hue",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "40.1c": {
+        "num": "40.1c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "scatterplot",
+            "parameter": "hue",
+            "location": "APIreference",
+            "explicit_directive": "Can be either categorical or numeric, although color mapping will behave differently in latter case",
+            "explicit_directive_source": "https://seaborn.pydata.org/generated/seaborn.scatterplot.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   x  y  color\n0  9  3      1\n1  9  3      1\n2  4  2      1",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype\n---  ------  --------------  -----\n 0   x       10 non-null     int64\n 1   y       10 non-null     int64\n 2   color   10 non-null     int64\ndtypes: int64(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/40_1c_seaborn_scatterplot.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67637829/seaborn-scatterplot-does-not-color-correctly-hue",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "42": {
+        "num": "42",
+        "correct": "no",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "replace",
+            "parameter": "inplace",
+            "location": "APIreference",
+            "explicit_directive": "bool, default False. If True, performs operation inplace and returns None.",
+            "explicit_directive_source": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "replace",
+            "fully_qualified_name": "pandas.DataFrame.replace",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "The code uses the replace method without setting the inplace parameter to True, so the replace operation returns a new DataFrame instead of modifying the original one. Since the code doesn't capture this returned DataFrame, it continues working on the original DataFrame, which doesn't contain the replaced values. To modify the original DataFrame directly, set the inplace parameter to True.",
+            "data_dependet": "no",
+            "trigger_api": "replace",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   l1     l2\n0   1  a. 12\n1   2  b. 75\n2   3     23",
+                "additional_info": "RangeIndex: 7 entries, 0 to 6\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   l1      7 non-null      int64 \n 1   l2      7 non-null      object\ndtypes: int64(1), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/42_pandas_replace.py",
+        "patch_file_rel_path": "patches/42_pandas_replace_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "df['l2'].replace(to_replace=r'^\\d+$', value=0, regex=True)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/69539000/replace-every-single-string-value-with-0",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "8",
+            "correct_instance": "24c"
+        }
+    },
+    "42c": {
+        "num": "42c",
+        "correct": "yes",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "replace",
+            "parameter": "inplace",
+            "location": "APIreference",
+            "explicit_directive": "bool, default False. If True, performs operation inplace and returns None.",
+            "explicit_directive_source": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   l1     l2\n0   1  a. 12\n1   2  b. 75\n2   3     23",
+                "additional_info": "RangeIndex: 7 entries, 0 to 6\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   l1      7 non-null      int64 \n 1   l2      7 non-null      object\ndtypes: int64(1), object(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/42c_pandas_replace.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/69539000/replace-every-single-string-value-with-0",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "8",
+            "correct_instance": "24c"
+        }
+    },
+    "43": {
+        "num": "43",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "Multiclass Receiver Operating Characteristic",
+            "parameter": "",
+            "location": "Example",
+            "explicit_directive": "ROC curves are typically used in binary classification, where the TPR and FPR can be defined unambiguously. In the case of multiclass classification, a notion of TPR or FPR is obtained only after binarizing the output.",
+            "explicit_directive_source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "roc_curve",
+            "fully_qualified_name": "sklearn.metrics.roc_curve",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The code uses roc_curve with a multiclass classification problem, which is incorrect. roc_curve is designed for binary classification problems. To use roc_curve with multiclass classification, you need to binarize the output. The code should use roc_curve with a binary classification problem or binarize the output for multiclass classification.",
+            "data_dependet": "yes",
+            "trigger_api": "roc_curve",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "y_true/y_score"
+            },
+            "data": {
+                "variable_name": "y_score",
+                "variable_line_num": 22,
+                "type": "numpy.ndarray",
+                "sample": "[[3.43956050e-05 3.48387716e-02 9.65126833e-01]\n [4.65740325e-04 2.33337586e-01 7.66196674e-01]\n [9.66023886e-01 3.39757113e-02 4.02432988e-07]]",
+                "additional_info": "shape: (45, 3) dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/43_scikitlearn_roc.py",
+        "patch_file_rel_path": "patches/43_scikitlearn_roc_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "fpr[i], tpr[i], thresh = roc_curve(y_test, y_score, pos_label=i)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                29
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67444332/wrong-roc-curve-for-multiclass-classification",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "43c": {
+        "num": "43c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "Multiclass Receiver Operating Characteristic",
+            "parameter": "",
+            "location": "Example",
+            "explicit_directive": "ROC curves are typically used in binary classification, where the TPR and FPR can be defined unambiguously. In the case of multiclass classification, a notion of TPR or FPR is obtained only after binarizing the output.",
+            "explicit_directive_source": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "y_score",
+                "variable_line_num": 25,
+                "type": "numpy.ndarray",
+                "sample": "[[3.43956050e-05 3.48387716e-02 9.65126833e-01]\n [4.65740325e-04 2.33337586e-01 7.66196674e-01]\n [9.66023886e-01 3.39757113e-02 4.02432988e-07]]",
+                "additional_info": "shape: (45, 3) dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/43c_scikitlearn_roc.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67444332/wrong-roc-curve-for-multiclass-classification",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "44": {
+        "num": "44",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Column transformer apply transformations in random order. Therefore, one should separate feature engineering from column transformation pipeline if engineered features are used in the column transformation pipeline."
+        },
+        "api_misuse": {
+            "api_name": "ColumnTransformer",
+            "fully_qualified_name": "sklearn.compose.ColumnTransformer",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The ColumnTransformer pipeline includes both HealthyAttributeAdder and OneHotEncoder. However, the categorical columns passed to OneHotEncoder expect a healthy column that doesn\u2019t exist initially. Since ColumnTransformer doesn\u2019t guarantee the order of operations, OneHotEncoder may attempt to process the data before HealthyAttributeAdder adds the healthy column, leading to an error. To resolve this, include the HealthyAttributeAdder() to the pipeline in a way that it first create the new feature, then do the column transformation, and finally the lasso regression.",
+            "data_dependet": "no",
+            "trigger_api": "OneHotEncoder",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "categories"
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 10,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   age     sex    bmi smoker region  charges\n0   19  female  27.90    yes     sw    16884\n1   18    male  33.77     no     sw     1725\n2   28    male  33.00     no     sw     4449",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   age      5 non-null      int64  \n 1   sex      5 non-null      object \n 2   bmi      5 non-null      float64\n 3   smoker   5 non-null      object \n 4   region   5 non-null      object \n 5   charges  5 non-null      int64  \ndtypes: float64(1), int64(2), object(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "patch_file_rel_path": "patches/44_scikitlearn_columntransformer_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "('healthy', HealthyAttributeAdder(), all_col)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                48
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "KeyError: 'healthy'",
+        "source_url": "https://stackoverflow.com/questions/70638171/custom-transformer-to-add-additional-column",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "44c": {
+        "num": "44c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Column transformer apply transformations in random order. Therefore, one should separate feature engineering from column transformation pipeline if engineered features are used in the column transformation pipeline."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 10,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   age     sex    bmi smoker region  charges\n0   19  female  27.90    yes     sw    16884\n1   18    male  33.77     no     sw     1725\n2   28    male  33.00     no     sw     4449",
+                "additional_info": "RangeIndex: 5 entries, 0 to 4\nData columns (total 6 columns):\n #   Column   Non-Null Count  Dtype  \n---  ------   --------------  -----  \n 0   age      5 non-null      int64  \n 1   sex      5 non-null      object \n 2   bmi      5 non-null      float64\n 3   smoker   5 non-null      object \n 4   region   5 non-null      object \n 5   charges  5 non-null      int64  \ndtypes: float64(1), int64(2), object(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/70638171/custom-transformer-to-add-additional-column",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "47": {
+        "num": "47",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When using datestr2num to convert date strings to numbers, use the month first format %m%d%Y as this API uses dateutil.parser.parse to convert date string to a number which assumes month first format by default"
+        },
+        "api_misuse": {
+            "api_name": "datestr2num",
+            "fully_qualified_name": "matplotlib.dates.datestr2num",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The error occurs because the date strings are in the day first format, which datestr2num doesn't convert correctly. datestr2num uses dateutil.parser.parse to convert date strings to numbers, which assumes the month first format by default. To fix this, use the month first format %m%d%Y when passing date strings to datestr2num.",
+            "data_dependet": "yes",
+            "trigger_api": "datestr2num",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "d"
+            },
+            "data": {
+                "variable_name": "days",
+                "variable_line_num": 4,
+                "type": "list",
+                "sample": "['30/01/2019', '31/01/2019', '01/02/2019']",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/47_matplotlib_datestr2num.py",
+        "patch_file_rel_path": "patches/47_matplotlib_datestr2num_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "x=datestr2num(days)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59738557/date-format-issues-in-plot-ticks-with-matplotlib-dates-and-datestr2num",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "47c": {
+        "num": "47c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When using datestr2num to convert date strings to numbers, use the month first format %m%d%Y as this API uses dateutil.parser.parse to convert date string to a number which assumes month first format by default"
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "days",
+                "variable_line_num": 4,
+                "type": "list",
+                "sample": "['30/01/2019', '31/01/2019', '01/02/2019']",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/47c_matplotlib_datestr2num.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59738557/date-format-issues-in-plot-ticks-with-matplotlib-dates-and-datestr2num",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "48": {
+        "num": "48",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When plotting a lot of plots in iPython notebooks, if displaying all of them are not required, chose to close each plot after creating them to reduce the memory consumption."
+        },
+        "api_misuse": {
+            "api_name": "close",
+            "fully_qualified_name": "matplotlib.pyplot.close",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "When plotting multiple heatmaps in a loop, the code doesn't close the plots after displaying them. This can lead to memory consumption issues when plotting a large number of plots. To prevent this, close each plot after displaying it to reduce memory consumption.",
+            "data_dependet": "no",
+            "trigger_api": "close",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "file_list",
+                "variable_line_num": 6,
+                "type": "list",
+                "sample": "[\"48_data/file1.csv\", \"48_data/file2.csv\", \"48_data/file3.csv\"]",
+                "additional_info": "len: 500"
+            }
+        },
+        "code_file_rel_path": "code_snippets/48_matplotlib_close.py",
+        "patch_file_rel_path": "patches/48_matplotlib_close_patch.txt",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                19
+            ]
+        },
+        "impact_type": "performance_or_memory",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67554983/can-you-turn-off-the-automatic-display-of-seaborn-heatmaps",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "48c": {
+        "num": "48c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "When plotting a lot of plots in iPython notebooks, if displaying all of them are not required, chose to close each plot after creating them to reduce the memory consumption."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "file_list",
+                "variable_line_num": 6,
+                "type": "list",
+                "sample": "[\"48_data/file1.csv\", \"48_data/file2.csv\", \"48_data/file3.csv\"]",
+                "additional_info": "len: 500"
+            }
+        },
+        "code_file_rel_path": "code_snippets/48c_matplotlib_close.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/67554983/can-you-turn-off-the-automatic-display-of-seaborn-heatmaps",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "49": {
+        "num": "49",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "Controlling figure aesthetics",
+            "parameter": "",
+            "location": "Tutorial",
+            "explicit_directive": "If you want to customize the seaborn styles, you can pass a dictionary of parameters to the rc argument of axes_style() and set_style(). Note that you can only override the parameters that are part of the style definition through this method. (However, the higher-level set_theme() function takes a dictionary of any matplotlib parameters).",
+            "explicit_directive_source": "https://seaborn.pydata.org/tutorial/aesthetics.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "set_context",
+            "fully_qualified_name": "seaborn.set_context",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "Seaborn provides different APIs to customize plots. In the incorrect code, set_context is used to change the axis grid color to red, but set_context is intended for scaling plot elements and does not accept grid-related settings. These values are valid for set_style, which is why the customization was ignored without error. Seaborn silently ignores invalid parameters, so it's essential to use set_style for style-related customizations like grid color.",
+            "data_dependet": "no",
+            "trigger_api": "set_context",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "rc"
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 12,
+                "type": "numpy.ndarray",
+                "sample": "[0.         0.14141414 0.28282828]",
+                "additional_info": "shape: (100, ) dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/49_seaborn_style.py",
+        "patch_file_rel_path": "patches/49_seaborn_style_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "'grid.color': 'red'"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                7
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/60878196/seaborn-rc-parameters-for-set-context-and-set-style",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "49c": {
+        "num": "49c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "Controlling figure aesthetics",
+            "parameter": "",
+            "location": "Tutorial",
+            "explicit_directive": "If you want to customize the seaborn styles, you can pass a dictionary of parameters to the rc argument of axes_style() and set_style(). Note that you can only override the parameters that are part of the style definition through this method. (However, the higher-level set_theme() function takes a dictionary of any matplotlib parameters).",
+            "explicit_directive_source": "https://seaborn.pydata.org/tutorial/aesthetics.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 17,
+                "type": "numpy.ndarray",
+                "sample": "[0.         0.14141414 0.28282828]",
+                "additional_info": "shape: (100, ) dtype: float64"
+            }
+        },
+        "code_file_rel_path": "code_snippets/49c_seaborn_style.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/60878196/seaborn-rc-parameters-for-set-context-and-set-style",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "50": {
+        "num": "50",
+        "correct": "no",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "x, y should be 1-D arrays (e.g. (N, )), not 2-D arrays in the shape of (N, 1)."
+        },
+        "api_misuse": {
+            "api_name": "lineplot",
+            "fully_qualified_name": "seaborn.lineplot",
+            "api_element": "parameter",
+            "violation": "replacement",
+            "explanation": "The seaborn lineplot function expects 1D arrays for both x and y parameters. However, the code is passing a 2D array for the x parameter, which will cause an error.",
+            "data_dependet": "no",
+            "trigger_api": "lineplot",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "x/y"
+            },
+            "data": {
+                "variable_name": "df_new",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   ones  X  Y\n0   1.0  0  1\n1   1.0  1  3\n2   1.0  2  2",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   ones    10 non-null     float64\n 1   X       10 non-null     int64 \n 2   Y       10 non-null     int64  \ndtypes: float64(1), int64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/50_seaborn_lineplot.py",
+        "patch_file_rel_path": "patches/50_seaborn_lineplot_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "sb.lineplot(data=None, x=df['X'].values.reshape(-1,1),y=Y_pred)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                20
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: Per-column arrays must each be 1-dimensional",
+        "source_url": "https://stackoverflow.com/questions/59453026/how-do-i-fix-if-using-all-scalar-values-you-must-pass-an-index-error",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "50c": {
+        "num": "50c",
+        "correct": "yes",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "directive": {
+            "api": "",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "x, y should be 1-D arrays (e.g. (N, )), not 2-D arrays in the shape of (N, 1)."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df_new",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   ones  X  Y\n0   1.0  0  1\n1   1.0  1  3\n2   1.0  2  2",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   ones    10 non-null     float64\n 1   X       10 non-null     int64 \n 2   Y       10 non-null     int64  \ndtypes: float64(1), int64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/50c_seaborn_lineplot.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://stackoverflow.com/questions/59453026/how-do-i-fix-if-using-all-scalar-values-you-must-pass-an-index-error",
+        "source": "stackoverflow",
+        "similar_instances": {
+            "misuse_instance": "10",
+            "correct_instance": "18c"
+        }
+    },
+    "153": {
+        "num": "153",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "Axes3D",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "As a user, you do not instantiate Axes directly, but use Axes creation methods instead; e.g. from pyplot or Figure: subplots, subplot_mosaic or Figure.add_axes. This is a new behavior in matplotlib >v3.4.",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/toolkits/mplot3d/axes3d.html#mpl_toolkits.mplot3d.axes3d.Axes3D",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "add_axes",
+            "fully_qualified_name": "matplotlib.figure.Figure.add_axes",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "New version of Matplotlib need axes to be created using add_axes method when using Axes3D constructor. Otherwise, the axes will not be created and the plot will not be created.",
+            "data_dependet": "no",
+            "trigger_api": "Axes3D",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 6,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "    x  y    z    dx   dy    dz\n0  74  0  0.0  10.0  1.0  1455\n1  74  1  0.0  10.0  1.0  1219\n2  74  2  0.0  10.0  1.0  1240",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 6 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       10 non-null     int64  \n 1   y       10 non-null     int64  \n 2   z       10 non-null     float64\n 3   dx      10 non-null     float64\n 4   dy      10 non-null     float64\n 5   dz      10 non-null     int64  \ndtypes: float64(3), int64(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/153_matplotlib_addaxes.py",
+        "patch_file_rel_path": "patches/153_matplotlib_addaxes_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "Axes3D(fig).bar3d(df['x'], df['y'], df['z'], df['dx'], df['dy'], df['dz'], color='b')"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                18
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/AtsushiSakai/PythonRobotics/commit/af39afe05cfec0ef202cc1542dfe0103c130ed3b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "153c": {
+        "num": "153c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "Axes3D",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "As a user, you do not instantiate Axes directly, but use Axes creation methods instead; e.g. from pyplot or Figure: subplots, subplot_mosaic or Figure.add_axes. This is a new behavior in matplotlib >v3.4.",
+            "explicit_directive_source": "https://matplotlib.org/stable/api/toolkits/mplot3d/axes3d.html#mpl_toolkits.mplot3d.axes3d.Axes3D",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 6,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "    x  y    z    dx   dy    dz\n0  74  0  0.0  10.0  1.0  1455\n1  74  1  0.0  10.0  1.0  1219\n2  74  2  0.0  10.0  1.0  1240",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 6 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       10 non-null     int64  \n 1   y       10 non-null     int64  \n 2   z       10 non-null     float64\n 3   dx      10 non-null     float64\n 4   dy      10 non-null     float64\n 5   dz      10 non-null     int64  \ndtypes: float64(3), int64(3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/153c_matplotlib_addaxes.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/AtsushiSakai/PythonRobotics/commit/af39afe05cfec0ef202cc1542dfe0103c130ed3b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "226": {
+        "num": "226",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "set_xticks",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "The use of this method is discouraged, because of the dependency on tick positions. In most cases, you'll want to use Axes.set_[x/y/z]ticks(positions, labels) or Axes.set_xticks instead.",
+            "explicit_directive_source": "https://matplotlib.org/devdocs/api/_as_gen/matplotlib.axes.Axes.set_xticklabels.html#matplotlib.axes.Axes.set_xticklabels",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "set_xticks",
+            "fully_qualified_name": "matplotlib.axes.Axes.set_xticks",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "Using set_xticklabels is discouraged, because the labels may not match the tick positions. Instead, use set_xticks to set the tick positions and the labels or use set_xticks to set the positions then call set_xticklabels.",
+            "data_dependet": "no",
+            "trigger_api": "set_xticklabels",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   x  y\n0  0  0\n1  1  1\n2  2  2",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       10 non-null     int64  \n 1   y       10 non-null     int64  \ndtypes: int64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/226_matplotlib_setxticks.py",
+        "patch_file_rel_path": "patches/226_matplotlib_setxticks_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "ax.set_xticklabels(df['x'])"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                14
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/facebook/prophet/commit/143e544beb19f3143c6ab6b3531b0c47c4d92c17",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "226c": {
+        "num": "226c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "set_xticks",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "The use of this method is discouraged, because of the dependency on tick positions. In most cases, you'll want to use Axes.set_[x/y/z]ticks(positions, labels) or Axes.set_xticks instead.",
+            "explicit_directive_source": "https://matplotlib.org/devdocs/api/_as_gen/matplotlib.axes.Axes.set_xticklabels.html#matplotlib.axes.Axes.set_xticklabels",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 5,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   x  y\n0  0  0\n1  1  1\n2  2  2",
+                "additional_info": "RangeIndex: 10 entries, 0 to 9\nData columns (total 2 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       10 non-null     int64  \n 1   y       10 non-null     int64  \ndtypes: int64(2)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/226c_matplotlib_setxticks.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/facebook/prophet/commit/143e544beb19f3143c6ab6b3531b0c47c4d92c17",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "930": {
+        "num": "930",
+        "correct": "no",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "squeeze",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "squeeze",
+            "fully_qualified_name": "numpy.squeeze",
+            "api_element": "function",
+            "violation": "redundant",
+            "explanation": "Calling squeeze on a single feature transform 2D array to 1D array. But scikit-learn predict expects a 2D array.",
+            "data_dependet": "yes",
+            "trigger_api": "squeeze",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X_te",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "           x\n8 -0.103219\n1  0.400157",
+                "additional_info": "Index: 2 entries, 8 to 1\nData columns (total 1 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       2 non-null      float64\ndtypes: float64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/930_numpy_squeeze.py",
+        "patch_file_rel_path": "patches/930_numpy_squeeze_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "preds = model.predict(np.squeeze(X_te.values)))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                15
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: Expected 2D array, got 1D array instead:",
+        "source_url": "https://github.com/microsoft/qlib/commit/e819879232cf02ec33638632fc3644ab621d2b81",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1732",
+            "correct_instance": "1933c"
+        }
+    },
+    "930c": {
+        "num": "930c",
+        "correct": "yes",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "squeeze",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X_te",
+                "variable_line_num": 11,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "           x\n8 -0.103219\n1  0.400157",
+                "additional_info": "Index: 2 entries, 8 to 1\nData columns (total 1 columns):\n #   Column  Non-Null Count  Dtype  \n---  ------  --------------  -----  \n 0   x       2 non-null      float64\ndtypes: float64(1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/930c_numpy_squeeze.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/microsoft/qlib/commit/e819879232cf02ec33638632fc3644ab621d2b81",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1732",
+            "correct_instance": "1933c"
+        }
+    },
+    "1732": {
+        "num": "1732",
+        "correct": "no",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "astype",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "astype",
+            "fully_qualified_name": "numpy.astype",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "Not calling astype returns inconsistent data types",
+            "data_dependet": "no",
+            "trigger_api": "astype",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[0 1 2 3]",
+                "additional_info": "dtype: int64 shape: (4,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1732_numpy_astype.py",
+        "patch_file_rel_path": "patches/1732_numpy_astype_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "sinc_result = np.sinc(original_data)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                5
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/unifyai/ivy/commit/642f645da73513388d9b47b1eb6d5a4863bc8306",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "930",
+            "correct_instance": "1933c"
+        }
+    },
+    "1732c": {
+        "num": "1732c",
+        "correct": "yes",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "astype",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[0 1 2 3]",
+                "additional_info": "dtype: int64 shape: (4,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1732c_numpy_astype.py",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/unifyai/ivy/commit/642f645da73513388d9b47b1eb6d5a4863bc8306",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "930",
+            "correct_instance": "1933c"
+        }
+    },
+    "1933": {
+        "num": "1933",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "amin",
+            "parameter": "initial",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "amin",
+            "fully_qualified_name": "numpy.amin",
+            "api_element": "condition",
+            "violation": "missing",
+            "explanation": "The parameters initial and where are correlated. If both passed None as keyword arguments or the initial not assigned when where has an argument, the function will raise an error.",
+            "data_dependet": "no",
+            "trigger_api": "amin",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "initial"
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[[-1, 2, 3], [-4, 2, 8]]",
+                "additional_info": "dtype: int32 shape: (2, 3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1933_numpy_amin.py",
+        "patch_file_rel_path": "patches/1933_numpy_amin_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: reduction operation 'minimum' does not have an identity, so to use a where mask one has to specify 'initial'",
+        "source_url": "https://github.com/unifyai/ivy/commit/0d3f9df7a62cf5490d5b1bdfefe33932e57b69af",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "1933c": {
+        "num": "1933c",
+        "correct": "yes",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "amin",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 3,
+                "type": "numpy.ndarray",
+                "sample": "[[-1, 2, 3], [-4, 2, 8]]",
+                "additional_info": "dtype: int32 shape: (2, 3)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/1933c_numpy_amin.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/unifyai/ivy/commit/0d3f9df7a62cf5490d5b1bdfefe33932e57b69af",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "930",
+            "correct_instance": "1732c"
+        }
+    },
+    "2750": {
+        "num": "2750",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "roc_auc_score",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "roc_auc_score",
+            "fully_qualified_name": "sklearn.metrics.roc_auc_score",
+            "api_element": "condition",
+            "violation": "missing",
+            "explanation": "roc_auc_score requires both labels to be present in the true_labels array. If only one class is present, the function will raise an error.",
+            "data_dependet": "yes",
+            "trigger_api": "roc_auc_score",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "true_labels"
+            },
+            "data": {
+                "variable_name": "true_labels",
+                "variable_line_num": 5,
+                "type": "numpy.ndarray",
+                "sample": "[1, 1, 1]",
+                "additional_info": "dtype: int64 shape: (3,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/2750_scikitlearn_rocauc.py",
+        "patch_file_rel_path": "patches/2750_scikitlearn_rocauc_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "roc_auc = roc_auc_score(true_labels, predicted_scores)"
+            ],
+            "opt2": [
+                "true_labels = np.array([1, 1, 0])"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                7
+            ],
+            "opt2": [
+                4
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: Only one class present in y_true. ROC AUC score is not defined in that case.",
+        "source_url": "https://github.com/pyg-team/pytorch_geometric/commit/129d60fdfee72e0ecb8d26c88fe25e9addfe1e33",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "2750c": {
+        "num": "2750c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "roc_auc_score",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "true_labels",
+                "variable_line_num": 5,
+                "type": "numpy.ndarray",
+                "sample": "[1, 1, 1]",
+                "additional_info": "dtype: int64 shape: (3,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/2750c_scikitlearn_rocauc.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/pyg-team/pytorch_geometric/commit/129d60fdfee72e0ecb8d26c88fe25e9addfe1e33",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "3010": {
+        "num": "3010",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "indexing",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "indexing",
+            "fully_qualified_name": "",
+            "api_element": "operation",
+            "violation": "replacement",
+            "explanation": "copyto is a more efficient way to copy elements from one array to another array.",
+            "data_dependet": "no",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "a",
+                "variable_line_num": 4,
+                "type": "numpy.ndarray",
+                "sample": "[0.37454012 0.95071431 0.73199394]",
+                "additional_info": "dtype: float64 shape: (1000000,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/3010_numpy_copyto.py",
+        "patch_file_rel_path": "patches/3010_numpy_copyto_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "a[mask] = cp[mask]"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                10
+            ]
+        },
+        "impact_type": "performance_or_memory",
+        "impact": "",
+        "source_url": "https://github.com/quantopian/zipline/commit/d7b9615d70478cba45a62964b576fad5d7a5060b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "3010c": {
+        "num": "3010c",
+        "correct": "yes",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "indexing",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 6,
+                "type": "numpy.ndarray",
+                "sample": "[10000, 2, 3]",
+                "additional_info": "dtype: int64 shape: (15, 1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/3010c_numpy_copyto.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/quantopian/zipline/commit/d7b9615d70478cba45a62964b576fad5d7a5060b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "3046": {
+        "num": "3046",
+        "correct": "no",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "gcf",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "get_active",
+            "fully_qualified_name": "matplotlib.pyplot.gcf",
+            "api_element": "condition",
+            "violation": "missing",
+            "explanation": "To check if there is an active figure, first call get_fignums and see if the list contain any figures. If the list is empty, then there is no active figure.",
+            "data_dependet": "no",
+            "trigger_api": "get_active",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 7,
+                "type": "list",
+                "sample": "[0, 1, 2, 3]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/3046_matplotlib_gcf.py",
+        "patch_file_rel_path": "patches/3046_matplotlib_gcf_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "return plt.gcf()"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                4
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "AttributeError: 'NoneType' object has no attribute 'canvas'AttributeError: 'NoneType' object has no attribute 'canvas'",
+        "source_url": "https://github.com/ipython/ipython/commit/b85eeb2572f086c2d1c5f1254a794c9b3682765e",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "3046c": {
+        "num": "3046c",
+        "correct": "yes",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "directive": {
+            "api": "gcf",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "",
+                "variable_line_num": 10,
+                "type": "list",
+                "sample": "[0, 1, 2, 3]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/3046c_matplotlib_gcf.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/ipython/ipython/commit/b85eeb2572f086c2d1c5f1254a794c9b3682765e",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4",
+            "correct_instance": "19c"
+        }
+    },
+    "3893": {
+        "num": "3893",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "predict",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "predict",
+            "fully_qualified_name": "sklearn.dummy.DummyClassifier.predict",
+            "api_element": "parameter",
+            "violation": "redundant",
+            "explanation": "predict only takes one argument, but two given",
+            "data_dependet": "no",
+            "trigger_api": "predict",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 4,
+                "type": "list",
+                "sample": "[[0], [0], [0]]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/3893_scikitlearn_predict.py",
+        "patch_file_rel_path": "patches/3893_scikitlearn_predict_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "predictions = clf.predict(X, y)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                10
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: DummyClassifier.predict() takes 2 positional arguments but 3 were given",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/76253a24700d8b7566909fbc041ca991892f0a49",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "33c"
+        }
+    },
+    "3893c": {
+        "num": "3893c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "predict",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 4,
+                "type": "list",
+                "sample": "[[0], [0], [0]]",
+                "additional_info": ""
+            }
+        },
+        "code_file_rel_path": "code_snippets/3893c_scikitlearn_predict.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/76253a24700d8b7566909fbc041ca991892f0a49",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "33c"
+        }
+    },
+    "4617": {
+        "num": "4617",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "intersect1d",
+            "parameter": "assume_unique",
+            "location": "APIreference",
+            "explicit_directive": "If True, the input arrays are both assumed to be unique, which can speed up the calculation. If True but ar1 or ar2 are not unique, incorrect results and out-of-bounds indices could result. Default is False.",
+            "explicit_directive_source": "https://numpy.org/doc/stable/reference/generated/numpy.intersect1d.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "interscet1d",
+            "fully_qualified_name": "numpy.intersect1d",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "When the arrays are unique, failing to set the argument of assume_unique to True reduces the computation time.",
+            "data_dependet": "yes",
+            "trigger_api": "intersect1d",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "assume_unique"
+            },
+            "data": {
+                "variable_name": "arr1",
+                "variable_line_num": 5,
+                "type": "numpy.ndarray",
+                "sample": "[1, 2, 3]",
+                "additional_info": "dtype: int64 shape: (1000,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4617_numpy_intersect1d.py",
+        "patch_file_rel_path": "patches/4617_numpy_intersect1d_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "result = np.intersect1d(arr1, arr2)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "performance_or_memory",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/21e63aaf01404f4eb3e7ae54ef9f71e8bb905f6b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "4617c": {
+        "num": "4617c",
+        "correct": "yes",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "intersect1d",
+            "parameter": "assume_unique",
+            "location": "APIreference",
+            "explicit_directive": "If True, the input arrays are both assumed to be unique, which can speed up the calculation. If True but ar1 or ar2 are not unique, incorrect results and out-of-bounds indices could result. Default is False.",
+            "explicit_directive_source": "https://numpy.org/doc/stable/reference/generated/numpy.intersect1d.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "arr1",
+                "variable_line_num": 5,
+                "type": "numpy.ndarray",
+                "sample": "[1, 2, 3]",
+                "additional_info": "dtype: int64 shape: (1000,)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4617c_numpy_intersect1d.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/21e63aaf01404f4eb3e7ae54ef9f71e8bb905f6b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "4714": {
+        "num": "4714",
+        "correct": "no",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "dot",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "dot",
+            "fully_qualified_name": "numpy.dot",
+            "api_element": "function",
+            "violation": "replacement",
+            "explanation": "einsum is more efficient than calling trace and dot separately.",
+            "data_dependet": "no",
+            "trigger_api": "dot",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "A",
+                "variable_line_num": 6,
+                "type": "numpy.ndarray",
+                "sample": "[[0.37454012 0.95071431 0.73199394]]",
+                "additional_info": "dtype: float64 dimensions: (100, 50)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4714_numpy_einsum.py",
+        "patch_file_rel_path": "patches/4617_numpy_einsum_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "res = np.trace(np.dot(A, B))"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                8
+            ]
+        },
+        "impact_type": "performance_or_memory",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/ef864824d01d06acb5a410ef9adbe6b69bd7d1b6",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "4714c": {
+        "num": "4714c",
+        "correct": "yes",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "directive": {
+            "api": "dot",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "A",
+                "variable_line_num": 6,
+                "type": "numpy.ndarray",
+                "sample": "[[0.37454012 0.95071431 0.73199394]]",
+                "additional_info": "dtype: float64 dimensions: (100, 50)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4714c_numpy_einsum.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/ef864824d01d06acb5a410ef9adbe6b69bd7d1b6",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "22",
+            "correct_instance": "26c"
+        }
+    },
+    "4780": {
+        "num": "4780",
+        "correct": "no",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "fit_transform",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "fit_transform",
+            "fully_qualified_name": "sklearn.preprocessing.RobustScaler.fit_transform",
+            "api_element": "function",
+            "violation": "replacement",
+            "explanation": "fit_transform should be called only once on the training data. If called on the test data, the scaler will be retrained on the test data, which is incorrect.",
+            "data_dependet": "no",
+            "trigger_api": "fit_transform",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 6,
+                "type": "numpy.ndarray",
+                "sample": "[10000, 2, 3]",
+                "additional_info": "dtype: int64 shape: (15, 1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4780_scikitlearn_robustscaler.py",
+        "patch_file_rel_path": "patches/4780_scikitlearn_robustscaler_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "X_test_scaled = rb_scaler.fit_transform(X_test)"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                11
+            ]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/0a1f6cd98eebe7c5233692e2d9680232c23bf9a8",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    },
+    "4780c": {
+        "num": "4780c",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "fit_transform",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 6,
+                "type": "numpy.ndarray",
+                "sample": "[10000, 2, 3]",
+                "additional_info": "dtype: int64 shape: (15, 1)"
+            }
+        },
+        "code_file_rel_path": "code_snippets/4780c_scikitlearn_robustscaler.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {},
+        "problematic_line_nums": {},
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/scikit-learn/scikit-learn/commit/0a1f6cd98eebe7c5233692e2d9680232c23bf9a8",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1",
+            "correct_instance": "3893c"
+        }
+    }
+}

@@ -1,0 +1,4 @@
+8c8
+<	ax.axvspan("4.5", "7.5", color='red', alpha=0.3, label='Problem Area')
+---
+>	ax.axvspan(4.5, 7.5, color='red', alpha=0.3, label='Problem Area')

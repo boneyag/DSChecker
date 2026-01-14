@@ -1,0 +1,5 @@
+8c8
+<	ax.legend()
+---
+>	# ax.legend() is not needed here as there are no labeled data series
+

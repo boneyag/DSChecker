@@ -1,0 +1,17 @@
+1c1
+< import numpy as np
+---
+> import numpy as np
+> import math
+2c2
+< from math import factorial
+---
+> 
+3a4
+> # Use math.log to calculate the logarithm of the factorial
+> # This approach avoids the overflow error by not calculating the factorial directly
+4c5
+< print(np.log(factorial(21)))
+---
+> print(sum(np.log(np.arange(1, 22))))
+

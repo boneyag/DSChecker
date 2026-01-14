@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The roc_auc_score function from scikit-learn requires at least one instance of each class in the true_labels array. The provided true_labels array only contains instances of class 1, which will cause an error.\",\n  \"patch\": \"4c4\\n<true_labels = np.array([1, 1, 1])\\n---\\n>true_labels = np.array([1, 1, 0])\"\n}"

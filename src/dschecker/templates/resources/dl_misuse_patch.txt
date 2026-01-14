@@ -1,0 +1,4 @@
+5c5
+< x = tf.ones_like([1, 2, 3])
+---
+> x = tf.ones_like([1, 2, 3], dtype=tf.float32)

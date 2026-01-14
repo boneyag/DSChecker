@@ -1,0 +1,4 @@
+10c10
+< a[mask] = cp[mask]
+---
+> np.copyto(a, cp, where=mask)

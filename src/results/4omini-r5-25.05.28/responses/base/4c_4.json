@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not specify the y-values for the plot in line 7. The `plt.plot()` function requires both x and y values to create a valid plot. Without the y-values, it will raise an error.\",\n  \"patch\": \"7c7\\n< plt.plot([1, 2])\\n---\\n> plt.plot([1, 2], [1, 2])\"\n}"

@@ -1,0 +1,5 @@
+16c16
+< return torch.mean(torch.log(outputs - targets))
+---
+> return torch.mean((outputs - targets) ** 2)
+

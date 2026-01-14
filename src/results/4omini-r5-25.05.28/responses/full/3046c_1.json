@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add text to the axes of a figure that has already been closed with plt.close() on line 11. Once a figure is closed, it cannot be modified, and any operations on it will not have any effect.\",\n  \"patch\": \"11d10\\n< plt.close()\"\n}"

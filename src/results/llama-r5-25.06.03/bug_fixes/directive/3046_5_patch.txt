@@ -1,0 +1,11 @@
+8c8
+<plt.close()
+---
+># Remove this line to keep the figure active
+
+16c16
+<plt.show(block=False)
+<plt.close()
+---
+>plt.show()
+># Remove plt.close() to keep the figure open until it's manually closed

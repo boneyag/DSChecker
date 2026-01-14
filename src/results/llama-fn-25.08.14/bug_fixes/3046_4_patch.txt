@@ -1,0 +1,8 @@
+12c12
+<if ac_fig is None:
+---
+>if ac_fig is not None:
+15a16
+>    plt.show(block=False)
+16a17
+>    plt.close()

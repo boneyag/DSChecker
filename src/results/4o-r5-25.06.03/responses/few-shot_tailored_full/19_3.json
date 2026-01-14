@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add a legend to a scatter plot, but the scatter plot does not have any labeled elements by default. Therefore, calling ax.legend() will result in an empty legend.\",\n  \"patch\": \"8c8\\n< ax.legend()\\n---\\n> ax.legend(['Scatter'])\\n\"\n}"

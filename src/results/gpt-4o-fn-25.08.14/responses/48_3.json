@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.close() after saving each figure, which can lead to excessive memory usage and potentially crash the program when processing many files.\",\n  \"patch\": \"18a19\\n>    plt.close()\\n\"\n}"

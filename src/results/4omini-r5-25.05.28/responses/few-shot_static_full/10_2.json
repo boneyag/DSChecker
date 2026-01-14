@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The lmplot() function is a figure-level function and cannot be used within the map() method of a FacetGrid, which expects an axes-level function. Instead, regplot() should be used for this purpose.\", \"patch\": \"6c6\\n< g.map(sns.lmplot, 'total_bill', 'tip')\\n---\\n> g.map(sns.regplot, 'total_bill', 'tip')\\n\"}"

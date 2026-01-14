@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The parameter 'p' in the KNeighborsClassifier should be a list of integers, not a single integer. The GridSearchCV expects a list of possible values to search over.\",\n  \"patch\": \"17c17\\n<p = [1]\\n---\\n>p = [1, 2]\"\n}"

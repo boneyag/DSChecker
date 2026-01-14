@@ -1,0 +1,5 @@
+8c8
+< mask = torch.randn(b, 1, h, w).cuda()
+---
+> mask = torch.randn(b, 1, h, w).to(device=img.device)
+

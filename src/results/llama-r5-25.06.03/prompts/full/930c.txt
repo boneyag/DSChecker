@@ -1,0 +1,51 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library numpy.
+Check this piece of code and decide if it correctly uses library numpy.
+
+Here is information about the variable X_te at line 11 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+Index: 2 entries, 8 to 1
+Data columns (total 1 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   x       2 non-null      float64
+dtypes: float64(1)
+
+sample: 
+           x
+8 -0.103219
+1  0.400157
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	import pandas as pd
+3	from sklearn.linear_model import LinearRegression
+4	from sklearn.model_selection import train_test_split
+5	
+6	np.random.seed(0)
+7	
+8	X = pd.DataFrame({'x': np.random.randn(10)})
+9	y = np.random.randn(10)
+10	
+11	X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2)
+12	
+13	model = LinearRegression()
+14	model.fit(X_tr, y_tr)
+15	preds = model.predict(X_te)
+16	
+
+Your response:

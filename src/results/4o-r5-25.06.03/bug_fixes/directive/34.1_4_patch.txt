@@ -1,0 +1,8 @@
+13c13,15
+<imp_array = impt.fit_transform(df)
+---
+>try:
+>    imp_array = impt.fit_transform(df)
+>except ValueError as e:
+>    print(f"Error during imputation: {e}")
+>    # Handle the case where columns are discarded

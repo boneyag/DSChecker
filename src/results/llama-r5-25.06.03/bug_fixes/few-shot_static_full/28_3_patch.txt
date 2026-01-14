@@ -1,0 +1,13 @@
+20c20
+< estimator = clf.fit(X, y)
+---
+> from sklearn.model_selection import train_test_split
+> X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+> estimator = clf.fit(X_train, y_train)
+21c21
+< print(f"best: {estimator.best_score_}")
+---
+> print(f"best: {estimator.best_score_}")
+> y_score = estimator.best_estimator_.predict(X_test)
+> print(f"accuracy: {accuracy_score(y_test, y_score)}")
+

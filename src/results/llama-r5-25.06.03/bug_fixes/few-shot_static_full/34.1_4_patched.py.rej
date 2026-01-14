@@ -1,0 +1,9 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 14,15
+- imp_array = impt.fit_transform(df)
+- print(imp_array[:, 1])
+--- 14,15 -----
++ imp_array = impt.fit_transform(df)
++ print(imp_array[:, 0])

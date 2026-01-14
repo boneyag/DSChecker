@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function `sns.set_context` is used incorrectly. The correct parameter name for setting custom parameters is `rc`, not `viz_dict`.\",\n  \"patch\": \"9c9\\n< sns.set_context(rc=viz_dict)\\n---\\n> sns.set_context(rc=viz_dict)\\n\"\n}"

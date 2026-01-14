@@ -1,0 +1,4 @@
+8c8
+< x = datestr2num(days)
+---
+> x = datestr2num([d.split('/')[2] + '-' + d.split('/')[1] + '-' + d.split('/')[0] for d in days])

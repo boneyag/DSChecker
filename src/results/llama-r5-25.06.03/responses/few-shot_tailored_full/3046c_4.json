@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"After calling plt.close() at line 11, there is no active figure. However, the code attempts to add a label to the current active figure at line 18. This will result in an error because there is no active figure to add the label to.\",\n  \"patch\": \"11d10\\n< plt.close()\\n\"\n}"

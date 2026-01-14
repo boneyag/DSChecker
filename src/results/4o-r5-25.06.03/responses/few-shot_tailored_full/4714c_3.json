@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The einsum function requires the specification of the output format. The provided subscripts 'ij,ji' do not specify the output format, which can lead to unexpected results.\",\n  \"patch\": \"8c8\\n< res = np.einsum('ij,ji', A, B)\\n---\\n> res = np.einsum('ij,ji->', A, B)\\n\"\n}"

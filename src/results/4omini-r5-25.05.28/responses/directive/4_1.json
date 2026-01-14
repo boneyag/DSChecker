@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not include a call to plt.show() to display the plot. Without this call, the plot will not be rendered in a window.\",\n  \"patch\": \"8a9\\n> plt.show()\"\n}"

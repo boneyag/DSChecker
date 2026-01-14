@@ -1,0 +1,6 @@
+35c35
+< cat_col = ['sex', 'smoker', 'region', 'healthy']
+---
+> cat_col = ['sex', 'smoker', 'region']
+> 
+> # 'healthy' should be added after the transformation in the pipeline.

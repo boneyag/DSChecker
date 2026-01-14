@@ -1,0 +1,6 @@
+17,18d16
+< ax.xaxis.set_major_locator(MonthLocator())
+< ax.xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+20a19,20
+> ax.xaxis.set_major_locator(MonthLocator())
+> ax.xaxis.set_major_formatter(DateFormatter('%Y-%m'))

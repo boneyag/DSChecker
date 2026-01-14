@@ -1,0 +1,4 @@
+3a4,6
+>     fig_stack = plt.get_fignums()
+>     if len(fig_stack) == 0:
+>         return None

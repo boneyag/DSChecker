@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function sns.set_context() is used to set the plotting context parameters, but it does not accept the 'rc' parameter. Instead, sns.set() should be used to set the rc parameters.\",\n  \"patch\": \"9c9\\n<sns.set_context(rc=viz_dict)\\n---\\n>sns.set(rc=viz_dict)\"\n}"

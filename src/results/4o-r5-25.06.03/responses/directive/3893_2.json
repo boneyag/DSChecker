@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `predict` method of `DummyClassifier` should only take the feature matrix `X` as its argument, not both `X` and `y`.\",\n  \"patch\": \"10c10\\n<\\tpredictions = clf.predict(X, y)\\n---\\n>\\tpredictions = clf.predict(X)\"\n}"

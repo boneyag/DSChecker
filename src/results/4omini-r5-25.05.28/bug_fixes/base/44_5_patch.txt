@@ -1,0 +1,6 @@
+35c35
+< cat_col = ['sex', 'smoker', 'region', 'healthy']
+---
+> cat_col = ['sex', 'smoker', 'region']
+> X_train = price_pipeline.named_steps['add_healthy'].transform(X_train)
+> X_test = price_pipeline.named_steps['add_healthy'].transform(X_test)

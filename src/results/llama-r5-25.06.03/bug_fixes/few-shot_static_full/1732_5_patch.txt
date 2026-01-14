@@ -1,0 +1,7 @@
+7,8c7,8
+< assert sinc_result[0] == 1, "Results not equal to one"
+< assert sinc_result[1] == 0, "Results not equal to zero"
+---
+> np.testing.assert_almost_equal(sinc_result[0], 1)
+> np.testing.assert_almost_equal(sinc_result[1], 0)
+

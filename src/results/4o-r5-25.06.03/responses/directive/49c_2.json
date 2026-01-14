@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code incorrectly uses the `sns.set_style()` function. The `rc` argument is not valid for `sns.set_style()`. Instead, the correct argument to pass the dictionary is `sns.axes_style()`.\",\n  \"patch\": \"14c14\\n<sns.set_style(rc=style_dict)\\n---\\n>sns.set_style(sns.axes_style(), rc=style_dict)\"\n}"

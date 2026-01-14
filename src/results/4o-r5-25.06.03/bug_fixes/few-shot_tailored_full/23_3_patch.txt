@@ -1,0 +1,6 @@
+5c5,6
+< g = sns.heatmap(tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+---
+> correlation_matrix = tips.corr()
+> g = sns.heatmap(correlation_matrix, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+

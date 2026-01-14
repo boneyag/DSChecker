@@ -1,0 +1,4 @@
+15c15
+< print(imp_array[:, 1])
+---
+> print(imp_array)

@@ -1,0 +1,4 @@
+11c11
+< impt = SimpleImputer(missing_values=np.nan, strategy="mean")
+---
+> impt = SimpleImputer(missing_values=np.nan, strategy="constant", fill_value=0.0001)

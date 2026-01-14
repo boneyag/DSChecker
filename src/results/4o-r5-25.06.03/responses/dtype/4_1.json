@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is missing a call to plt.show() which is necessary to display the plot window when using Matplotlib.\",\n  \"patch\": \"7a8\\n>plt.show()\"\n}"

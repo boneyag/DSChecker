@@ -1,0 +1,40 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library TensorFlow.
+Check this piece of code and decide if it correctly uses library TensorFlow.
+
+TensorFlow documentation states this guideline "If provided, a Tensor which is of the same type as y, and has a shape broadcastable with condition and y." for x parameter of where API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable x at line 4 used in this code snippet.
+
+type: tensorflow.python.framework.ops.EagerTensor
+
+additional information: 
+dtype:int64 shape: (8, )
+
+sample: 
+[1 2 0]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import tensorflow as tf
+2	
+3	tf.random.set_seed(0)
+4	x = tf.constant([1, 2, 0, 2, 1, 1, 0, 1], dtype=tf.int64)
+5	mask = tf.constant([1, 1, 0, 1, 1, 1, 0, 1], dtype=tf.int64)
+6	
+7	output = tf.where(x == mask, tf.fill(tf.shape(x), -100), x)
+8	
+9	print(output)
+10	
+
+Your response:

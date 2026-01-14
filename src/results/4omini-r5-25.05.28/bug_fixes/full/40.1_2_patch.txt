@@ -1,0 +1,5 @@
+13c13
+< sns.scatterplot(data=df, x='x', y='y', hue='color', legend=False, s=50)
+---
+> df['color'] = df['color'].astype('category')
+> sns.scatterplot(data=df, x='x', y='y', hue='color', legend=False, s=50)

@@ -1,0 +1,4 @@
+26c26
+<     return euclidean_distances([p1.to_list()], [p2.to_list()])
+---
+>     return euclidean_distances([p1.to_list()], [p2.to_list()])[0][0]

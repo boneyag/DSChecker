@@ -1,0 +1,5 @@
+7c7
+<     'country': ['UK', 0.2, 'FR', 'US'],
+---
+>     'country': ['UK', 'FR', 'US'],
+>     'country_numeric': [0.2, 0.3, 0.4, 0.5],

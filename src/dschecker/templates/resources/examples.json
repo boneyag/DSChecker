@@ -1,0 +1,220 @@
+{
+    "non-dl-misuse": {
+        "num": "non-dl-misuse",
+        "correct": "no",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "directive": {
+            "api": "set_index",
+            "parameter": "inplace",
+            "location": "APIreference",
+            "explicit_directive": "bool, default: False. Whether to modify the DataFrame rather than creating a new one.",
+            "explicit_directive_source": "https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.set_index.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "set_index",
+            "fully_qualified_name": "pandas.DataFrame.set_index",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "set_index() returns a new DataFrame with the specified column as the index. The original DataFrame is not modified. Therefore, the correct way to access the 4th row of the DataFrame is to use the new DataFrame returned by set_index() and use the iloc[] method to access the 4th row.",
+            "data_dependet": "no",
+            "trigger_api": "set_index",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 3,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   A   B      C\n0  1  10   True\n1  2  20  False\n2  3  30   True",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   A       4 non-null      int64 \n 1   B       4 non-null      object\n 2   C       4 non-null      bool  \ndtypes: bool(1), int64(1), object(1)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "resources/nondl_code_misuse.py",
+        "patch_file_rel_path": "resources/nondl_misuse_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "df.set_index('A')"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                9
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "ValueError: 4 is not in range",
+        "source_url": "",
+        "source": "",
+        "similar_instances": {
+            "misuse_instance": "",
+            "correct_instance": ""
+        }
+    },
+    "non-dl-correct": {
+        "num": "non-dl-correct",
+        "correct": "yes",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "directive": {
+            "api": "MinMaxScaler",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "MinMaxScaler doesn’t reduce the effect of outliers, but it linearly scales them down into a fixed range, where the largest occurring data point corresponds to the maximum value and the smallest one corresponds to the minimum value.",
+            "explicit_directive_source": "https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "yes",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "df",
+                "variable_line_num": 4,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "   Age  Income  Gender\n0   20   40000    Male\n1   25   50000  Female\n2   30   60000  Female",
+                "additional_info": "RangeIndex: 4 entries, 0 to 3\nData columns (total 3 columns):\n #   Column  Non-Null Count  Dtype \n---  ------  --------------  ----- \n 0   Age     4 non-null      int64\n 1   Income  4 non-null      int64\n 2   Gender  4 non-null      object\ndtypes: int64(2), object(1)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "resources/nondl_code_correct.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": [
+                ""
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+            ]
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "",
+        "source": "",
+        "similar_instances": {
+            "misuse_instance": "",
+            "correct_instance": ""
+        }
+    },
+    "dl-misuse": {
+        "num": "dl-correct",
+        "correct": "no",
+        "lib": "TensorFlow",
+        "lib_version": "2.19.0",
+        "directive": {
+            "api": "tf.math.log",
+            "parameter": "x",
+            "location": "APIreference",
+            "explicit_directive": "A Tensor. Must be one of the following types: bfloat16, half, float32, float64, complex64, complex128.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "ones_like",
+            "fully_qualified_name": "tf.ones_like",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "tf.math.log() requires the input tensor to have a floating point data type. The input to x contain integers. Since the dtype parameter is not specified, TensorFlow infer the type from the input tensor. Therefore, the correct way to create a tensor of ones with the same shape and data type as the input tensor is to specify the dtype parameter.",
+            "data_dependet": "yes",
+            "trigger_api": "log",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 3,
+                "type": "tensorflow.python.framework.ops.EagerTensor",
+                "sample": "[1 1 1]",
+                "additional_info": "dtype=torch.int32 shape: (3, ) device: cpu"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "resources/dl_code_misuse.py",
+        "patch_file_rel_path": "resources/dl_misuse_patch.txt",
+        "problematic_lines": {
+            "opt1": [
+                "x = tf.ones_like([1, 2, 3])"
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+                3
+            ]
+        },
+        "impact_type": "runtime_error",
+        "impact": "tensorflow.python.framework.errors_impl.InvalidArgumentError: Value for attr 'T' of int32 is not in the list of allowed values: bfloat16, half, float, double, complex64, complex128",
+        "source_url": "",
+        "source": "",
+        "similar_instances": {
+            "misuse_instance": "",
+            "correct_instance": ""
+        }
+    },
+    "dl-correct": {
+        "num": "dl-correct",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "Flatten",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Flattens a contiguous range of dims into a tensor. For use with Sequential, see torch.flatten() for details.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.nn.Flatten.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "yes",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 15,
+                "type": "pandas.core.frame.DataFrame",
+                "sample": "[[[[0.6924, 0.9393, 1.1230],\n    [0.5882, 0.9767, 0.9245],\n    [1.0214, 0.5788, 0.9948]]]]",
+                "additional_info": "dtype=torch.float16 shape: torch.Size([1, 16, 13, 13]) device: cpu"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "resources/dl_code_correct.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": [
+                ""
+            ]
+        },
+        "problematic_line_nums": {
+            "opt1": [
+            ]
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "",
+        "source": "",
+        "similar_instances": {
+            "misuse_instance": "",
+            "correct_instance": ""
+        }
+    }
+}

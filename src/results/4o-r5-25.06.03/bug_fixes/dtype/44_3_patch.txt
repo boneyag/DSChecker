@@ -1,0 +1,10 @@
+35c35
+<cat_col = ['sex', 'smoker', 'region', 'healthy']
+---
+>cat_col = ['sex', 'smoker', 'region']
+38a39
+>all_col = all_col.tolist() + ['healthy']
+43c44
+<('ohe', OneHotEncoder(), cat_col),
+---
+>('ohe', OneHotEncoder(), all_col),

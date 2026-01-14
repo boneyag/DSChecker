@@ -1,0 +1,9 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 13,14
+- imp_array = impt.fit_transform(df)
+- print(imp_array[:, 1])
+--- 13,14 -----
++ imp_array = impt.fit_transform(df)
++ if imp_array.shape[1] > 1:

@@ -1,0 +1,3 @@
+5c5
+sns.heatmap(tips.corr(), square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+

@@ -1,0 +1,159 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+seaborn documentation states this guideline "The regplot() and lmplot() functions are closely related, but the former is an axes-level function while the latter is a figure-level function that combines regplot() and FacetGrid." for lmplot API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable tips at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+#   Column      Non-Null Count  Dtype 
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+
+sample: 
+   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import seaborn as sns
+2	
+3	tips = sns.load_dataset('tips')
+4	
+5	g = sns.FacetGrid(data=tips, col='time', row='sex')
+6	g.map(sns.lmplot, 'total_bill', 'tip')
+7	
+
+Your response:
+
+{"correct": "no", "explanation": "The function sns.lmplot is a figure-level function and cannot be used with sns.FacetGrid which expects an axes-level plotting function. sns.FacetGrid is designed to work with simpler axes-level functions like sns.regplot or sns.scatterplot.", "patch": "5,6c5\n< g = sns.FacetGrid(data=tips, col='time', row='sex')\n< g.map(sns.lmplot, 'total_bill', 'tip')\n---\n> sns.lmplot(data=tips, x='total_bill', y='tip', col='time', row='sex')\n"}
+
+Example 2:
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+seaborn documentation states this guideline "If True, the histogram height shows a density rather than a count. This is implied if a KDE or fitted density is plotted. " for norm_hist parameter of distplot API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable tips at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype 
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+
+sample: 
+   total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import seaborn as sns
+2	
+3	data = sns.load_dataset('tips')
+4	
+5	sns.distplot(data.tip, norm_hist=False, kde=False)
+6	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+seaborn documentation states this guideline "2D dataset that can be coerced into an ndarray. If a Pandas DataFrame is provided, the index/column information will be used to label the columns and rows" for data parameter of heatmap API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable tips at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+
+sample: 
+ total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import seaborn as sns
+2	
+3	tips = sns.load_dataset('tips')
+4	
+5	g = sns.heatmap(tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+6	
+
+Your response:

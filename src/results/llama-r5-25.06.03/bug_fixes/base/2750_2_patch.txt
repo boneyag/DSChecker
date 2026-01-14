@@ -1,0 +1,9 @@
+7c7
+roc_auc = roc_auc_score(true_labels, predicted_scores)
+---
+try:
+    roc_auc = roc_auc_score(true_labels, predicted_scores)
+except ValueError as e:
+    print(f"Error: {e}")
+    roc_auc = np.nan
+

@@ -1,0 +1,4 @@
+19,20d18
+< ax.set_xticks(df.date.unique())
+< ax.set_xticklabels(labels=df.date.unique(), rotation=45)
+

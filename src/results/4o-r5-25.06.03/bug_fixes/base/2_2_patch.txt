@@ -1,0 +1,4 @@
+28c28
+<clustering = DBSCAN(metric=get_point_distance).fit(np.array([[point] for point in points]))
+---
+>clustering = DBSCAN(metric=get_point_distance).fit(np.array([point.to_list() for point in points]))

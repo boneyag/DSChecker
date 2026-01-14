@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add text to the axes of a figure that has already been closed. The call to `plt.close()` on line 11 closes the figure created by `plt.subplots()`, making it inactive. Therefore, trying to add text to `ax` after the figure has been closed will result in an error.\",\n  \"patch\": \"11d10\\n< plt.close()\"\n}"

@@ -1,0 +1,52 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+PyTorch documentation states this guideline "the input tensor, either of floating point or complex dtype" for input parameter of mean API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable tensor_list at line 8 used in this code snippet.
+
+type: list
+
+additional information: 
+
+
+sample: 
+[tensor([[-1.1258, -1.1524, -0.2506],
+        [-2.6133, -1.6965, -0.2282],
+        [-0.0744, -1.0922,  0.3920]]),
+ tensor([[-1.9877,  0.6613, -0.2379],
+        [-0.1309, -0.1440,  0.2201],
+        [ 1.9519,  2.0767,  1.9891]]),
+ tensor([[ 1.2675,  0.2432,  0.5111],
+        [-0.3241, -0.9605,  0.6498],
+        [-0.9282,  1.1856,  0.2420]])
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	
+3	
+4	def calculate_mean(tensor_list):
+5	    return torch.mean(tensor_list, dim=0)
+6	
+7	
+8	num_tensors = 1000
+9	tensor_size = (100, 100)
+10	torch.manual_seed(0)
+11	tensor_list = [torch.randn(tensor_size) for _ in range(num_tensors)]
+12	
+13	mean = calculate_mean(tensor_list)
+14	
+
+Your response:

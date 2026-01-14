@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The einsum function is incorrectly used. The subscript 'ji' should be 'ij' to correctly compute the matrix multiplication of A and B. The current usage will result in an error or incorrect output.\",\n  \"patch\": \"8c8\\n< res = np.einsum('ij,ji', A, B)\\n---\\n> res = np.einsum('ij,jk->ik', A, B)\"\n}"

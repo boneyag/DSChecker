@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.clf() or plt.close() after saving each plot. This can lead to overlapping plots when processing multiple files.\",\n  \"patch\": \"18a19,20\\n>    plt.clf()\\n>    plt.close()\"\n}"

@@ -1,0 +1,9 @@
+5c5
+< g = sns.FacetGrid(data=tips, col='time', row='sex')
+---
+> g = sns.FacetGrid(data=tips, col='time', row='sex')
+6c6
+< g.map(sns.lmplot, 'total_bill', 'tip')
+---
+> g.map(sns.regplot, 'total_bill', 'tip')
+

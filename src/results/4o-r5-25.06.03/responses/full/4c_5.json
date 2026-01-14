@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is missing a call to plt.show() to display the plot.\",\n  \"patch\": \"8a9\\n> plt.show()\"\n}"

@@ -1,0 +1,5 @@
+5c5
+< initial_value = None
+---
+> initial_value = float('inf')
+

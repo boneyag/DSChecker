@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is incorrect because the np.log function in NumPy will throw an error when given the result of factorial(21) as input. This is because the result of factorial(21) is too large to be handled by np.log.\",\n  \"patch\": \"4c4\\n< print(np.log(factorial(21)))\\n---\\n> print(np.log(np.float128(factorial(21))))\"\n}"

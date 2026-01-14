@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The sns.set_style() function does not accept the rc argument. Instead, it accepts a dictionary of parameters directly. The correct function to use for setting the rc parameters is sns.set_theme().\",\n  \"patch\": \"14c14\\n< sns.set_style(rc=style_dict)\\n---\\n> sns.set_theme(style='whitegrid', rc=style_dict)\\n\"\n}"

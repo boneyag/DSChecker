@@ -1,0 +1,7 @@
+7c7,8
+<where_value = None
+<initial_value = None
+---
+>where_value = np.ones_like(x, dtype=np.bool_)
+>initial_value = np.inf
+

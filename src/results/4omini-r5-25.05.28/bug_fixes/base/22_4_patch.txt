@@ -1,0 +1,4 @@
+4c4
+< print(np.log(factorial(21)))
+---
+> print(np.log1p(factorial(21) - 1))

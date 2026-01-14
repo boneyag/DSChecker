@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not set the grid visibility before plotting. In Matplotlib, if you want to display a grid, you need to call plt.grid() after plotting the data.\",\n  \"patch\": \"8a9\\n> plt.grid()\"\n}"

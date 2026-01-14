@@ -1,0 +1,7 @@
+14,15c14,15
+< imp_array = impt.fit_transform(df)
+< print(imp_array[:, 1])
+---
+> imp_array = impt.fit_transform(df)
+> print(imp_array[:, 0])
+

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is using sns.lmplot inside sns.FacetGrid.map, which is incorrect. sns.lmplot is a figure-level function and should not be used inside sns.FacetGrid.map. Instead, sns.regplot should be used.\",\n  \"patch\": \"6c6\\n< g.map(sns.lmplot, 'total_bill', 'tip')\\n---\\n> g.map(sns.regplot, 'total_bill', 'tip')\\n\"\n}"

@@ -1,0 +1,122 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+Here is information about the variable y_logits at line 42 used in this code snippet.
+
+type: torch.Tensor
+
+additional information: 
+dtype:torch.float32 shape: torch.Size([32, 1])
+
+sample: 
+[[-0.2190],
+        [ 0.2608],
+        [ 0.1358]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	import torch.nn as nn
+3	import torch.optim as optim
+4	from sklearn.datasets import load_breast_cancer
+5	from sklearn.model_selection import train_test_split
+6	from sklearn.preprocessing import StandardScaler
+7	from torch.utils.data import DataLoader, TensorDataset
+8	
+9	data = load_breast_cancer()
+10	X, y = data.data, data.target
+11	X_train, X_test, y_train, y_test = train_test_split(
+12	    X, y, test_size=0.2, random_state=42
+13	)
+14	
+15	scaler = StandardScaler()
+16	X_train = scaler.fit_transform(X_train)
+17	X_test = scaler.transform(X_test)
+18	
+19	X_train_tensor = torch.tensor(X_train, dtype=torch.float32)
+20	y_train_tensor = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
+21	X_test_tensor = torch.tensor(X_test, dtype=torch.float32)
+22	y_test_tensor = torch.tensor(y_test, dtype=torch.float32).view(-1, 1)
+23	
+24	train_dataset = TensorDataset(X_train_tensor, y_train_tensor)
+25	test_dataset = TensorDataset(X_test_tensor, y_test_tensor)
+26	train_loader = DataLoader(dataset=train_dataset, batch_size=32, shuffle=True)
+27	test_loader = DataLoader(dataset=test_dataset, batch_size=32, shuffle=False)
+28	
+29	
+30	class BinaryClassifier(nn.Module):
+31	    def __init__(self, input_size):
+32	        super(BinaryClassifier, self).__init__()
+33	        self.linear = nn.Linear(input_size, 1)
+34	
+35	    def forward(self, x):
+36	        return self.linear(x)
+37	
+38	
+39	input_size = X_train_tensor.shape[1]
+40	model = BinaryClassifier(input_size)
+41	loss_fn = nn.BCEWithLogitsLoss()
+42	optimizer = optim.Adam(model.parameters(), lr=0.001)
+43	
+44	
+45	def training_step(model, batch, loss_fn, optimizer):
+46	    x, y = batch
+47	    y_logits = model(x)
+48	    loss = loss_fn(y_logits, y)
+49	
+50	    optimizer.zero_grad()
+51	    loss.backward()
+52	    optimizer.step()
+53	
+54	    return loss.item()
+55	
+56	
+57	def validation_step(model, batch, loss_fn):
+58	    x, y = batch
+59	    y_logits = model(x)
+60	    loss = loss_fn(y_logits, y)
+61	
+62	    y_score = torch.sigmoid(y_logits)
+63	    y_pred = (y_score > 0.5).float()
+64	    accuracy = (y_pred == y).float().mean()
+65	
+66	    return loss.item(), accuracy.item()
+67	
+68	
+69	num_epochs = 100
+70	for epoch in range(num_epochs):
+71	    model.train()
+72	    train_loss = 0.0
+73	    for batch in train_loader:
+74	        train_loss += training_step(model, batch, loss_fn, optimizer)
+75	    train_loss /= len(train_loader)
+76	
+77	    model.eval()
+78	    val_loss = 0.0
+79	    val_accuracy = 0.0
+80	    with torch.no_grad():
+81	        for batch in test_loader:
+82	            loss, accuracy = validation_step(model, batch, loss_fn)
+83	            val_loss += loss
+84	            val_accuracy += accuracy
+85	    val_loss /= len(test_loader)
+86	    val_accuracy /= len(test_loader)
+87	
+88	    if (epoch + 1) % 10 == 0:
+89	        print(
+90	            f"Epoch [{epoch + 1}/{num_epochs}], Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}, Val Accuracy: {val_accuracy:.4f}"
+91	        )
+92	
+
+Your response:

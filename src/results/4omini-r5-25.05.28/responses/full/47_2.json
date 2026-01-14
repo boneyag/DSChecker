@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function `datestr2num` is not designed to handle a list of date strings directly. It expects a single date string as input. Therefore, calling it with the entire list `days` will result in an error.\",\n  \"patch\": \"8c8\\n< x = datestr2num(days)\\n---\\n> x = [datestr2num(day) for day in days]\"\n}"

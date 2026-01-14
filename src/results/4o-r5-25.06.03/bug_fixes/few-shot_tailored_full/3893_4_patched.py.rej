@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 10
+-    predictions = clf.predict(X, y)
+--- 10 -----
++    predictions = clf.predict(X)

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The value of factorial(21) is very large and can cause overflow errors when converted to a float. Using np.log on such a large float can lead to inaccuracies.\",\n  \"patch\": \"4c4\\n< print(np.log(float(factorial(21))))\\n---\\n> print(np.log(factorial(21)))\\n\"\n}"

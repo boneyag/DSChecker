@@ -1,0 +1,4 @@
+9c9
+<sns.set_context(rc=viz_dict)
+---
+>sns.set(rc=viz_dict)

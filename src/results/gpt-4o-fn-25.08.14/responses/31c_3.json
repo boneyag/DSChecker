@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `ax.axvspan` method is used to add a vertical span (rectangle) across the Axes. However, the `label` parameter is not automatically added to the legend. To include it in the legend, `ax.legend()` should be called after plotting.\",\n  \"patch\": \"10c10,11\\n<plt.show()\\n---\\n>ax.legend()\\n>plt.show()\"\n}"

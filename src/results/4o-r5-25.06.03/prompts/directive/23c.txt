@@ -1,0 +1,29 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+seaborn documentation states this guideline "2D dataset that can be coerced into an ndarray. If a Pandas DataFrame is provided, the index/column information will be used to label the columns and rows" for data parameter of heatmap API, which could be useful to decide if the code correctly uses the library.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import seaborn as sns
+2	
+3	tips = sns.load_dataset('tips')
+4	
+5	tips_new = tips.drop(['sex', 'smoker', 'time','total_bill'], axis=1)
+6	df_heatmap = tips_new.pivot_table("tip", "day", "size")
+7	
+8	g = sns.heatmap(df_heatmap, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+9	
+
+Your response:

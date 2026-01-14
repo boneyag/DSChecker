@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function np.sinc expects the input to be in radians, but the input provided is in integer form. The correct usage would be to convert the input to radians before passing it to np.sinc.\",\n  \"patch\": \"5c5\\n< sinc_result = np.sinc(original_data)\\n---\\n> sinc_result = np.sinc(np.radians(original_data))\"\n}"

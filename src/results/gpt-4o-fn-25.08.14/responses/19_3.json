@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` without specifying any labels for the legend. In Matplotlib, calling `ax.legend()` without any data that can be used to create a legend will result in an empty legend.\",\n  \"patch\": \"8c8,9\\n<\\tax.legend()\\n---\\n> \\tax.legend(['Total Bill vs Tip'])\"\n}"

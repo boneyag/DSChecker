@@ -1,0 +1,6 @@
+3a4
+> from datetime import datetime
+8c9
+< x = datestr2num(days)
+---
+> x = datestr2num([datetime.strptime(day, '%d/%m/%Y').strftime('%m/%d/%Y') for day in days])

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not clear the figure between iterations of the loop, which can lead to overlapping plots from different CSV files. This can be fixed by calling plt.clf() before creating a new scatter plot.\",\n  \"patch\": \"12a13\\n> plt.clf()\\n\"\n}"

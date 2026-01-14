@@ -1,0 +1,13 @@
+24,25c24
+<def get_point_distance(p1, p2):
+<    """Returns euclidea distance"""
+---
+>def get_point_distance(p1, p2):
+25c25
+<    return euclidean_distances([p1.to_list()], [p2.to_list()])
+---
+>    return np.linalg.norm(np.array(p1.to_list()) - np.array(p2.to_list()))
+28c28
+<clustering = DBSCAN(metric=get_point_distance).fit(np.array([[point] for point in points]))
+---
+>clustering = DBSCAN(metric=get_point_distance).fit(np.array([point.to_list() for point in points]))

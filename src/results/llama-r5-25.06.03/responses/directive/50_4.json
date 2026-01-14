@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The seaborn library's lineplot function does not accept multidimensional arrays for the x and y parameters when data is set to None.\",\n  \"patch\": \"20c20\\n<sb.lineplot(data=None, x=df['X'].values.reshape(-1, 1), y=Y_pred)\\n---\\n>sb.lineplot(data=None, x=df['X'].values, y=Y_pred.squeeze())\"\n}"

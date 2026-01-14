@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The parameter 'p' in the param_grid should have more than one value to perform a proper grid search. Having only one value does not make sense for a grid search as it does not provide any variability for that parameter.\",\n  \"patch\": \"17c17\\n<p = [1, 2]\\n\"\n}"

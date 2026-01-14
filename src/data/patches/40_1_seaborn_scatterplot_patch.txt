@@ -1,0 +1,5 @@
+12,13c12
+< sns.set_palette(sns.color_palette(colors))
+< sns.scatterplot(data=df, x='x', y='y', hue='color', legend=False, s=50)
+---
+> sns.scatterplot(data=df, x='x', y='y', hue='color', legend=False, palette=colors, s=50)

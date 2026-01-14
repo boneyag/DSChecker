@@ -1,0 +1,7 @@
+8c8,11
+< res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)
+---
+> if initial_value is not None and where_value is not None:
+>     res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)
+> else:
+>     res = np.amin(a=x, axis=1, keepdims=False, out=None)

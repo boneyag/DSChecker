@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is using the discouraged method of setting xticks and their labels separately. Instead, it should use the recommended method of setting xticks with positions and labels.\",\n  \"patch\": \"14,15c14\\n< ax.set_xticks(df['x'])\\n< ax.set_xticklabels(df['x'])\\n---\\n> ax.set_xticks(df['x'], df['x'])\"\n}"

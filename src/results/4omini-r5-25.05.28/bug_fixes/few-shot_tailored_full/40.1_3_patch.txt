@@ -1,0 +1,6 @@
+9c9
+< df = pd.read_csv(csv_file_path)
+---
+> df = pd.read_csv(csv_file_path)
+> df['color'] = df['color'].astype('category')
+

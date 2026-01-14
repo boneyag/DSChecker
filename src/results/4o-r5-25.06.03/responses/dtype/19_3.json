@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add a legend to a scatter plot, but since no hue or style parameters are specified in the scatterplot, there are no labels to create a legend from. This will result in an empty legend.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\tax.legend([], frameon=False)\"\n}"

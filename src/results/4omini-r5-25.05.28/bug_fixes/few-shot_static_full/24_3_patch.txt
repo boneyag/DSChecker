@@ -1,0 +1,5 @@
+9c9
+< df['z'] = df.groupby(['y']).apply(lambda x: (x['x1'] != x['x1'].shift(-1)) | (x['x2'] != x['x2'].shift(-1)))
+---
+> df['z'] = df.groupby(['y']).transform(lambda x: (x['x1'] != x['x1'].shift(-1)) | (x['x2'] != x['x2'].shift(-1)))
+

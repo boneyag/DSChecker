@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is trying to add a label to the current active figure after it has been closed. This will result in an error because there is no active figure to add the label to.\",\n  \"patch\": \"12c12\\n<if ac_fig is None:\\n---\\n>if ac_fig is not None:\\n15a16\\n>    plt.show(block=False)\\n16a17\\n>    plt.close()\"\n}"

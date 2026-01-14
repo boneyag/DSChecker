@@ -1,0 +1,6 @@
+8,9c8,9
+< df.set_index(\"A\")
+< print(df.loc[4])
+---
+> new_df = df.set_index(\"A\")
+> print(new_df.iloc[4])

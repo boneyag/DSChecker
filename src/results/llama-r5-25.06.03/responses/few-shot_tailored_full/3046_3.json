@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"After calling plt.close() at line 8, there is no active figure. So, when get_active_figure() is called at line 10, it returns None. Then, at line 15, ax.text() is called on an axes object from a figure that has already been closed, which will raise an error.\",\n  \"patch\": \"8d8\\n< plt.close()\\n\"\n}"

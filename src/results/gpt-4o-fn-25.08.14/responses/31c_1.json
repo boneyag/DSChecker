@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code uses the 'label' parameter in the 'axvspan' method, but it does not include a legend to display this label.\",\n  \"patch\": \"10c10,11\\n<plt.show()\\n---\\n>ax.legend()\\n>plt.show()\"\n}"

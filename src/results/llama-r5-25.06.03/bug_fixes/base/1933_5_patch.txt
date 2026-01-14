@@ -1,0 +1,4 @@
+7c7,8
+ initial_value = np.inf
+ where_value = np.ones_like(x, dtype=np.bool_)
+

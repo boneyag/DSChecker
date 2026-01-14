@@ -1,0 +1,12 @@
+18c18
+< print(df.head(3), df.info())
+---
+> 
+42d41
+<     ('healthy', HealthyAttributeAdder(), all_col),
+47a47
+>     ('add_healthy', HealthyAttributeAdder()),
+51,53d50
+< 
+< health_transform = HealthyAttributeAdder()
+< health_transform.fit_transform(X_train)

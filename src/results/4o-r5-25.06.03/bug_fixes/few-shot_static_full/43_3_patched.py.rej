@@ -1,0 +1,9 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 28,29
+- for i in range(n_classes):
+-     fpr[i], tpr[i], thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])
+--- 28,29 -----
++ for i in range(n_classes):
++     fpr.append(dict())

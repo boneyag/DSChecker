@@ -1,0 +1,10 @@
+28c28
+< for i in range(n_classes):
+---
+> for i in range(n_classes):
+>     y_test_binarized = label_binarizer.transform(y_test)[:, i]
+29c29,30
+<     fpr[i], tpr[i], thresh = roc_curve(y_test, y_score, pos_label=i)
+---
+>     fpr[i], tpr[i], thresh = roc_curve(y_test_binarized, y_score[:, i])
+

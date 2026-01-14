@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"yes/no\",\n  \"explanation\": \"explanation of why the code is incorrect\",\n  \"patch\": \"Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\\n<foo()\\n---\\n>foo(bass='bazz')\\n>bar()). Consider indentation when creating the patch.\"\n}\n\n"

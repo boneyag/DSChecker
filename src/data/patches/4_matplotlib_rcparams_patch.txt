@@ -1,0 +1,2 @@
+3a4
+> mpl.rcParams['axes.grid'] = True

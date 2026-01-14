@@ -1,0 +1,4 @@
+9c9
+---
+>plt.rcParams.update(viz_dict)
+

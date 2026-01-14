@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not account for potential overflow errors when using NumPy numeric types. The factorial of 21 is a very large number and may cause an overflow error when passed to NumPy's log function.\",\n  \"patch\": \"4c4\\n< print(np.log(factorial(21)))\\n---\\n> print(np.log(float(factorial(21))))\"\n}"

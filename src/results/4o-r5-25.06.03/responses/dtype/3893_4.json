@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `predict` method of `DummyClassifier` takes only one argument, which is the input data `X`. The code incorrectly passes both `X` and `y` to the `predict` method.\",\n  \"patch\": \"10c10\\n<\\tpredictions = clf.predict(X, y)\\n---\\n>\\tpredictions = clf.predict(X)\"\n}"

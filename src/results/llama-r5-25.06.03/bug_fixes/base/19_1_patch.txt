@@ -1,0 +1,9 @@
+7c7
+sbn.scatterplot(data=tips, x='total_bill', y='tip', ax=ax)
+---
+7c7
+sbn.scatterplot(data=tips, x='total_bill', y='tip', ax=ax)
+8d8
+<
+ax.legend()
+

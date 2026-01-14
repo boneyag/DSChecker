@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"After calling plt.close() at line 8, there is no active figure. So, when get_active_figure() is called at line 10, it will return None. Then, trying to add a label to the current active figure at line 15 will result in an error because there is no active figure.\",\n  \"patch\": \"8d8\\n< plt.close()\\n\"\n}"

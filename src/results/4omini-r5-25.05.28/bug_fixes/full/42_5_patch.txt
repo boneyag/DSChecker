@@ -1,0 +1,4 @@
+8c8
+< df['l2'].replace(to_replace=r'^+$', value=0, regex=True)
+---
+> df['l2'].replace(to_replace=r'^+$', value=0, regex=True, inplace=True)

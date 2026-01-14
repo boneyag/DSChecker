@@ -1,0 +1,4 @@
+17c17
+< plt.text("2013-01-05", 0.5, "SAMPLE")
+---
+> plt.text(datetime.datetime(2013, 1, 5), 0.5, "SAMPLE")

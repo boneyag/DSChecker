@@ -1,0 +1,4 @@
+36c36
+<sns.countplot(data=groups_df.reset_index(), x='group', hue='group', palette=cmap.colors.tolist(), ax=ax[1])
+---
+>sns.countplot(data=groups_df.reset_index(), x='group', hue='group', palette=cmap.colors.tolist(), saturation=0.75, ax=ax[1])

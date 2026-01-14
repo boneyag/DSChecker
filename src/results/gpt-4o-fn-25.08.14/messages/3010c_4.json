@@ -1,0 +1,67 @@
+[
+    {
+        "role": "system",
+        "content": "## You are analyzing Python code to determine whether it uses third-party library APIs correctly. If you cannot decide from the snippet alone, you may call special helper functions to obtain missing context.\n\n### **Available Helper Functions**\n\n#### 1. `get_variable_information(variable_name, line_number)`\n\n* **Purpose:** Get detailed information about a variable at a specific line in the code.\n* **Returns:**\n\n  * Variable type\n  * Sample data (if applicable)\n  * Shape/dimensions\n  * Data type (e.g., `float32`, `float64`)\n  * Device (`CPU` or `CUDA`)\n* **When to use:**\n\n  * When you need to know the value, type, device, or shape of a variable to check correctness.\n* **When NOT to use:**\n\n  * For simple local variables like loop counters (`b`, `c`, `h`, `w`) whose meaning is clear from context.\n* **When to STOP:**\n\n  * If the function returns \"Unsuported type for instrumentation\", the function cannot extract the type. STOP calling the function on that variable.\n\u2705 **Example valid call:**\n\n```python\nget_variable_information(\"img\", 13)\n```\n\n\u274c **Invalid call:**\n\n```python\nget_variable_information(\"b\", 6)  # Just a loop counter\n```\n\n---\n\n#### 2. `get_api_documentation(api_name)`\n\n* **Purpose:** Retrieve documentation pages (or examples/user guides) for a given library API.\n* **Returns:**\n\n  * API reference\n  * Examples\n  * Usage guidelines from the library docs\n* **When to use:**\n\n  * When you need to check correct usage of a library API.\n* **When NOT to use:**\n\n  * For library/module names (e.g., `\"torch\"`)\n  * For locally defined functions (e.g., `\"apply_mask\"`) that you already have full context for.\n* **When to STOP:**\n\n  * If the function return \"No results found for the API\", it could be that you ask for an API that do not support as we only indexed five libraries API docs, examples, user guides, etc. STOP calling the function for the same API name.\n\n\u2705 **Example valid call:**\n\n```python\nget_api_documentation(\"expand\")\n```\n\n\u274c **Invalid calls:**\n\n```python\nget_api_documentation(\"torch\")       # Library name\nget_api_documentation(\"apply_mask\")  # Local function\n```\n\n---\n\n### **Decision Rules**\n\n1. First, read and analyze the provided code snippet.\n2. If you **already know** the API behavior and can deduce all relevant variable details, proceed without calling any helper functions.\n3. If missing context prevents you from checking correctness:\n\n   * For unknown **variable properties** \u2192 call `get_variable_information`.\n   * For unknown **API behavior** \u2192 call `get_api_documentation`.\n4. Use as many helper function calls as needed \u2014 there is no limit.\n\n---\n\n### **Example**\n\n#### Code:\n\n```python\nimport torch\n\ntorch.manual_seed(0)\n\ndef apply_mask(img):\n    b, c, h, w = img.shape\n    mask = torch.randn(b, 1, h, w).cuda()\n    mask = mask.expand(b, c, h, w)\n    masked_img = img * mask\n    return masked_img\n\ndevice = torch.device(\"cuda\" if torch.cuda.is_available() else \"cpu\")\nimg = torch.randn(2, 3, 128, 128).to(device=device)\n\nmasked_image = apply_mask(img)\n```\n\n#### Reasoning:\n\n* The `img` tensor\u2019s device may not match `mask`\u2019s device \u2192 `get_variable_information(\"img\", 13)` could be called.\n* The behavior of `expand` may be relevant \u2192 `get_api_documentation(\"expand\")` could be called.\n* Variables `b`, `c`, `h`, and `w` are clearly derived from `img.shape` \u2192 no call needed.\n\n---"
+    },
+    {
+        "role": "user",
+        "content": "Libraries have certain usage constraints that ensure their correct usage.\nFor example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.\n\nThe code provided uses the library NumPy.\nCheck this piece of code and decide if it correctly uses library NumPy.\n\nRespond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field \"correct\" to yes:\n{\n  \"correct\": \"yes/no\",\n  \"explanation\": \"explanation of why the code is incorrect\",\n  \"patch\": \"Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\\n<foo()\\n---\\n>foo(bass='bazz')\\n>bar()). Consider indentation when creating the patch according to the code snippet.\"\n}\n\nHere is the code to inspect.\nThe numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.\n\n1\timport numpy as np\n2\t\n3\tnp.random.seed(42)\n4\t\n5\tsize = 1000000\n6\ta = np.random.rand(size)\n7\tcp = np.random.rand(size)\n8\tmask = np.random.randint(2, size=size, dtype=bool)\n9\t\n10\tnp.copyto(a, cp, where=mask)\n11\t\n\nYour response:"
+    },
+    {
+        "role": "assistant",
+        "tool_calls": [
+            {
+                "id": "call_MJ8yTw7WamWgWWrlaESTtMAO",
+                "function": {
+                    "arguments": "{\"api_name\": \"copyto\"}",
+                    "name": "get_api_documentation"
+                },
+                "type": "function"
+            },
+            {
+                "id": "call_XnK8KIxCUBPi78i5RbnElcUN",
+                "function": {
+                    "arguments": "{\"variable_name\": \"a\", \"line_number\": 6}",
+                    "name": "get_variable_information"
+                },
+                "type": "function"
+            },
+            {
+                "id": "call_1XgPkKPkUEoWPlIz9y48XXvj",
+                "function": {
+                    "arguments": "{\"variable_name\": \"cp\", \"line_number\": 7}",
+                    "name": "get_variable_information"
+                },
+                "type": "function"
+            },
+            {
+                "id": "call_2UIHTyRPPK2tt8tsGWtrVgCu",
+                "function": {
+                    "arguments": "{\"variable_name\": \"mask\", \"line_number\": 8}",
+                    "name": "get_variable_information"
+                },
+                "type": "function"
+            }
+        ]
+    },
+    {
+        "role": "tool",
+        "content": "[{\"title\": \"numpy.copyto\", \"type\": \"\", \"content\": \"numpy.copyto\\nnumpy.copyto\\n  numpy. copyto ( dst , src , casting = 'same_kind' , where = True ) #  Copies values from one array to another, broadcasting as necessary.  Raises a TypeError if the casting rule is violated, and if where is provided, it selects which elements to copy.   New in version 1.7.0.    Parameters :   dst ndarray The array into which values are copied.   src array_like The array from which values are copied.   casting {\\u2018no\\u2019, \\u2018equiv\\u2019, \\u2018safe\\u2019, \\u2018same_kind\\u2019, \\u2018unsafe\\u2019}, optional Controls what kind of data casting may occur when copying.   \\u2018no\\u2019 means the data types should not be cast at all.  \\u2018equiv\\u2019 means only byte-order changes are allowed.  \\u2018safe\\u2019 means only casts which can preserve values are allowed.  \\u2018same_kind\\u2019 means only safe casts or casts within a kind,\\nlike float64 to float32, are allowed.  \\u2018unsafe\\u2019 means any data conversions may be done.    where array_like of bool, optional A boolean array which is broadcasted to match the dimensions\\nof dst , and selects elements to copy from src to dst wherever it contains the value True.      Examples  >>> import  numpy  as  np  >>> A  =  np . array ([ 4 ,  5 ,  6 ])  >>> B  =  [ 1 ,  2 ,  3 ]  >>> np . copyto ( A ,  B )  >>> A  array([1, 2, 3])    >>> A  =  np . array ([[ 1 ,  2 ,  3 ],  [ 4 ,  5 ,  6 ]])  >>> B  =  [[ 4 ,  5 ,  6 ],  [ 7 ,  8 ,  9 ]]  >>> np . copyto ( A ,  B )  >>> A  array([[4, 5, 6],  [7, 8, 9]])   \"}, {\"title\": \"numpy.place\", \"type\": \"\", \"content\": \"numpy.place\\nnumpy.place\\n  numpy. place ( arr , mask , vals ) [source] #  Change elements of an array based on conditional and input values.  Similar to np.copyto(arr,  vals,  where=mask) , the difference is that place uses the first N elements of vals , where N is the number of\\nTrue values in mask , while copyto uses the elements where mask is True.  Note that extract does the exact opposite of place .   Parameters :   arr ndarray Array to put data into.   mask array_like Boolean mask array. Must have the same size as a .   vals 1-D sequence Values to put into a . Only the first N elements are used, where\\nN is the number of True values in mask . If vals is smaller\\nthan N, it will be repeated, and if elements of a are to be masked,\\nthis sequence must be non-empty.       See also   copyto , put , take , extract    Examples  >>> import  numpy  as  np  >>> arr  =  np . arange ( 6 ) . reshape ( 2 ,  3 )  >>> np . place ( arr ,  arr > 2 ,  [ 44 ,  55 ])  >>> arr  array([[ 0,  1,  2],  [44, 55, 44]])   \"}, {\"title\": \"numpy.putmask\", \"type\": \"\", \"content\": \"numpy.putmask\\nnumpy.putmask\\n  numpy. putmask ( a , mask , values ) #  Changes elements of an array based on conditional and input values.  Sets a.flat[n]  =  values[n] for each n where mask.flat[n]==True .  If values is not the same size as a and mask then it will repeat.\\nThis gives behavior different from a[mask]  =  values .   Parameters :   a ndarray Target array.   mask array_like Boolean mask array. It has to be the same shape as a .   values array_like Values to put into a where mask is True. If values is smaller\\nthan a it will be repeated.       See also   place , put , take , copyto    Examples  >>> import  numpy  as  np  >>> x  =  np . arange ( 6 ) . reshape ( 2 ,  3 )  >>> np . putmask ( x ,  x > 2 ,  x ** 2 )  >>> x  array([[ 0,  1,  2],  [ 9, 16, 25]])    If values is smaller than a it is repeated:  >>> x  =  np . arange ( 5 )  >>> np . putmask ( x ,  x > 1 ,  [ - 33 ,  - 44 ])  >>> x  array([  0,   1, -33, -44, -33])   \"}, {\"title\": \"numpy.extract\", \"type\": \"\", \"content\": \"numpy.extract\\nnumpy.extract\\n  numpy. extract ( condition , arr ) [source] #  Return the elements of an array that satisfy some condition.  This is equivalent to np.compress(ravel(condition),  ravel(arr)) .  If condition is boolean np.extract is equivalent to arr[condition] .  Note that place does the exact opposite of extract .   Parameters :   condition array_like An array whose nonzero or True entries indicate the elements of arr to extract.   arr array_like Input array of the same size as condition .     Returns :   extract ndarray Rank 1 array of values from arr where condition is True.       See also   take , put , copyto , compress , place    Examples  >>> import  numpy  as  np  >>> arr  =  np . arange ( 12 ) . reshape (( 3 ,  4 ))  >>> arr  array([[ 0,  1,  2,  3],  [ 4,  5,  6,  7],  [ 8,  9, 10, 11]])  >>> condition  =  np . mod ( arr ,  3 ) == 0  >>> condition  array([[ True, False, False,  True],  [False, False,  True, False],  [False,  True, False, False]])  >>> np . extract ( condition ,  arr )  array([0, 3, 6, 9])    If condition is boolean:  >>> arr [ condition ]  array([0, 3, 6, 9])   \"}]",
+        "tool_call_id": "call_MJ8yTw7WamWgWWrlaESTtMAO"
+    },
+    {
+        "role": "tool",
+        "content": "{\"variable_name\": \"a\", \"line_number\": 6, \"data_type\": \"numpy.ndarray\", \"sample\": \"[0.37454012 0.95071431 0.73199394]\", \"additional_info\": \"dtype-float64 shape-(1000000,)\"}",
+        "tool_call_id": "call_XnK8KIxCUBPi78i5RbnElcUN"
+    },
+    {
+        "role": "tool",
+        "content": "{\"variable_name\": \"cp\", \"line_number\": 7, \"data_type\": \"numpy.ndarray\", \"sample\": \"[0.59515562 0.36471714 0.00537562]\", \"additional_info\": \"dtype-float64 shape-(1000000,)\"}",
+        "tool_call_id": "call_1XgPkKPkUEoWPlIz9y48XXvj"
+    },
+    {
+        "role": "tool",
+        "content": "{\"variable_name\": \"mask\", \"line_number\": 8, \"data_type\": \"numpy.ndarray\", \"sample\": \"[ True  True  True]\", \"additional_info\": \"dtype-bool shape-(1000000,)\"}",
+        "tool_call_id": "call_2UIHTyRPPK2tt8tsGWtrVgCu"
+    }
+]

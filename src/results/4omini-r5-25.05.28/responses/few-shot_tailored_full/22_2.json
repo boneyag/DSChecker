@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The value of factorial(21) exceeds the maximum limit for a 64-bit integer, which can lead to overflow errors when using NumPy functions that expect fixed-size numeric types. This can cause incorrect results or runtime errors.\", \"patch\": \"4c4\\n< print(np.log(factorial(21)))\\n---\\n> print(np.log(np.float128(factorial(21))))\\n\"}"

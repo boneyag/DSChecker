@@ -1,0 +1,9 @@
+Here is information about the variable $variable at line $linenum used in this code snippet.
+
+type: $type
+
+additional information: 
+$additional
+
+sample: 
+$sample

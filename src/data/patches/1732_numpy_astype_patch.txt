@@ -1,0 +1,4 @@
+5c5
+< sinc_result = np.sinc(original_data)
+---
+> sinc_result = np.sinc(original_data).astype(original_data.dtype)

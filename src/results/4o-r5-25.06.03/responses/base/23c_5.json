@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The 'pivot_table' method in line 6 is being used incorrectly. The first argument should be 'values', not 'tip'.\",\n  \"patch\": \"6c6\\n<df_heatmap = tips_new.pivot_table('tip', 'day', 'size')\\n---\\n>df_heatmap = tips_new.pivot_table(values='tip', index='day', columns='size')\"\n}"

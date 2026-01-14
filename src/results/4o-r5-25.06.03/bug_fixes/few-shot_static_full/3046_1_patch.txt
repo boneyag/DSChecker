@@ -1,0 +1,8 @@
+8c8
+< plt.close()
+---
+> # plt.close()
+16c16
+< plt.show(block=False)
+---
+> plt.show()

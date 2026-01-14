@@ -1,0 +1,7 @@
+5c5
+<g = sns.heatmap(tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+---
+># Select a subset of numerical data from the DataFrame
+>numerical_data = tips[['total_bill', 'tip', 'size']]
+>g = sns.heatmap(numerical_data, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+

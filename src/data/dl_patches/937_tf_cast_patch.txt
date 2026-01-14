@@ -1,0 +1,8 @@
+10a11,13
+>     pad_token_id = tf.cast(pad_token_id, input_ids.dtype)
+>     decoder_start_token_id = tf.cast(decoder_start_token_id, input_ids.dtype)
+> 
+16c19
+<         assert_gte0 = tf.debugging.assert_greater_equal(shifted_input_ids, tf.constant(0))
+---
+>         assert_gte0 = tf.debugging.assert_greater_equal(shifted_input_ids, tf.constant(0, dtype=input_ids.dtype))

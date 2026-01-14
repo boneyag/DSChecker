@@ -1,0 +1,8 @@
+15c15
+< ax.plot(df['C'], df['E'])
+---
+> ax.plot_date(df['C'], df['E'])
+17c17
+< plt.text("2013-01-05", 0.5, "SAMPLE")
+---
+> plt.text(datetime.datetime(2013, 1, 5), 0.5, "SAMPLE")

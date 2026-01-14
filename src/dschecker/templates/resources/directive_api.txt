@@ -1,0 +1,1 @@
+$lib documentation states this guideline "$directive" for $api API, which could be useful to decide if the code correctly uses the library.

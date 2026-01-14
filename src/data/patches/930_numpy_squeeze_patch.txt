@@ -1,0 +1,8 @@
+9c9
+< y = np.random.randn(10).reshape(-1, 1)
+---
+> y = np.random.randn(10)
+15c15
+< preds = model.predict(np.squeeze(X_te.values))
+---
+> preds = model.predict(X_te)

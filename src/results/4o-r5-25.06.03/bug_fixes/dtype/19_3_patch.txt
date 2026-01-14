@@ -1,0 +1,4 @@
+8c8
+<	ax.legend()
+---
+>	ax.legend([], frameon=False)

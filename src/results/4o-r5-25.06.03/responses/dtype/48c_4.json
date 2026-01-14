@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not correctly use Matplotlib because it does not clear the current figure before creating a new plot in the loop. This can lead to overlapping plots from different files.\",\n  \"patch\": \"16a17\\n>        plt.clf()\"\n}"

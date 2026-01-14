@@ -1,0 +1,10 @@
+5,6c5,6
+< def max_prediction_mask(gold_labels):
+<     return torch.arange(gold_labels.numel())
+---
+> def max_prediction_mask(gold_labels, device="cpu"):
+>     return torch.arange(gold_labels.numel(), device=device)
+11c11
+< res = torch.where(max_prediction_mask(gold_labels) == gold_labels)[0]
+---
+> res = torch.where(max_prediction_mask(gold_labels, device=dev) == gold_labels)[0]

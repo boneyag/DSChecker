@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code mixes strings and numeric values within the 'city' and 'country' features, which violates the guideline for the categories parameter of OneHotEncoder.\",\n  \"patch\": \"13c13\\n<\\tone_hot = OneHotEncoder()\\n---\\n>\\tone_hot = OneHotEncoder(categories='auto')\"\n}"

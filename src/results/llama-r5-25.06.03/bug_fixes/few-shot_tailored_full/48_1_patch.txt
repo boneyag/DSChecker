@@ -1,0 +1,5 @@
+16a17
+> plt.clf()
+19a21
+> plt.close()
+

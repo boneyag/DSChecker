@@ -1,0 +1,11 @@
+7,10c7
+< print(type(input))
+< print(input.shape)
+< print(input.dtype)
+< print(input[:1, :1, :1, :3, :3])
+---
+> 
+15c12
+< identity = identity[None].repeat(input.shape[0], 1, 1)
+---
+> identity = identity[None].expand(input.shape[0], n, n)

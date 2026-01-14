@@ -1,0 +1,7 @@
+11c11,12
+<colors = ['#747FE3', '#8EE35D', '#E37346']
+---
+># Ensure 'color' column is categorical or numeric
+>df['color'] = df['color'].astype('category')
+12a13
+>colors = ['#747FE3', '#8EE35D', '#E37346']

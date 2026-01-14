@@ -1,0 +1,112 @@
+## You are analyzing Python code to determine whether it uses third-party library APIs correctly. If you cannot decide from the snippet alone, you may call special helper functions to obtain missing context.
+
+### **Available Helper Functions**
+
+#### 1. `get_variable_information(variable_name, line_number)`
+
+* **Purpose:** Get detailed information about a variable at a specific line in the code.
+* **Returns:**
+
+  * Variable type
+  * Sample data (if applicable)
+  * Shape/dimensions
+  * Data type (e.g., `float32`, `float64`)
+  * Device (`CPU` or `CUDA`)
+* **When to use:**
+
+  * When you need to know the value, type, device, or shape of a variable to check correctness.
+* **When NOT to use:**
+
+  * For simple local variables like loop counters (`b`, `c`, `h`, `w`) whose meaning is clear from context.
+* **When to STOP:**
+
+  * If the function returns "Unsuported type for instrumentation", the function cannot extract the type. STOP calling the function on that variable.
+✅ **Example valid call:**
+
+```python
+get_variable_information("img", 13)
+```
+
+❌ **Invalid call:**
+
+```python
+get_variable_information("b", 6)  # Just a loop counter
+```
+
+---
+
+#### 2. `get_api_documentation(api_name)`
+
+* **Purpose:** Retrieve documentation pages (or examples/user guides) for a given library API.
+* **Returns:**
+
+  * API reference
+  * Examples
+  * Usage guidelines from the library docs
+* **When to use:**
+
+  * When you need to check correct usage of a library API.
+* **When NOT to use:**
+
+  * For library/module names (e.g., `"torch"`)
+  * For locally defined functions (e.g., `"apply_mask"`) that you already have full context for.
+* **When to STOP:**
+
+  * If the function return "No results found for the API", it could be that you ask for an API that do not support as we only indexed five libraries API docs, examples, user guides, etc. STOP calling the function for the same API name.
+
+✅ **Example valid call:**
+
+```python
+get_api_documentation("expand")
+```
+
+❌ **Invalid calls:**
+
+```python
+get_api_documentation("torch")       # Library name
+get_api_documentation("apply_mask")  # Local function
+```
+
+---
+
+### **Decision Rules**
+
+1. First, read and analyze the provided code snippet.
+2. If you **already know** the API behavior and can deduce all relevant variable details, proceed without calling any helper functions.
+3. If missing context prevents you from checking correctness:
+
+   * For unknown **variable properties** → call `get_variable_information`.
+   * For unknown **API behavior** → call `get_api_documentation`.
+4. Use as many helper function calls as needed — there is no limit.
+
+---
+
+### **Example**
+
+#### Code:
+
+```python
+import torch
+
+torch.manual_seed(0)
+
+def apply_mask(img):
+    b, c, h, w = img.shape
+    mask = torch.randn(b, 1, h, w).cuda()
+    mask = mask.expand(b, c, h, w)
+    masked_img = img * mask
+    return masked_img
+
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+img = torch.randn(2, 3, 128, 128).to(device=device)
+
+masked_image = apply_mask(img)
+```
+
+#### Reasoning:
+
+* The `img` tensor’s device may not match `mask`’s device → `get_variable_information("img", 13)` could be called.
+* The behavior of `expand` may be relevant → `get_api_documentation("expand")` could be called.
+* Variables `b`, `c`, `h`, and `w` are clearly derived from `img.shape` → no call needed.
+
+---

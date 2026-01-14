@@ -1,0 +1,146 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+scikit-learn documentation states this guideline "The passed categories should not mix strings and numeric values within a single feature" for categories parameter of OneHotEncoder API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable X at line 5 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 4 columns):
+ #   Column         Non-Null Count  Dtype 
+---  ------         --------------  ----- 
+ 0   city           4 non-null      object
+ 1   country        4 non-null      object
+ 2   expert_rating  4 non-null      int64 
+ 3   user_rating    4 non-null      int64 
+dtypes: int64(2), object(2)
+
+sample: 
+      city country  expert_rating  user_rating
+0   London      UK              5            4
+1   London     0.2              3            5
+2    Paris      FR              4            4
+3  NewYork      US              5            3
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.compose import ColumnTransformer
+2	from sklearn.preprocessing import OneHotEncoder
+3	import pandas as pd
+4	
+5	X = pd.DataFrame(
+6	    {'city': ['London', 'London', 'Paris', 'NewYork'],
+7	     'country': ['UK', 0.2, 'FR', 'US'],
+8	     'expert_rating': [5, 3, 4, 5],
+9	     'user_rating': [4, 5, 4, 3]}
+10	)
+11	
+12	categorical_features = ['city', 'country']
+13	one_hot = OneHotEncoder()
+14	transformer = ColumnTransformer([("one_hot", one_hot, categorical_features)], remainder="passthrough")
+15	transformed_X = transformer.fit_transform(X)
+16	
+
+Your response:
+
+{"correct": "no", "explanation": "The 'country' column in the DataFrame mixes string and numeric values, which violates the scikit-learn guideline for OneHotEncoder that states 'The passed categories should not mix strings and numeric values within a single feature'", "patch": "7c7\n<      'country': ['UK', 0.2, 'FR', 'US'],\n---\n>      'country': ['UK', 'UK', 'FR', 'US'],\n"}
+
+Example 2:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Here is information about the variable X at line 4 used in this code snippet.
+
+type: list
+
+additional information: 
+
+
+sample: 
+[[0], [0], [0]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.dummy import DummyClassifier
+2	import numpy as np
+3	
+4	X = [[0], [0], [0], [0], [0]]
+5	y = [1, 2, 1, 1, 2]
+6	
+7	clf = DummyClassifier(strategy="most_frequent", random_state=0)
+8	clf.fit(X, y)
+9	
+10	predictions = clf.predict(X)
+11	print(predictions == np.ones(len(y)))
+12	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable true_labels at line 5 used in this code snippet.
+
+type: numpy.ndarray
+
+additional information: 
+dtype: int64 shape: (3,)
+
+sample: 
+[1, 1, 1]
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	from sklearn.metrics import roc_auc_score
+3	
+4	true_labels = np.array([1, 1, 1])
+5	predicted_scores = np.array([0.9, 0.8, 0.4])
+6	
+7	if len(np.unique(true_labels)) < 2:
+8	    roc_auc = 0.0
+9	else:
+10	    roc_auc = roc_auc_score(true_labels, predicted_scores)
+11	print(roc_auc)
+12	
+
+Your response:

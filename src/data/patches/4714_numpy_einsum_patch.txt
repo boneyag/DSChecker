@@ -1,0 +1,4 @@
+8c8
+< res = np.trace(np.dot(A, B))
+---
+> res = np.einsum('ij,ji', A, B)

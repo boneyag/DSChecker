@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The function sns.set_context does not have an rc parameter. Instead, you should use sns.set_theme or sns.set_style to override the matplotlib parameters. The function sns.set_style has an rc parameter but sns.set_context does not.\", \"patch\": \"8c8\\n< sns.set_context(rc=scale_dict)\\n---\\n> sns.set_style(rc=scale_dict)\\n\"}"

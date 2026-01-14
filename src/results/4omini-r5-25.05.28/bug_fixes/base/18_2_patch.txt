@@ -1,0 +1,4 @@
+5c5
+< sns.distplot(data.tip, norm_hist=False)
+---
+> sns.histplot(data=data, x='tip', stat='density', bins=30)

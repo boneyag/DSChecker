@@ -1,0 +1,45 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+PyTorch documentation states this guideline "the desired device of returned tensor. Default: if None, uses the current device for the default tensor type (see torch.set_default_device()). device will be the CPU for CPU tensor types and the current CUDA device for CUDA tensor types." for device parameter of arange API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable gold_labels at line 9 used in this code snippet.
+
+type: torch.Tensor
+
+additional information: 
+dtype:torch.int64 shape:torch.Size([4]) device:cuda:0
+
+sample: 
+[1, 0, 2]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	
+3	torch.manual_seed(0)
+4	
+5	
+6	def max_prediction_mask(gold_labels):
+7	    return torch.arange(gold_labels.numel())
+8	
+9	
+10	dev = "cuda" if torch.cuda.is_available() else "cpu"
+11	gold_labels = torch.tensor([1, 0, 2, 1]).to(dev)
+12	
+13	res = torch.where(max_prediction_mask(gold_labels) == gold_labels)[0]
+14	print(res)
+15	
+
+Your response:

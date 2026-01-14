@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code uses ax.set_xticks(df['x']), which is discouraged according to the Matplotlib documentation. Instead, it is recommended to use Axes.set_xticks(positions, labels) or Axes.set_xticks.\",\n  \"patch\": \"14c14,15\\n<ax.set_xticks(df['x'])\\n---\\n>ax.set_xticks(df['x'])\\n>ax.set_xticklabels(df['x'])\"\n}"

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not include plt.close() after saving the figure with plt.savefig(). This can lead to memory issues if many figures are created in a loop, as each figure remains open in memory.\",\n  \"patch\": \"18a19\\n>    plt.close()\\n\"\n}"

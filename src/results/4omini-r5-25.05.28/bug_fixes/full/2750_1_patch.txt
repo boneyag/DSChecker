@@ -1,0 +1,4 @@
+5c5
+< predicted_scores = np.array([0.9, 0.8, 0.4])
+---
+> predicted_scores = np.array([0.9, 0.8, 0.4, 0.2])

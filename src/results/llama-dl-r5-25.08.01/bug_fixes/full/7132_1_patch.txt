@@ -1,0 +1,5 @@
+30a31
+> if torch.isnan(loss):
+>     print('NaN loss encountered.')
+>     break
+

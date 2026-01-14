@@ -1,0 +1,8 @@
+16a17
+> import matplotlib.dates as mdates
+17c18
+< plt.text("2013-01-05", 0.5, "SAMPLE")
+---
+> date = datetime.datetime(2013, 1, 5)
+> plt.text(mdates.date2num([date])[0], 0.5, "SAMPLE")
+

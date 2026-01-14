@@ -1,0 +1,4 @@
+6c6
+<g.map(sns.lmplot, 'total_bill', 'tip')
+---
+>g.map(sns.regplot, 'total_bill', 'tip')

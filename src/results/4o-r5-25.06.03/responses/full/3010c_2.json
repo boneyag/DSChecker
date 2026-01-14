@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The dtype of the mask array should be boolean, but np.random.randint generates integers. This will cause an issue because np.copyto expects a boolean mask.\",\n  \"patch\": \"8c8\\n<mask = np.random.randint(2, size=size, dtype=bool)\\n---\\n>mask = np.random.randint(2, size=size).astype(bool)\\n\"\n}"

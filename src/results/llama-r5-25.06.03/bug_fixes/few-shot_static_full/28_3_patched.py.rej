@@ -1,0 +1,14 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 20
+- estimator = clf.fit(X, y)
+--- 20 -----
++ from sklearn.model_selection import train_test_split
+*** /dev/null
+--- /dev/null
+***************
+*** 21
+- print(f"best: {estimator.best_score_}")
+--- 21 -----
++ print(f"best: {estimator.best_score_}")

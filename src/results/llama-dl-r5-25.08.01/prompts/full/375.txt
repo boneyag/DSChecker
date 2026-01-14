@@ -1,0 +1,82 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+PyTorch documentation states this guideline "Set the module in evaluation mode. This has an effect only on certain modules. See the documentation of particular modules for details of their behaviors in training/evaluation mode, i.e. whether they are affected, e.g. Dropout, BatchNorm, etc." for eval API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable X at line 40 used in this code snippet.
+
+type: torch.Tensor
+
+additional information: 
+dtype:torch.float32 shape: torch.Size([10, 10])
+
+sample: 
+[[-0.0163,  0.3224, -0.1113],
+        [-1.5869, -1.1137,  0.3370],
+        [1.1840, -0.6379, -0.1295]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	import torch.nn as nn
+3	import torch.nn.functional as F
+4	
+5	
+6	class SimpleModel(nn.Module):
+7	    def __init__(self, dropout_prob=0.5):
+8	        super(SimpleModel, self).__init__()
+9	        self.linear1 = nn.Linear(10, 20)
+10	        self.dropout = nn.Dropout(dropout_prob)
+11	        self.linear2 = nn.Linear(20, 2)
+12	
+13	    def forward(self, x):
+14	        x = F.relu(self.linear1(x))
+15	        x = self.dropout(x)
+16	        x = self.linear2(x)
+17	        return x
+18	
+19	
+20	def evaluate_accuracy(net, data_iter):
+21	    correct = 0
+22	    total = 0
+23	    with torch.no_grad():
+24	        for X, y in data_iter:
+25	            outputs = net(X)
+26	            _, predicted = torch.max(outputs.data, 1)
+27	            total += y.size(0)
+28	            correct += (predicted == y).sum().item()
+29	    return correct / total
+30	
+31	
+32	torch.manual_seed(0)
+33	data_iter = [(torch.randn(10, 10), torch.randint(0, 2, (10,))) for _ in range(10)]
+34	
+35	model = SimpleModel()
+36	optimizer = torch.optim.Adam(model.parameters(), lr=0.01)
+37	criterion = nn.CrossEntropyLoss()
+38	
+39	for epoch in range(50):
+40	    model.train()
+41	    for X, y in data_iter:
+42	        optimizer.zero_grad()
+43	        outputs = model(X)
+44	        loss = criterion(outputs, y)
+45	        loss.backward()
+46	        optimizer.step()
+47	
+48	accuracy_eval = evaluate_accuracy(model, data_iter)
+49	print(f"Accuracy (eval): {accuracy_eval}")
+50	
+
+Your response:

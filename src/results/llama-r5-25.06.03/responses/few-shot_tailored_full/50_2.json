@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The function sb.lineplot expects 1D arrays for the x and y parameters when data is set to None. However, the code is passing 2D arrays for both x and y.\", \"patch\": \"20c20\\n< sb.lineplot(data=None, x=df['X'].values.reshape(-1, 1), y=Y_pred)\\n---\\n> sb.lineplot(data=None, x=df['X'].values, y=Y_pred.flatten())\\n\"}"

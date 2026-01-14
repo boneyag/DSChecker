@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not clear the current figure after saving it, which can cause figures to overlap when processing multiple files.\",\n  \"patch\": \"16a17\\n>    plt.clf()\\n\"\n}"

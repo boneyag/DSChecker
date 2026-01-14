@@ -1,0 +1,6 @@
+11,12c11
+< colors = ['#747FE3', '#8EE35D', '#E37346']
+< sns.set_palette(sns.color_palette(colors))
+---
+> sns.set_palette('viridis')
+

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` on line 8, but there is no legend to display because no `hue`, `style`, or `size` parameters are used in the `sbn.scatterplot` function. This will result in an empty legend.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\t# ax.legend()\"\n}"

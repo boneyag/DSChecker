@@ -1,0 +1,7 @@
+18,19c18,20
+< Axes3D(fig).bar3d(df['x'], df['y'], df['z'], df['dx'], df['dy'], df['dz'], color='b')
+< 
+---
+> ax = Axes3D(fig)
+> ax.bar3d(df['x'], df['y'], df['z'], df['dx'], df['dy'], df['dz'], color='b')
+> fig.add_axes(ax)

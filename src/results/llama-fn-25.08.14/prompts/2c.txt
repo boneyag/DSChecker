@@ -1,0 +1,56 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch according to the code snippet."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	from sklearn.cluster import DBSCAN
+3	from sklearn.metrics.pairwise import euclidean_distances
+4	
+5	data = np.array(
+6	    [
+7	        [-0.538, -0.478, -0.374, -0.338, -0.346, 0.230, 0.246, 0.366, 0.362, 0.342],
+8	        [0.471, 0.559, 0.411, 0.507, 0.631, 0.579, 0.467, 0.475, 0.543, 0.659],
+9	    ]
+10	).T
+11	
+12	
+13	class Point:
+14	    def __init__(self, x, y):
+15	        self.x = x
+16	        self.y = y
+17	
+18	    def to_list(self):
+19	        return [self.x, self.y]
+20	
+21	    def __repr__(self):
+22	        return (
+23	            str(self.__class__.__name__) + "(" + str(self.x) + ", " + str(self.y) + ")"
+24	        )
+25	
+26	
+27	points = [Point(*xy) for xy in data]
+28	
+29	
+30	def get_point_distance(p1, p2):
+31	    """Returns euclidean distance"""
+32	    return float(euclidean_distances([p1], [p2])[0, 0])
+33	
+34	
+35	clustering = DBSCAN(metric=get_point_distance).fit(
+36	    np.array([point.to_list() for point in points])
+37	)
+38	
+
+Your response:

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The predict method of DummyClassifier should only take the feature set X as input. The second argument y is not required and is incorrect usage of the API.\",\n  \"patch\": \"10c10\\n<     predictions = clf.predict(X, y)\\n---\\n>     predictions = clf.predict(X)\"\n}"

@@ -1,0 +1,48 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library pandas.
+Check this piece of code and decide if it correctly uses library pandas.
+
+pandas documentation states this guideline "bool, default False. If True, performs operation inplace and returns None." for inplace parameter of replace API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable df at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 2 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   l1      7 non-null      int64 
+ 1   l2      7 non-null      object
+dtypes: int64(1), object(1)
+
+sample: 
+   l1     l2
+0   1  a. 12
+1   2  b. 75
+2   3     23
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	
+3	df = pd.DataFrame({
+4	    'l1': [1, 2, 3, 4, 5, 6, 7],
+5	    'l2': ['a. 12', 'b. 75', '23', 'sc/a 34', '85', 'a 32', 'b 345']
+6	})
+7	
+8	df['l2'].replace(to_replace=r'^\d+$', value=0, regex=True, inplace=True)
+9	
+
+Your response:

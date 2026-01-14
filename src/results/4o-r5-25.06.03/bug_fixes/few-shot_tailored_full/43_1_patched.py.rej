@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 29
+-     fpr[i], tpr[i], thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])
+--- 29 -----
++     fpr_i, tpr_i, thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])

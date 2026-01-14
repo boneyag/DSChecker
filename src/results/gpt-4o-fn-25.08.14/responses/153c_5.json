@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code incorrectly uses the Axes3D class. The Axes3D class should be added to the figure using the add_subplot method, not by directly instantiating it and adding it with add_axes.\",\n  \"patch\": \"18c18\\n<ax = Axes3D(fig)\\n---\\n>ax = fig.add_subplot(111, projection='3d')\\n20d19\\n<fig.add_axes(ax)\"\n}"

@@ -1,0 +1,6 @@
+13c13,14
+<imp_array = impt.fit_transform(df)
+---
+>imp_array = impt.fit_transform(df)
+>if imp_array.shape[1] < df.shape[1]:
+>    imp_array = np.insert(imp_array, 1, np.nan, axis=1)

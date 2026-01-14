@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` on line 8, but there is no legend to display because the scatter plot does not include any labeled data series by default.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\t# ax.legend() is not needed here as there are no labeled data series\\n\"\n}"

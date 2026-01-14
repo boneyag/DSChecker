@@ -1,0 +1,8 @@
+26c26
+<     return euclidean_distances([p1.to_list()], [p2.to_list()])
+---
+>     return euclidean_distances([p1], [p2])
+28c28
+< clustering = DBSCAN(metric=get_point_distance).fit(np.array([[point] for point in points]))
+---
+> clustering = DBSCAN(metric=get_point_distance).fit(np.array([point.to_list() for point in points]))

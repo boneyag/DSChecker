@@ -1,0 +1,4 @@
+21c21
+<             scores = scores.masked_fill(attn_mask, -1e8)
+---
+>             scores = scores.masked_fill(attn_mask, -1e8 if x.dtype == torch.float32 else -1e4)

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The value of factorial(21) is very large and may cause an overflow error when converted to a float. NumPy provides a safer way to handle large numbers using its own data types.\",\n  \"patch\": \"4c4\\n< print(np.log(float(factorial(21))))\\n---\\n> print(np.log(np.float64(factorial(21))))\\n\"\n}"

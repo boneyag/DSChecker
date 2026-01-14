@@ -1,0 +1,1532 @@
+{
+    "375": {
+        "num": "375",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "eval",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Set the module in evaluation mode. This has an effect only on certain modules. See the documentation of particular modules for details of their behaviors in training/evaluation mode, i.e. whether they are affected, e.g. Dropout, BatchNorm, etc.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.eval",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "eval",
+            "fully_qualified_name": "torch.nn.Module.eval",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "To calculate the accuracy in evaluation mode, set the model to evaluation mode. This is important as the network as dropout layers.",
+            "data_dependet": "no",
+            "trigger_api": "eval",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 40,
+                "type": "torch.Tensor",
+                "sample": "[[-0.0163,  0.3224, -0.1113],\n        [-1.5869, -1.1137,  0.3370],\n        [1.1840, -0.6379, -0.1295]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([10, 10])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/375_torch_eval.py",
+        "patch_file_rel_path": "dl_patches/375_torch_eval_patch.txt",
+        "problematic_lines": {
+            "opt1": [""]
+        },
+        "problematic_line_nums": {
+            "opt1": [19]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/d2l-ai/d2l-en/commit/16f8d3ecfca4b94cc6d80274bb9be3e3231031cd",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "3531",
+            "correct_instance": "7132c"
+        }
+    },
+    "479": {
+        "num": "479",
+        "correct": "no",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "directive": {
+            "api": "where",
+            "parameter": "x",
+            "location": "APIreference",
+            "explicit_directive": "If provided, a Tensor which is of the same type as y, and has a shape broadcastable with condition and y.",
+            "explicit_directive_source": "https://www.tensorflow.org/api_docs/python/tf/where#args",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "where",
+            "fully_qualified_name": "tensorflow.where",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "When x and y are provided, those tensors should have the same type.",
+            "data_dependet": "yes",
+            "trigger_api": "where",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "x"
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 4,
+                "type": "tensorflow.python.framework.ops.EagerTensor",
+                "sample": "[1 2 0]",
+                "additional_info": "dtype:int64 shape: (8, )"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/479_tf_cast.py",
+        "patch_file_rel_path": "dl_patches/479_tf_cast_patch.txt",
+        "problematic_lines": {
+            "opt1": ["tf.fill(tf.shape(x), -100)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [9]
+        },
+        "impact_type": "runtime_error",
+        "impact": "InvalidArgumentError: cannot compute SelectV2 as input #2(zero-based) was expected to be a int32 tensor but is a int64 tensor [Op:SelectV2] name",
+        "source_url": "https://github.com/huggingface/transformers/commit/f04257fdbcb6ecb5a9bef75f4c2a8d2e8b5a6209",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "937",
+            "correct_instance": ""
+        }
+    },
+    "501": {
+        "num": "501",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "tensor",
+            "parameter": "data",
+            "location": "APIreference",
+            "explicit_directive": "Initial data for the tensor. Can be a list, tuple, NumPy ndarray, scalar, and other types.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.tensor.html#torch.tensor",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "tensor",
+            "fully_qualified_name": "torch.tensor",
+            "api_element": "condtion",
+            "violation": "missing",
+            "explanation": "Cannot infer data type from none type.",
+            "data_dependet": "yes",
+            "trigger_api": "tensor",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "predictions",
+                "variable_line_num": 17,
+                "type": "numpy.ndarray",
+                "sample": "[[0.77685044 0.40999631 0.09523112]]",
+                "additional_info": "dtype=float64 shape: (1, 8)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/501_torch_tensor.py",
+        "patch_file_rel_path": "dl_patches/501_torch_tensor_patch.txt",
+        "problematic_lines": {
+            "opt1": ["acc_tensor = torch.tensor(calculate_accuracy(predictions, labels))"]
+        },
+        "problematic_line_nums": {
+            "opt1": [19]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: Could not infer dtype of NoneType",
+        "source_url": "https://github.com/espnet/espnet/commit/02673760229ad7310ba0f50b09225fceba0be91b",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "524",
+            "correct_instance": "1766c"
+        }
+    },
+    "524": {
+        "num": "524",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "cuda",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Instead of hardcoding the device, use the to method to move the tensor to the device that is available or desired (i.e., device that other tensors are on)."
+        },
+        "api_misuse": {
+            "api_name": "cuda",
+            "fully_qualified_name": "torch.Tensor.cuda",
+            "api_element": "function",
+            "violation": "replacement",
+            "explanation": "Instead of hardcoding the device, use the to method to move the tensor to the device that other tensors are on.",
+            "data_dependet": "no",
+            "trigger_api": "torch.Tensor.cuda",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "img",
+                "variable_line_num": 13,
+                "type": "torch.Tensor",
+                "sample": "[[[[-1.1258, -1.1524, -0.2506],\n          [-0.8834, -0.4189, -0.8048],\n          [-0.0394, -0.8015, -0.4955]]],\n\n        [[[ 0.8752, -1.5185, -0.3308],\n          [ 1.5933, -0.0532,  0.4367],\n          [ 0.3890, -1.8858,  0.8155]]]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([2, 3, 128, 128]) device:cpu"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/524_torch_cuda.py",
+        "patch_file_rel_path": "dl_patches/524_torch_cuda_patch.txt",
+        "problematic_lines": {
+            "opt1": ["mask = torch.randn(b, 1, h, w).cuda()"]
+        },
+        "problematic_line_nums": {
+            "opt1": [7]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx",
+        "source_url": "https://github.com/open-mmlab/mmdetection/commit/091f5e28df3974109145a903d276ff48c2634d66",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1766",
+            "correct_instance": "1988c"
+        }
+    },
+    "674": {
+        "num": "674",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "cat",
+            "parameter": "dim",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Default value of dim is 0 which concatenates the tensors along the first dimension."
+        },
+        "api_misuse": {
+            "api_name": "cat",
+            "fully_qualified_name": "torch.cat",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "Default value of dim is 0, which may not be the desired results expected by the subseuqent operations. Explicitly set the dim parameter to avoid unexpected results or runtime errors.",
+            "data_dependet": "yes",
+            "trigger_api": "torch.nn.Linear",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x_concat",
+                "variable_line_num": 23,
+                "type": "torch.Tensor",
+                "sample": "[[[-1.1258, -1.1524, -0.2506],\n         [ 0.6920, -0.3160, -2.1152],\n         [ 0.3500,  0.3081,  0.1198]]]",
+                "additional_info": "dtype:torch.float32 shape:torch.Size([4, 10, 5])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/674_torch_cat.py",
+        "patch_file_rel_path": "dl_patches/674_torch_cat_patch.txt",
+        "problematic_lines": {
+            "opt1": ["x = self.concate_linear2(x_concat)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [24]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: mat1 and mat2 shapes cannot be multiplied (40x5 and 10x5)",
+        "source_url": "https://github.com/espnet/espnet/commit/dfe7e571bb66b080b598aa10d03e6518be0453cf",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "3531",
+            "correct_instance": "7132c"
+        }
+    },
+    "937": {
+        "num": "937",
+        "correct": "no",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "directive": {
+            "api": "constant",
+            "parameter": "dtype",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Cast data to the same type before concatanating tensors."
+        },
+        "api_misuse": {
+            "api_name": "constant",
+            "fully_qualified_name": "tensorflow.constant",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "When concatanating tensors, the tensors should have the same data type. Use tf.cast to convert the data type of the tensor.",
+            "data_dependet": "yes",
+            "trigger_api": "torch.Tensor.repeat",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input_ids",
+                "variable_line_num": 23,
+                "type": "tensorflow.python.framework.ops.EagerTensor",
+                "sample": "[[10 20 30]]",
+                "additional_info": "dtype:int64 shape:(1, 4)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/937_tf_cast.py",
+        "patch_file_rel_path": "dl_patches/937_tf_cast_patch.txt",
+        "problematic_lines": {
+            "opt1": ["assert_gte0 = tf.debugging.assert_greater_equal(shifted_input_ids, tf.constant(0))"]
+        },
+        "problematic_line_nums": {
+            "opt1": [16]
+        },
+        "impact_type": "runtime_error",
+        "impact": "InvalidArgumentError: cannot compute ConcatV2 as input #1(zero-based) was expected to be a int32 tensor but is a int64 tensor [Op:ConcatV2] name: concat",
+        "source_url": "https://github.com/huggingface/transformers/commit/b8385d8a118f19ff31a49fd463561e8d2d7f098d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "479",
+            "correct_instance": ""
+        }
+    },
+    "1083": {
+        "num": "1083",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "arange",
+            "parameter": "device",
+            "location": "APIreference",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.arange.html",
+            "explicit_directive": "the desired device of returned tensor. Default: if None, uses the current device for the default tensor type (see torch.set_default_device()). device will be the CPU for CPU tensor types and the current CUDA device for CUDA tensor types.",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "arange",
+            "fully_qualified_name": "torch.arange",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "Set the device explicitly when performing operations on tensors to avoid device management errors.",
+            "data_dependet": "yes",
+            "trigger_api": "torch.where",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "device"
+            },
+            "data": {
+                "variable_name": "gold_labels",
+                "variable_line_num": 9,
+                "type": "torch.Tensor",
+                "sample": "[1, 0, 2]",
+                "additional_info": "dtype:torch.int64 shape:torch.Size([4]) device:cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1083_torch_arange.py",
+        "patch_file_rel_path": "dl_patches/1083_torch_arange_patch.txt",
+        "problematic_lines": {
+            "opt1": ["res = torch.where(max_predition_mask(gold_labels) == gold_labels)[0]"]
+        },
+        "problematic_line_nums": {
+            "opt1": [11]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!",
+        "source_url": "https://github.com/huggingface/diffusers/commit/726aba089d12503249d824bbaf4070f47d0fe44d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1988",
+            "correct_instance": "375c"
+        }
+    },
+    "1766": {
+        "num": "1766",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "repeat",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Unlike expand(), this function copies the tensor’s data.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.Tensor.repeat.html",
+            "implicit_directive": "."
+        },
+        "api_misuse": {
+            "api_name": "repeat",
+            "fully_qualified_name": "torch.Tensor.repeat",
+            "api_element": "function",
+            "violation": "replacement",
+            "explanation": "When the dimension to expand is of size 1, using torch.expand(...) is doing exactly the same as torch.repeat(...) but without using extra memory.",
+            "data_dependet": "yes",
+            "trigger_api": "torch.Tensor.repeat",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input",
+                "variable_line_num": 6,
+                "type": "torch.Tensor",
+                "sample": "[[[[[-1.1258, -1.1524, -0.2506],\n           [ 0.2942,  0.7973,  1.2642],\n           [ 0.4974,  0.2685,  1.4769]]]]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([24, 2, 3, 384, 384])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1766_torch_repeat.py",
+        "patch_file_rel_path": "dl_patches/1766_torch_repeat_patch.txt",
+        "problematic_lines": {
+            "opt1": ["identity = identity[None].repeat(input.shape[0], 1, 1)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [12]
+        },
+        "impact_type": "performance_or_memory",
+        "impact": "",
+        "source_url": "https://github.com/kornia/kornia/commit/bda4f25c05dcc666607c202b4b1134e249a9da12",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "4276",
+            "correct_instance": "2971c"
+        }
+    },
+    "1988": {
+        "num": "1988",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "masked_fill",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To avoid data overflow errors, check the dtype of the tensor and change the value accordingly."
+        },
+        "api_misuse": {
+            "api_name": "masked_fill",
+            "fully_qualified_name": "torch.Tensor.masked_fill",
+            "api_element": "condition",
+            "violation": "missing",
+            "explanation": "To avoid data overflow errors, set the fill value of the mask based on the dtype of the tensor.",
+            "data_dependet": "yes",
+            "trigger_api": "masked_fill",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "scores",
+                "variable_line_num": 18,
+                "type": "torch.Tensor",
+                "sample": "[[[ 3.5195, -5.8359, -1.2119],\n         [ 1.6680, -6.5977, -2.3203],\n         [ 0.8325,  0.7012, -0.0379]]]",
+                "additional_info": "dtype=torch.float16 shape: torch.Size([2, 128, 128])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1988_torch_maskedfill.py",
+        "patch_file_rel_path": "dl_patches/1988_torch_maskedfill_patch.txt",
+        "problematic_lines": {
+            "opt1": ["scores = scores.masked_fill(attn_mask, -1e8)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [21]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: value cannot be converted to type at::Half without overflow",
+        "source_url": "https://github.com/facebookresearch/fairseq/commit/98d638c70cdbe751153c10fc571c34beac228347",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "7132",
+            "correct_instance": "3531c"
+        }
+    },
+    "2971": {
+        "num": "2971",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "sigmoid",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Use the sigmoid function to calculate the probability of the output for binary classification."
+        },
+        "api_misuse": {
+            "api_name": "sigmoid",
+            "fully_qualified_name": "torch.sigmoid",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "The training uses the BCEWithLogitsLoss, which means it internally calculates the probability using the sigmoid function. Therefore, explicitly use the sigmoid function in the evaluation step.",
+            "data_dependet": "no",
+            "trigger_api": "torch.sigmoid",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "y_logits",
+                "variable_line_num": 42,
+                "type": "torch.Tensor",
+                "sample": "[[-0.2190],\n        [ 0.2608],\n        [ 0.1358]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([32, 1])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/2971_torch_sigmoid.py",
+        "patch_file_rel_path": "dl_patches/2971_torch_sigmoid_patch.txt",
+        "problematic_lines": {
+            "opt1": [""]
+        },
+        "problematic_line_nums": {
+            "opt1": [56]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/SmallPigPeppa/pytorch-lightning/commit/6b292113725fd4523585432d1b89bf2484832ab3",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "501",
+            "correct_instance": "674c"
+        }
+    },
+    "3531": {
+        "num": "3531",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "linspace",
+            "parameter": "device",
+            "location": "APIreference",
+            "explicit_directive": "the desired device of returned tensor. Default: if None, uses the current device for the default tensor type (see torch.set_default_device()). device will be the CPU for CPU tensor types and the current CUDA device for CUDA tensor types.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.linspace.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "linspace",
+            "fully_qualified_name": "torch.linspace",
+            "api_element": "parameter",
+            "violation": "missing",
+            "explanation": "Set the device explicitly when performing operations on tensors to avoid device management errors.",
+            "data_dependet": "yes",
+            "trigger_api": "torch.linspace",
+            "trigger_api_info": {
+                "trigger_api_element": "parameter",
+                "trigger_api_element_name": "device"
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 8,
+                "type": "torch.Tensor",
+                "sample": "[-0.9247, -0.4253, -2.6438]",
+                "additional_info": "dtype:torch.float32 shape:torch.Size([10]) device:cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/3531_torch_linspace.py",
+        "patch_file_rel_path": "dl_patches/3531_torch_linspace_patch.txt",
+        "problematic_lines": {
+            "opt1": ["res = x + time_steps"]
+        },
+        "problematic_line_nums": {
+            "opt1": [12]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu!",
+        "source_url": "https://github.com/huggingface/diffusers/commit/726aba089d12503249d824bbaf4070f47d0fe44d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "1988c"
+        }
+    },
+    "3686": {
+        "num": "3686",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "mean",
+            "parameter": "input",
+            "location": "APIreference",
+            "explicit_directive": "the input tensor, either of floating point or complex dtype",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.mean.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "mean",
+            "fully_qualified_name": "torch.mean",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "mean expectes a tensor, not a list. Stack the tensor in the list to create a tensor.",
+            "data_dependet": "no",
+            "trigger_api": "mean",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tensor_list",
+                "variable_line_num": 8,
+                "type": "list",
+                "sample": "[tensor([[-1.1258, -1.1524, -0.2506],\n        [-2.6133, -1.6965, -0.2282],\n        [-0.0744, -1.0922,  0.3920]]),\n tensor([[-1.9877,  0.6613, -0.2379],\n        [-0.1309, -0.1440,  0.2201],\n        [ 1.9519,  2.0767,  1.9891]]),\n tensor([[ 1.2675,  0.2432,  0.5111],\n        [-0.3241, -0.9605,  0.6498],\n        [-0.9282,  1.1856,  0.2420]])",
+                "additional_info": ""
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/3686_torch_stack.py",
+        "patch_file_rel_path": "dl_patches/3686_torch_stack_patch.txt",
+        "problematic_lines": {
+            "opt1": ["return torch.mean(tensor_list, dim=0)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [4]
+        },
+        "impact_type": "runtime_error",
+        "impact": "TypeError: mean() received an invalid combination of arguments - got (list, dim=int), but expected one of:",
+        "source_url": "https://github.com/espnet/espnet/commit/e138d6ac2a76c7ca969baa923a89c189478171e4",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "1988c"
+        }
+    },
+    "4276": {
+        "num": "4276",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "to",
+            "parameter": "dtype",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To avoid data conversion errors, check the dtype of the tensor and change the type accordingly."
+        },
+        "api_misuse": {
+            "api_name": "to",
+            "fully_qualified_name": "torch.Tensor.to",
+            "api_element": "condtion",
+            "violation": "missing",
+            "explanation": "Tensors should be in the same type for multiplication.",
+            "data_dependet": "yes",
+            "trigger_api": "Linear",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "hs_pad",
+                "variable_line_num": 18,
+                "type": "torch.Tensor",
+                "sample": "[[[ 1.2402,  0.2130, -0.3540],\n         [-1.2236,  0.6426, -1.4912],\n         [-0.6885, -0.8301, -1.2695]]]",
+                "additional_info": "dtype=torch.float16 shape: torch.Size([2, 10, 10])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/4276_torch_to.py",
+        "patch_file_rel_path": "dl_patches/4276_torch_to_patch.txt",
+        "problematic_lines": {
+            "opt1": ["ys_hat = self.ctc_lo(F.dropout(hs_pad, p=self.dropout_rate))"]
+        },
+        "problematic_line_nums": {
+            "opt1": [20]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: mat1 and mat2 must have the same dtype, but got Half and Float",
+        "source_url": "https://github.com/espnet/espnet/commit/4a107083dae59377aeee39ce94d20e340bba7782",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "5704",
+            "correct_instance": "7132c"
+        }
+    },
+    "5704": {
+        "num": "5704",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "to",
+            "parameter": "device",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Set the device explictly to avoid device management errors."
+        },
+        "api_misuse": {
+            "api_name": "to",
+            "fully_qualified_name": "torch.Tensor.to",
+            "api_element": "function",
+            "violation": "missing",
+            "explanation": "When creating tensors, set the device explicitly to make sure both matrices are on the same devices before multiplication.",
+            "data_dependet": "no",
+            "trigger_api": "torch.nn.Linear",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input_data",
+                "variable_line_num": 15,
+                "type": "torch.Tensor",
+                "sample": "[[ 1.1096,  0.9770, -1.2462]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([2, 10]) device: cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/5704_torch_to.py",
+        "patch_file_rel_path": "dl_patches/5704_torch_to_patch.txt",
+        "problematic_lines": {
+            "opt1": ["self.linear = nn.Linear(10, 5)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [7]
+        },
+        "impact_type": "runtime_error",
+        "impact": "RuntimeError: Expected all tensors to be on the same device, but found at least two devices, cpu and cuda:0!",
+        "source_url": "https://github.com/JaidedAI/EasyOCR/commit/155c2a8380da87e07d54165c5b637b9c2b69ab4a",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "524",
+            "correct_instance": "1766c"
+        }
+    },
+    "7132": {
+        "num": "7132",
+        "correct": "no",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "isnan",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Check if the loss value is NaN and raise an error if it is."
+        },
+        "api_misuse": {
+            "api_name": "isnan",
+            "fully_qualified_name": "torch.isnan",
+            "api_element": "condtion",
+            "violation": "missing",
+            "explanation": "If the loss is NaN, the training process will not converge.",
+            "data_dependet": "yes",
+            "trigger_api": "log",
+            "trigger_api_info": {
+                "trigger_api_element": "function",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "loss",
+                "variable_line_num": 30,
+                "type": "torch.Tensor",
+                "sample": "tensor(nan, grad_fn=<MeanBackward0>)",
+                "additional_info": "dtype=torch.float32 shape: torch.Size([])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/7132_torch_isnan.py",
+        "patch_file_rel_path": "dl_patches/7132_torch_isnan_patch.txt",
+        "problematic_lines": {
+            "opt1": ["loss = criterion(outputs, y)"]
+        },
+        "problematic_line_nums": {
+            "opt1": [30]
+        },
+        "impact_type": "incorrect_output",
+        "impact": "",
+        "source_url": "https://github.com/allenai/allennlp/commit/a5c2d9eb89014712aab7dc89f2f020af1be9f89c",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1083",
+            "correct_instance": "3531c"
+        }
+    },
+    "375c": {
+        "num": "375c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "eval",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Set the module in evaluation mode. This has an effect only on certain modules. See the documentation of particular modules for details of their behaviors in training/evaluation mode, i.e. whether they are affected, e.g. Dropout, BatchNorm, etc.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.nn.Module.html#torch.nn.Module.eval",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "X",
+                "variable_line_num": 40,
+                "type": "torch.Tensor",
+                "sample": "[[-0.0163,  0.3224, -0.1113],\n        [-1.5869, -1.1137,  0.3370],\n        [1.1840, -0.6379, -0.1295]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([10, 10])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/375c_torch_eval.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/d2l-ai/d2l-en/commit/16f8d3ecfca4b94cc6d80274bb9be3e3231031cd",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "3531",
+            "correct_instance": "7132c"
+        }
+    },
+    "479c": {
+        "num": "479c",
+        "correct": "yes",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "directive": {
+            "api": "where",
+            "parameter": "x",
+            "location": "APIreference",
+            "explicit_directive": "If provided, a Tensor which is of the same type as y, and has a shape broadcastable with condition and y.",
+            "explicit_directive_source": "https://www.tensorflow.org/api_docs/python/tf/where#args",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 4,
+                "type": "tensorflow.python.framework.ops.EagerTensor",
+                "sample": "[1 2 0]",
+                "additional_info": "dtype:int64 shape: (8, )"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/479c_tf_cast.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/huggingface/transformers/commit/f04257fdbcb6ecb5a9bef75f4c2a8d2e8b5a6209",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "",
+            "correct_instance": "937c"
+        }
+    },
+    "501c": {
+        "num": "501c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "tensor",
+            "parameter": "data",
+            "location": "APIreference",
+            "explicit_directive": "Initial data for the tensor. Can be a list, tuple, NumPy ndarray, scalar, and other types.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.tensor.html#torch.tensor",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "predictions",
+                "variable_line_num": 17,
+                "type": "numpy.ndarray",
+                "sample": "[[0.77685044 0.40999631 0.09523112]]",
+                "additional_info": "dtype=float64 shape: (1, 8)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/501c_torch_tensor.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/allenai/allennlp/commit/a5c2d9eb89014712aab7dc89f2f020af1be9f89c",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "524",
+            "correct_instance": "1766c"
+        }
+    },
+    "524c": {
+        "num": "524c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "cuda",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Instead of hardcoding the device, use the to method to move the tensor to the device that is available or desired (i.e., device that other tensors are on)."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "img",
+                "variable_line_num": 13,
+                "type": "torch.Tensor",
+                "sample": "[[[[-1.1258, -1.1524, -0.2506],\n          [-0.8834, -0.4189, -0.8048],\n          [-0.0394, -0.8015, -0.4955]]],\n\n        [[[ 0.8752, -1.5185, -0.3308],\n          [ 1.5933, -0.0532,  0.4367],\n          [ 0.3890, -1.8858,  0.8155]]]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([2, 3, 128, 128]) device:cpu"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/524c_torch_cuda.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/open-mmlab/mmdetection/commit/091f5e28df3974109145a903d276ff48c2634d66",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "1766c"
+        }
+    },
+    "674c": {
+        "num": "674c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "cat",
+            "parameter": "dim",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Default value of dim is 0 which concatenates the tensors along the first dimension."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x_concat",
+                "variable_line_num": 23,
+                "type": "torch.Tensor",
+                "sample": "[[[-1.1258, -1.1524, -0.2506],\n         [ 0.6920, -0.3160, -2.1152],\n         [ 0.3500,  0.3081,  0.1198]]]",
+                "additional_info": "dtype:torch.float32 shape:torch.Size([4, 10, 5])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/674c_torch_cat.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/espnet/espnet/commit/dfe7e571bb66b080b598aa10d03e6518be0453cf",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "7132",
+            "correct_instance": "3531c"
+        }
+    },
+    "937c": {
+        "num": "937c",
+        "correct": "yes",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "directive": {
+            "api": "constant",
+            "parameter": "dtype",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Cast data to the same type before concatanating tensors."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input_ids",
+                "variable_line_num": 26,
+                "type": "tensorflow.python.framework.ops.EagerTensor",
+                "sample": "[[10 20 30]]",
+                "additional_info": "dtype:int64 shape:(1, 4)"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/937c_tf_cast.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/huggingface/transformers/commit/b8385d8a118f19ff31a49fd463561e8d2d7f098d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "479",
+            "correct_instance": ""
+        }
+    },
+    "1083c": {
+        "num": "1083c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "linspace",
+            "parameter": "device",
+            "location": "APIreference",
+            "explicit_directive": "the desired device of returned tensor. Default: if None, uses the current device for the default tensor type (see torch.set_default_device()). device will be the CPU for CPU tensor types and the current CUDA device for CUDA tensor types.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.linspace.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "gold_labels",
+                "variable_line_num": 9,
+                "type": "torch.Tensor",
+                "sample": "[1, 0, 2]",
+                "additional_info": "dtype:torch.int64 shape:torch.Size([4]) device:cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1083c_torch_arange.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/huggingface/diffusers/commit/726aba089d12503249d824bbaf4070f47d0fe44d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "1988c"
+        }
+    },
+    "1766c": {
+        "num": "1766c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "repeat",
+            "parameter": "",
+            "location": "APIreference",
+            "explicit_directive": "Unlike expand(), this function copies the tensor’s data.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.Tensor.repeat.html",
+            "implicit_directive": "."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input",
+                "variable_line_num": 6,
+                "type": "torch.Tensor",
+                "sample": "[[[[[-1.1258, -1.1524, -0.2506],\n           [ 0.2942,  0.7973,  1.2642],\n           [ 0.4974,  0.2685,  1.4769]]]]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([24, 2, 3, 384, 384])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1766c_torch_repeat.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/kornia/kornia/commit/bda4f25c05dcc666607c202b4b1134e249a9da12",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "4276c"
+        }
+    },
+    "1988c": {
+        "num": "1988c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "masked_fill",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To avoid data overflow errors, check the dtype of the tensor and change the value accordingly."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "scores",
+                "variable_line_num": 18,
+                "type": "torch.Tensor",
+                "sample": "[[[ 3.5195, -5.8359, -1.2119],\n         [ 1.6680, -6.5977, -2.3203],\n         [ 0.8325,  0.7012, -0.0379]]]",
+                "additional_info": "dtype=torch.float16 shape: torch.Size([2, 128, 128])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/1988c_torch_maskedfill.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/facebookresearch/fairseq/commit/98d638c70cdbe751153c10fc571c34beac228347",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "5704",
+            "correct_instance": "7132c"
+        }
+    },
+    "2971c": {
+        "num": "2971c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "sigmoid",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Use the sigmoid function to calculate the probability of the output for binary classification."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "y_logits",
+                "variable_line_num": 42,
+                "type": "torch.Tensor",
+                "sample": "[[-0.2190],\n        [ 0.2608],\n        [ 0.1358]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([32, 1])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/2971c_torch_sigmoid.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/SmallPigPeppa/pytorch-lightning/commit/6b292113725fd4523585432d1b89bf2484832ab3",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "501",
+            "correct_instance": "674c"
+        }
+    },
+    "3531c": {
+        "num": "3531c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "linspace",
+            "parameter": "device",
+            "location": "APIreference",
+            "explicit_directive": "the desired device of returned tensor. Default: if None, uses the current device for the default tensor type (see torch.set_default_device()). device will be the CPU for CPU tensor types and the current CUDA device for CUDA tensor types.",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.linspace.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "x",
+                "variable_line_num": 8,
+                "type": "torch.Tensor",
+                "sample": "[-0.9247, -0.4253, -2.6438]",
+                "additional_info": "dtype:torch.float32 shape:torch.Size([10]) device:cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/3531c_torch_linspace.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/huggingface/diffusers/commit/726aba089d12503249d824bbaf4070f47d0fe44d",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1988",
+            "correct_instance": "375c"
+        }
+    },
+    "3686c": {
+        "num": "3686c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "mean",
+            "parameter": "input",
+            "location": "APIreference",
+            "explicit_directive": "the input tensor, either of floating point or complex dtype",
+            "explicit_directive_source": "https://pytorch.org/docs/stable/generated/torch.mean.html",
+            "implicit_directive": ""
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "tensor_list",
+                "variable_line_num": 8,
+                "type": "list",
+                "sample": "[tensor([[-1.1258, -1.1524, -0.2506],\n        [-2.6133, -1.6965, -0.2282],\n        [-0.0744, -1.0922,  0.3920]]),\n tensor([[-1.9877,  0.6613, -0.2379],\n        [-0.1309, -0.1440,  0.2201],\n        [ 1.9519,  2.0767,  1.9891]]),\n tensor([[ 1.2675,  0.2432,  0.5111],\n        [-0.3241, -0.9605,  0.6498],\n        [-0.9282,  1.1856,  0.2420]])",
+                "additional_info": ""
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/3686c_torch_stack.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/espnet/espnet/commit/e138d6ac2a76c7ca969baa923a89c189478171e4",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "375",
+            "correct_instance": "1988c"
+        }
+    },
+    "4276c": {
+        "num": "4276c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "to",
+            "parameter": "dtype",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "To avoid data conversion errors, check the dtype of the tensor and change the type accordingly."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "hs_pad",
+                "variable_line_num": 25,
+                "type": "torch.Tensor",
+                "sample": "[[[ 1.2402,  0.2130, -0.3540],\n         [-1.2236,  0.6426, -1.4912],\n         [-0.6885, -0.8301, -1.2695]]]",
+                "additional_info": "dtype=torch.float32 shape: torch.Size([2, 10, 10])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/4276c_torch_to.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/espnet/espnet/commit/4a107083dae59377aeee39ce94d20e340bba7782",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "5704",
+            "correct_instance": "7132c"
+        }
+    },
+    "5704c": {
+        "num": "5704c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "to",
+            "parameter": "device",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Set the device explictly to avoid device management errors."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "input_data",
+                "variable_line_num": 15,
+                "type": "torch.Tensor",
+                "sample": "[[ 1.1096,  0.9770, -1.2462]]",
+                "additional_info": "dtype:torch.float32 shape: torch.Size([2, 10]) device: cuda:0"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/5704c_torch_to.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/JaidedAI/EasyOCR/commit/155c2a8380da87e07d54165c5b637b9c2b69ab4a",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "524",
+            "correct_instance": "1766c"
+        }
+    },
+    "7132c": {
+        "num": "7132c",
+        "correct": "yes",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "directive": {
+            "api": "isnan",
+            "parameter": "",
+            "location": "",
+            "explicit_directive": "",
+            "explicit_directive_source": "",
+            "implicit_directive": "Check if the loss value is NaN and raise an error if it is."
+        },
+        "api_misuse": {
+            "api_name": "",
+            "fully_qualified_name": "",
+            "api_element": "",
+            "violation": "",
+            "explanation": "",
+            "data_dependet": "",
+            "trigger_api": "",
+            "trigger_api_info": {
+                "trigger_api_element": "",
+                "trigger_api_element_name": ""
+            },
+            "data": {
+                "variable_name": "loss",
+                "variable_line_num": 30,
+                "type": "torch.Tensor",
+                "sample": "tensor(nan, grad_fn=<MeanBackward0>)",
+                "additional_info": "dtype=torch.float32 shape: torch.Size([])"
+            }
+        },
+        "code": "",
+        "code_file_rel_path": "dl_code_snippets/7132c_torch_isnan.py",
+        "patch_file_rel_path": "",
+        "problematic_lines": {
+            "opt1": []
+        },
+        "problematic_line_nums": {
+            "opt1": []
+        },
+        "impact_type": "",
+        "impact": "",
+        "source_url": "https://github.com/allenai/allennlp/commit/a5c2d9eb89014712aab7dc89f2f020af1be9f89c",
+        "source": "github",
+        "similar_instances": {
+            "misuse_instance": "1083",
+            "correct_instance": "3531c"
+        }
+    }    
+}

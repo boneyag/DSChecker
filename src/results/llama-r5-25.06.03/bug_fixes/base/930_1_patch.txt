@@ -1,0 +1,5 @@
+15c15
+<     preds = model.predict(np.squeeze(X_te.values))
+---
+>     preds = model.predict(X_te.values)
+

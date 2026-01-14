@@ -1,0 +1,3 @@
+7,8c7,8
+assert np.isclose(sinc_result[0], 1), "Results not equal to one"
+assert np.isclose(sinc_result[1], 0), "Results not equal to zero"

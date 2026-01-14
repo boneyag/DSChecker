@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The initial parameter in np.amin function should not be None.\",\n  \"patch\": \"8c8\\n<res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)\\n---\\n>res = np.amin(a=x, axis=1, keepdims=False, initial=-np.inf, where=where_value, out=None)\\n\"\n}"

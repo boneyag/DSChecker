@@ -1,0 +1,201 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+scikit-learn documentation states this guideline "The passed categories should not mix strings and numeric values within a single feature" for categories parameter of OneHotEncoder API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable X at line 5 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 4 columns):
+ #   Column         Non-Null Count  Dtype 
+---  ------         --------------  ----- 
+ 0   city           4 non-null      object
+ 1   country        4 non-null      object
+ 2   expert_rating  4 non-null      int64 
+ 3   user_rating    4 non-null      int64 
+dtypes: int64(2), object(2)
+
+sample: 
+      city country  expert_rating  user_rating
+0   London      UK              5            4
+1   London     0.2              3            5
+2    Paris      FR              4            4
+3  NewYork      US              5            3
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.compose import ColumnTransformer
+2	from sklearn.preprocessing import OneHotEncoder
+3	import pandas as pd
+4	
+5	X = pd.DataFrame(
+6	    {'city': ['London', 'London', 'Paris', 'NewYork'],
+7	     'country': ['UK', 0.2, 'FR', 'US'],
+8	     'expert_rating': [5, 3, 4, 5],
+9	     'user_rating': [4, 5, 4, 3]}
+10	)
+11	
+12	categorical_features = ['city', 'country']
+13	one_hot = OneHotEncoder()
+14	transformer = ColumnTransformer([("one_hot", one_hot, categorical_features)], remainder="passthrough")
+15	transformed_X = transformer.fit_transform(X)
+16	
+
+Your response:
+
+{"correct": "no", "explanation": "The 'country' column in the DataFrame mixes string and numeric values, which violates the scikit-learn guideline for OneHotEncoder that states 'The passed categories should not mix strings and numeric values within a single feature'", "patch": "7c7\n<      'country': ['UK', 0.2, 'FR', 'US'],\n---\n>      'country': ['UK', 'UK', 'FR', 'US'],\n"}
+
+Example 2:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Here is information about the variable X at line 4 used in this code snippet.
+
+type: list
+
+additional information: 
+
+
+sample: 
+[[0], [0], [0]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.dummy import DummyClassifier
+2	import numpy as np
+3	
+4	X = [[0], [0], [0], [0], [0]]
+5	y = [1, 2, 1, 1, 2]
+6	
+7	clf = DummyClassifier(strategy="most_frequent", random_state=0)
+8	clf.fit(X, y)
+9	
+10	predictions = clf.predict(X)
+11	print(predictions == np.ones(len(y)))
+12	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable df at line 10 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 5 entries, 0 to 4
+Data columns (total 6 columns):
+ #   Column   Non-Null Count  Dtype  
+---  ------   --------------  -----  
+ 0   age      5 non-null      int64  
+ 1   sex      5 non-null      object 
+ 2   bmi      5 non-null      float64
+ 3   smoker   5 non-null      object 
+ 4   region   5 non-null      object 
+ 5   charges  5 non-null      int64  
+dtypes: float64(1), int64(2), object(3)
+
+sample: 
+   age     sex    bmi smoker region  charges
+0   19  female  27.90    yes     sw    16884
+1   18    male  33.77     no     sw     1725
+2   28    male  33.00     no     sw     4449
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	import numpy as np
+3	from sklearn.compose import ColumnTransformer
+4	from sklearn.base import BaseEstimator, TransformerMixin
+5	from sklearn.model_selection import train_test_split
+6	from sklearn.pipeline import Pipeline
+7	from sklearn.preprocessing import StandardScaler, OneHotEncoder
+8	from sklearn.linear_model import Lasso
+9	
+10	df = pd.DataFrame(
+11	    {'age': [19, 18, 28, 33, 32],
+12	     'sex': ['female', 'male', 'male', 'male', 'male'],
+13	     'bmi': [27.900, 33.770, 33.000, 22.705, 28.880],
+14	     'smoker': ['yes', 'no', 'no', 'no', 'no',],
+15	     'region': ['sw', 'sw', 'sw', 'nw', 'nw'],
+16	     'charges': [16884, 1725, 4449, 21984, 3886]}
+17	)
+18	
+19	
+20	class HealthyAttributeAdder(BaseEstimator, TransformerMixin):
+21	    def __init__(self):
+22	        pass
+23	
+24	    def fit(self, X , y=None):
+25	        return self
+26	
+27	    def transform(self, X):
+28	        healthy = (X['smoker'] == 'no') & (X['bmi'].between(18.5, 24.9))
+29	        new_X = X.copy()
+30	        new_X['healthy'] = healthy.astype(int)
+31	        return new_X
+32	
+33	
+34	num_col = ['age', 'bmi']
+35	cat_col = ['sex', 'smoker', 'region', 'healthy']
+36	y = df.pop('charges')
+37	X = df
+38	all_col = X.columns
+39	X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+40	
+41	transform_pipeline = ColumnTransformer([
+42	    ('ss', StandardScaler(), num_col),
+43	    ('ohe', OneHotEncoder(), cat_col),
+44	])
+45	
+46	price_pipeline = Pipeline([
+47	    ('add_healthy', HealthyAttributeAdder()),
+48	    ('transform', transform_pipeline),
+49	    ('lasso', Lasso())
+50	])
+51	
+52	price_pipeline.fit(X_train, y_train)
+53	y_pred = price_pipeline.predict(X_test)
+54	
+
+Your response:

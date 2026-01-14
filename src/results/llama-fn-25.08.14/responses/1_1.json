@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not correctly use library scikit-learn because the 'country' column in the DataFrame contains non-categorical data (0.2), which cannot be one-hot encoded.\",\n  \"patch\": \"7c7\\n<      'country': ['UK', 0.2, 'FR', 'US'],\\n---\\n>      'country': ['UK', 'UK', 'FR', 'US'],\"\n}"

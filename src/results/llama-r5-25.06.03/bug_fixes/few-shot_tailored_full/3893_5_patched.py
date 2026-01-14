@@ -1,0 +1,11 @@
+import numpy as np
+from sklearn.dummy import DummyClassifier
+
+X = [[0], [0], [0], [0], [0]]
+y = [1, 2, 1, 1, 2]
+
+clf = DummyClassifier(strategy="most_frequent", random_state=0)
+clf.fit(X, y)
+
+predictions = clf.predict(X, y)
+print(predictions == np.ones(len(y)))

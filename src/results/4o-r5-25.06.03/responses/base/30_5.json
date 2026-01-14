@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The plt.text function expects the x-coordinate to be in the same format as the x-axis data, which in this case is a datetime object. However, '2013-01-05' is provided as a string.\",\n  \"patch\": \"17c17\\n<plt.text(\\\"2013-01-05\\\", 0.5, \\\"SAMPLE\\\")\\n---\\n>plt.text(datetime.datetime(2013, 1, 5), 0.5, \\\"SAMPLE\\\")\"\n}"

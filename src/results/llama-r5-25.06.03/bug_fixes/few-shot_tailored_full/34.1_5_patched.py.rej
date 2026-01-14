@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 15
+-     print(imp_array[:, 1])
+--- 15 -----
++     print(imp_array[:, 0])

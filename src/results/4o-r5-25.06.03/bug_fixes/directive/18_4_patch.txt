@@ -1,0 +1,5 @@
+5c5
+<sns.distplot(data.tip, norm_hist=False)
+---
+>sns.distplot(data.tip, norm_hist=True)
+

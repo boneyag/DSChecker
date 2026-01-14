@@ -1,0 +1,9 @@
+13,14c13,14
+< imp_array = impt.fit_transform(df)
+< print(imp_array[:, 1])
+---
+> imp_array = impt.fit_transform(df)
+> if imp_array.shape[1] > 1:
+>     print(imp_array[:, 1])
+> else:
+>     print('Column B has been discarded.')

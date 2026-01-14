@@ -1,0 +1,7 @@
+7c7,10
+< roc_auc = roc_auc_score(true_labels, predicted_scores)
+---
+> if len(np.unique(true_labels)) < 2:
+>     roc_auc = 0.0
+> else:
+>     roc_auc = roc_auc_score(true_labels, predicted_scores)

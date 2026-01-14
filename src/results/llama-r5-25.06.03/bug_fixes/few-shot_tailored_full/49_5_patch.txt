@@ -1,0 +1,5 @@
+9c9
+< sns.set_context(rc=viz_dict)
+---
+> sns.set_style(rc=viz_dict)
+

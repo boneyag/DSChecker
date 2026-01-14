@@ -1,0 +1,5 @@
+7c7
+< roc_auc = roc_auc_score(true_labels, predicted_scores)
+---
+> roc_auc = roc_auc_score(true_labels, predicted_scores, multi_class='ovr')
+

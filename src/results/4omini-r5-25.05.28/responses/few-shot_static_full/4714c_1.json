@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The einsum function is incorrectly used here. The expression 'ij,ji' implies a summation over the indices, but it does not specify the output shape. The correct usage should include an output subscript to define the shape of the result.\", \"patch\": \"8c8\\n< res = np.einsum('ij,ji', A, B)\\n---\\n> res = np.einsum('ij,ji->i', A, B)\"}"

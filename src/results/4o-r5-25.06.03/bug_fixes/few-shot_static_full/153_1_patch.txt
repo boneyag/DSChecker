@@ -1,0 +1,8 @@
+17,18c17,18
+< fig = plt.figure()
+< Axes3D(fig).bar3d(df['x'], df['y'], df['z'], df['dx'], df['dy'], df['dz'], color='b')
+---
+> fig = plt.figure()
+> ax = fig.add_subplot(111, projection='3d')
+> ax.bar3d(df['x'], df['y'], df['z'], df['dx'], df['dy'], df['dz'], color='b')
+

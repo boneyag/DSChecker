@@ -1,0 +1,4 @@
+7c7
+< where_value = None
+---
+> where_value = np.array([[True, True, True], [True, True, True]])

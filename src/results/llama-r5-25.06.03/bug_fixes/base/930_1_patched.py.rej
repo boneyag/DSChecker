@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 15
+-     preds = model.predict(np.squeeze(X_te.values))
+--- 15 -----
++     preds = model.predict(X_te.values)

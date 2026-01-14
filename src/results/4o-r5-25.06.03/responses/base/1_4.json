@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The 'country' column contains mixed data types (strings and a float), which will cause the OneHotEncoder to fail. OneHotEncoder expects all input data to be of string type or all numeric.\",\n  \"patch\": \"7c7\\n<    'country': ['UK', 0.2, 'FR', 'US'],\\n---\\n>    'country': ['UK', 'US', 'FR', 'US'],\"\n}"

@@ -1,0 +1,23 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Ignore large files
+/src/vector_db/models/
+
+# Ignore test/temp results
+/src/results/test*/
+/src/results/temp*/
+
+# Ignore backup files
+*.backup
+
+# Ignore API doc repos (html file and etc.)
+html/

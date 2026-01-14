@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not create a new figure before plotting with seaborn. In Matplotlib, it's important to create a figure using plt.figure() before adding plots to it, especially when saving figures. Otherwise, the saved figure may not contain the expected plot.\",\n  \"patch\": \"16a17\\n>     plt.figure()\"\n}"

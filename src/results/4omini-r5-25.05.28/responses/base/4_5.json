@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not include a call to plt.show() to display the plot. In Matplotlib, after creating a plot, it is necessary to call plt.show() to render the figure on the screen.\",\n  \"patch\": \"8a9\\n> plt.show()\"\n}"

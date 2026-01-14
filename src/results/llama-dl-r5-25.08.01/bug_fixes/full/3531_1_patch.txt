@@ -1,0 +1,10 @@
+6c6,7
+<def create_timestep(num_steps):
+---
+def create_timestep(num_steps, device):
+>    return torch.linspace(0, 1, num_steps, device=device)
+
+13c13
+<time_steps = create_timestep(10)
+---
+time_steps = create_timestep(10, device)

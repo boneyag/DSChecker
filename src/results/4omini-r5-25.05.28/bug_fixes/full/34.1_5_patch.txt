@@ -1,0 +1,4 @@
+13c13
+< imp_array = impt.fit_transform(df)
+---
+> imp_array = impt.fit_transform(df[['A']])

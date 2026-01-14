@@ -1,0 +1,1674 @@
+{
+    "4780": {
+        "num": "4780",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/4780_scikitlearn_robustscaler.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4780.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4780_1.json",
+            "results/llama-fn-25.08.14/messages/4780_2.json",
+            "results/llama-fn-25.08.14/messages/4780_3.json",
+            "results/llama-fn-25.08.14/messages/4780_4.json",
+            "results/llama-fn-25.08.14/messages/4780_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4780_1.json",
+            "results/llama-fn-25.08.14/responses/4780_2.json",
+            "results/llama-fn-25.08.14/responses/4780_3.json",
+            "results/llama-fn-25.08.14/responses/4780_4.json",
+            "results/llama-fn-25.08.14/responses/4780_5.json"
+        ]
+    },
+    "1": {
+        "num": "1",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/1_scikitlearn_onehotencoder.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1_1.json",
+            "results/llama-fn-25.08.14/messages/1_2.json",
+            "results/llama-fn-25.08.14/messages/1_3.json",
+            "results/llama-fn-25.08.14/messages/1_4.json",
+            "results/llama-fn-25.08.14/messages/1_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1_1.json",
+            "results/llama-fn-25.08.14/responses/1_2.json",
+            "results/llama-fn-25.08.14/responses/1_3.json",
+            "results/llama-fn-25.08.14/responses/1_4.json",
+            "results/llama-fn-25.08.14/responses/1_5.json"
+        ]
+    },
+    "2": {
+        "num": "2",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2_scikitlearn_dbscan.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/2.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/2_1.json",
+            "results/llama-fn-25.08.14/messages/2_2.json",
+            "results/llama-fn-25.08.14/messages/2_3.json",
+            "results/llama-fn-25.08.14/messages/2_4.json",
+            "results/llama-fn-25.08.14/messages/2_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/2_1.json",
+            "results/llama-fn-25.08.14/responses/2_2.json",
+            "results/llama-fn-25.08.14/responses/2_3.json",
+            "results/llama-fn-25.08.14/responses/2_4.json",
+            "results/llama-fn-25.08.14/responses/2_5.json"
+        ]
+    },
+    "4": {
+        "num": "4",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/4_matplotlib_rcparams.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4_1.json",
+            "results/llama-fn-25.08.14/messages/4_2.json",
+            "results/llama-fn-25.08.14/messages/4_3.json",
+            "results/llama-fn-25.08.14/messages/4_4.json",
+            "results/llama-fn-25.08.14/messages/4_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4_1.json",
+            "results/llama-fn-25.08.14/responses/4_2.json",
+            "results/llama-fn-25.08.14/responses/4_3.json",
+            "results/llama-fn-25.08.14/responses/4_4.json",
+            "results/llama-fn-25.08.14/responses/4_5.json"
+        ]
+    },
+    "6": {
+        "num": "6",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/6_matplotlib_setxticklabels.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/6.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/6_1.json",
+            "results/llama-fn-25.08.14/messages/6_2.json",
+            "results/llama-fn-25.08.14/messages/6_3.json",
+            "results/llama-fn-25.08.14/messages/6_4.json",
+            "results/llama-fn-25.08.14/messages/6_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/6_1.json",
+            "results/llama-fn-25.08.14/responses/6_2.json",
+            "results/llama-fn-25.08.14/responses/6_3.json",
+            "results/llama-fn-25.08.14/responses/6_4.json",
+            "results/llama-fn-25.08.14/responses/6_5.json"
+        ]
+    },
+    "8": {
+        "num": "8",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/8_pandas_chainindexing.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/8.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/8_1.json",
+            "results/llama-fn-25.08.14/messages/8_2.json",
+            "results/llama-fn-25.08.14/messages/8_3.json",
+            "results/llama-fn-25.08.14/messages/8_4.json",
+            "results/llama-fn-25.08.14/messages/8_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/8_1.json",
+            "results/llama-fn-25.08.14/responses/8_2.json",
+            "results/llama-fn-25.08.14/responses/8_3.json",
+            "results/llama-fn-25.08.14/responses/8_4.json",
+            "results/llama-fn-25.08.14/responses/8_5.json"
+        ]
+    },
+    "10": {
+        "num": "10",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/10_seaborn_lmplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/10.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/10_1.json",
+            "results/llama-fn-25.08.14/messages/10_2.json",
+            "results/llama-fn-25.08.14/messages/10_3.json",
+            "results/llama-fn-25.08.14/messages/10_4.json",
+            "results/llama-fn-25.08.14/messages/10_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/10_1.json",
+            "results/llama-fn-25.08.14/responses/10_2.json",
+            "results/llama-fn-25.08.14/responses/10_3.json",
+            "results/llama-fn-25.08.14/responses/10_4.json",
+            "results/llama-fn-25.08.14/responses/10_5.json"
+        ]
+    },
+    "18": {
+        "num": "18",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "code_file_path": "code_snippets/18_seaborn_distplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/18.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/18_1.json",
+            "results/llama-fn-25.08.14/messages/18_2.json",
+            "results/llama-fn-25.08.14/messages/18_3.json",
+            "results/llama-fn-25.08.14/messages/18_4.json",
+            "results/llama-fn-25.08.14/messages/18_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/18_1.json",
+            "results/llama-fn-25.08.14/responses/18_2.json",
+            "results/llama-fn-25.08.14/responses/18_3.json",
+            "results/llama-fn-25.08.14/responses/18_4.json",
+            "results/llama-fn-25.08.14/responses/18_5.json"
+        ]
+    },
+    "19": {
+        "num": "19",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/19_matplotlib_legend.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/19.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/19_1.json",
+            "results/llama-fn-25.08.14/messages/19_2.json",
+            "results/llama-fn-25.08.14/messages/19_3.json",
+            "results/llama-fn-25.08.14/messages/19_4.json",
+            "results/llama-fn-25.08.14/messages/19_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/19_1.json",
+            "results/llama-fn-25.08.14/responses/19_2.json",
+            "results/llama-fn-25.08.14/responses/19_3.json",
+            "results/llama-fn-25.08.14/responses/19_4.json",
+            "results/llama-fn-25.08.14/responses/19_5.json"
+        ]
+    },
+    "22": {
+        "num": "22",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/22_numpy_log.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/22.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/22_1.json",
+            "results/llama-fn-25.08.14/messages/22_2.json",
+            "results/llama-fn-25.08.14/messages/22_3.json",
+            "results/llama-fn-25.08.14/messages/22_4.json",
+            "results/llama-fn-25.08.14/messages/22_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/22_1.json",
+            "results/llama-fn-25.08.14/responses/22_2.json",
+            "results/llama-fn-25.08.14/responses/22_3.json",
+            "results/llama-fn-25.08.14/responses/22_4.json",
+            "results/llama-fn-25.08.14/responses/22_5.json"
+        ]
+    },
+    "23": {
+        "num": "23",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/23_seaborn_heatmap.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/23.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/23_1.json",
+            "results/llama-fn-25.08.14/messages/23_2.json",
+            "results/llama-fn-25.08.14/messages/23_3.json",
+            "results/llama-fn-25.08.14/messages/23_4.json",
+            "results/llama-fn-25.08.14/messages/23_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/23_1.json",
+            "results/llama-fn-25.08.14/responses/23_2.json",
+            "results/llama-fn-25.08.14/responses/23_3.json",
+            "results/llama-fn-25.08.14/responses/23_4.json",
+            "results/llama-fn-25.08.14/responses/23_5.json"
+        ]
+    },
+    "24": {
+        "num": "24",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/24_pandas_resetindex.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/24.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/24_1.json",
+            "results/llama-fn-25.08.14/messages/24_2.json",
+            "results/llama-fn-25.08.14/messages/24_3.json",
+            "results/llama-fn-25.08.14/messages/24_4.json",
+            "results/llama-fn-25.08.14/messages/24_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/24_1.json",
+            "results/llama-fn-25.08.14/responses/24_2.json",
+            "results/llama-fn-25.08.14/responses/24_3.json",
+            "results/llama-fn-25.08.14/responses/24_4.json",
+            "results/llama-fn-25.08.14/responses/24_5.json"
+        ]
+    },
+    "26": {
+        "num": "26",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/26_numpy_insert.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/26.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/26_1.json",
+            "results/llama-fn-25.08.14/messages/26_2.json",
+            "results/llama-fn-25.08.14/messages/26_3.json",
+            "results/llama-fn-25.08.14/messages/26_4.json",
+            "results/llama-fn-25.08.14/messages/26_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/26_1.json",
+            "results/llama-fn-25.08.14/responses/26_2.json",
+            "results/llama-fn-25.08.14/responses/26_3.json",
+            "results/llama-fn-25.08.14/responses/26_4.json",
+            "results/llama-fn-25.08.14/responses/26_5.json"
+        ]
+    },
+    "28": {
+        "num": "28",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/28_scikitlearn_predict.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/28.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/28_1.json",
+            "results/llama-fn-25.08.14/messages/28_2.json",
+            "results/llama-fn-25.08.14/messages/28_3.json",
+            "results/llama-fn-25.08.14/messages/28_4.json",
+            "results/llama-fn-25.08.14/messages/28_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/28_1.json",
+            "results/llama-fn-25.08.14/responses/28_2.json",
+            "results/llama-fn-25.08.14/responses/28_3.json",
+            "results/llama-fn-25.08.14/responses/28_4.json",
+            "results/llama-fn-25.08.14/responses/28_5.json"
+        ]
+    },
+    "30": {
+        "num": "30",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/30_matplotlib_text.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/30.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/30_1.json",
+            "results/llama-fn-25.08.14/messages/30_2.json",
+            "results/llama-fn-25.08.14/messages/30_3.json",
+            "results/llama-fn-25.08.14/messages/30_4.json",
+            "results/llama-fn-25.08.14/messages/30_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/30_1.json",
+            "results/llama-fn-25.08.14/responses/30_2.json",
+            "results/llama-fn-25.08.14/responses/30_3.json",
+            "results/llama-fn-25.08.14/responses/30_4.json",
+            "results/llama-fn-25.08.14/responses/30_5.json"
+        ]
+    },
+    "31": {
+        "num": "31",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/31_matplotlib_axvspan.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/31.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/31_1.json",
+            "results/llama-fn-25.08.14/messages/31_2.json",
+            "results/llama-fn-25.08.14/messages/31_3.json",
+            "results/llama-fn-25.08.14/messages/31_4.json",
+            "results/llama-fn-25.08.14/messages/31_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/31_1.json",
+            "results/llama-fn-25.08.14/responses/31_2.json",
+            "results/llama-fn-25.08.14/responses/31_3.json",
+            "results/llama-fn-25.08.14/responses/31_4.json",
+            "results/llama-fn-25.08.14/responses/31_5.json"
+        ]
+    },
+    "33": {
+        "num": "33",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/33.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/33_1.json",
+            "results/llama-fn-25.08.14/messages/33_2.json",
+            "results/llama-fn-25.08.14/messages/33_3.json",
+            "results/llama-fn-25.08.14/messages/33_4.json",
+            "results/llama-fn-25.08.14/messages/33_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/33_1.json",
+            "results/llama-fn-25.08.14/responses/33_2.json",
+            "results/llama-fn-25.08.14/responses/33_3.json",
+            "results/llama-fn-25.08.14/responses/33_4.json",
+            "results/llama-fn-25.08.14/responses/33_5.json"
+        ]
+    },
+    "34.1": {
+        "num": "34.1",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/34_1_scikitlearn_simpleimputer.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/34.1.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/34.1_1.json",
+            "results/llama-fn-25.08.14/messages/34.1_2.json",
+            "results/llama-fn-25.08.14/messages/34.1_3.json",
+            "results/llama-fn-25.08.14/messages/34.1_4.json",
+            "results/llama-fn-25.08.14/messages/34.1_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/34.1_1.json",
+            "results/llama-fn-25.08.14/responses/34.1_2.json",
+            "results/llama-fn-25.08.14/responses/34.1_3.json",
+            "results/llama-fn-25.08.14/responses/34.1_4.json",
+            "results/llama-fn-25.08.14/responses/34.1_5.json"
+        ]
+    },
+    "39": {
+        "num": "39",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/39_seaborn_countplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/39.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/39_1.json",
+            "results/llama-fn-25.08.14/messages/39_2.json",
+            "results/llama-fn-25.08.14/messages/39_3.json",
+            "results/llama-fn-25.08.14/messages/39_4.json",
+            "results/llama-fn-25.08.14/messages/39_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/39_1.json",
+            "results/llama-fn-25.08.14/responses/39_2.json",
+            "results/llama-fn-25.08.14/responses/39_3.json",
+            "results/llama-fn-25.08.14/responses/39_4.json",
+            "results/llama-fn-25.08.14/responses/39_5.json"
+        ]
+    },
+    "40.1": {
+        "num": "40.1",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/40_1_seaborn_scatterplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/40.1.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/40.1_1.json",
+            "results/llama-fn-25.08.14/messages/40.1_2.json",
+            "results/llama-fn-25.08.14/messages/40.1_3.json",
+            "results/llama-fn-25.08.14/messages/40.1_4.json",
+            "results/llama-fn-25.08.14/messages/40.1_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/40.1_1.json",
+            "results/llama-fn-25.08.14/responses/40.1_2.json",
+            "results/llama-fn-25.08.14/responses/40.1_3.json",
+            "results/llama-fn-25.08.14/responses/40.1_4.json",
+            "results/llama-fn-25.08.14/responses/40.1_5.json"
+        ]
+    },
+    "42": {
+        "num": "42",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/42_pandas_replace.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/42.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/42_1.json",
+            "results/llama-fn-25.08.14/messages/42_2.json",
+            "results/llama-fn-25.08.14/messages/42_3.json",
+            "results/llama-fn-25.08.14/messages/42_4.json",
+            "results/llama-fn-25.08.14/messages/42_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/42_1.json",
+            "results/llama-fn-25.08.14/responses/42_2.json",
+            "results/llama-fn-25.08.14/responses/42_3.json",
+            "results/llama-fn-25.08.14/responses/42_4.json",
+            "results/llama-fn-25.08.14/responses/42_5.json"
+        ]
+    },
+    "43": {
+        "num": "43",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/43_scikitlearn_roc.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/43.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/43_1.json",
+            "results/llama-fn-25.08.14/messages/43_2.json",
+            "results/llama-fn-25.08.14/messages/43_3.json",
+            "results/llama-fn-25.08.14/messages/43_4.json",
+            "results/llama-fn-25.08.14/messages/43_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/43_1.json",
+            "results/llama-fn-25.08.14/responses/43_2.json",
+            "results/llama-fn-25.08.14/responses/43_3.json",
+            "results/llama-fn-25.08.14/responses/43_4.json",
+            "results/llama-fn-25.08.14/responses/43_5.json"
+        ]
+    },
+    "44": {
+        "num": "44",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/44.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/44_1.json",
+            "results/llama-fn-25.08.14/messages/44_2.json",
+            "results/llama-fn-25.08.14/messages/44_3.json",
+            "results/llama-fn-25.08.14/messages/44_4.json",
+            "results/llama-fn-25.08.14/messages/44_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/44_1.json",
+            "results/llama-fn-25.08.14/responses/44_2.json",
+            "results/llama-fn-25.08.14/responses/44_3.json",
+            "results/llama-fn-25.08.14/responses/44_4.json",
+            "results/llama-fn-25.08.14/responses/44_5.json"
+        ]
+    },
+    "47": {
+        "num": "47",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/47_matplotlib_datestr2num.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/47.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/47_1.json",
+            "results/llama-fn-25.08.14/messages/47_2.json",
+            "results/llama-fn-25.08.14/messages/47_3.json",
+            "results/llama-fn-25.08.14/messages/47_4.json",
+            "results/llama-fn-25.08.14/messages/47_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/47_1.json",
+            "results/llama-fn-25.08.14/responses/47_2.json",
+            "results/llama-fn-25.08.14/responses/47_3.json",
+            "results/llama-fn-25.08.14/responses/47_4.json",
+            "results/llama-fn-25.08.14/responses/47_5.json"
+        ]
+    },
+    "48": {
+        "num": "48",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/48_matplotlib_close.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/48.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/48_1.json",
+            "results/llama-fn-25.08.14/messages/48_2.json",
+            "results/llama-fn-25.08.14/messages/48_3.json",
+            "results/llama-fn-25.08.14/messages/48_4.json",
+            "results/llama-fn-25.08.14/messages/48_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/48_1.json",
+            "results/llama-fn-25.08.14/responses/48_2.json",
+            "results/llama-fn-25.08.14/responses/48_3.json",
+            "results/llama-fn-25.08.14/responses/48_4.json",
+            "results/llama-fn-25.08.14/responses/48_5.json"
+        ]
+    },
+    "49": {
+        "num": "49",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/49_seaborn_style.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/49.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/49_1.json",
+            "results/llama-fn-25.08.14/messages/49_2.json",
+            "results/llama-fn-25.08.14/messages/49_3.json",
+            "results/llama-fn-25.08.14/messages/49_4.json",
+            "results/llama-fn-25.08.14/messages/49_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/49_1.json",
+            "results/llama-fn-25.08.14/responses/49_2.json",
+            "results/llama-fn-25.08.14/responses/49_3.json",
+            "results/llama-fn-25.08.14/responses/49_4.json",
+            "results/llama-fn-25.08.14/responses/49_5.json"
+        ]
+    },
+    "50": {
+        "num": "50",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/50_seaborn_lineplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/50.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/50_1.json",
+            "results/llama-fn-25.08.14/messages/50_2.json",
+            "results/llama-fn-25.08.14/messages/50_3.json",
+            "results/llama-fn-25.08.14/messages/50_4.json",
+            "results/llama-fn-25.08.14/messages/50_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/50_1.json",
+            "results/llama-fn-25.08.14/responses/50_2.json",
+            "results/llama-fn-25.08.14/responses/50_3.json",
+            "results/llama-fn-25.08.14/responses/50_4.json",
+            "results/llama-fn-25.08.14/responses/50_5.json"
+        ]
+    },
+    "153": {
+        "num": "153",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/153_matplotlib_addaxes.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/153.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/153_1.json",
+            "results/llama-fn-25.08.14/messages/153_2.json",
+            "results/llama-fn-25.08.14/messages/153_3.json",
+            "results/llama-fn-25.08.14/messages/153_4.json",
+            "results/llama-fn-25.08.14/messages/153_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/153_1.json",
+            "results/llama-fn-25.08.14/responses/153_2.json",
+            "results/llama-fn-25.08.14/responses/153_3.json",
+            "results/llama-fn-25.08.14/responses/153_4.json",
+            "results/llama-fn-25.08.14/responses/153_5.json"
+        ]
+    },
+    "226": {
+        "num": "226",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/226_matplotlib_setxticks.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/226.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/226_1.json",
+            "results/llama-fn-25.08.14/messages/226_2.json",
+            "results/llama-fn-25.08.14/messages/226_3.json",
+            "results/llama-fn-25.08.14/messages/226_4.json",
+            "results/llama-fn-25.08.14/messages/226_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/226_1.json",
+            "results/llama-fn-25.08.14/responses/226_2.json",
+            "results/llama-fn-25.08.14/responses/226_3.json",
+            "results/llama-fn-25.08.14/responses/226_4.json",
+            "results/llama-fn-25.08.14/responses/226_5.json"
+        ]
+    },
+    "930": {
+        "num": "930",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/930_numpy_squeeze.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/930.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/930_1.json",
+            "results/llama-fn-25.08.14/messages/930_2.json",
+            "results/llama-fn-25.08.14/messages/930_3.json",
+            "results/llama-fn-25.08.14/messages/930_4.json",
+            "results/llama-fn-25.08.14/messages/930_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/930_1.json",
+            "results/llama-fn-25.08.14/responses/930_2.json",
+            "results/llama-fn-25.08.14/responses/930_3.json",
+            "results/llama-fn-25.08.14/responses/930_4.json",
+            "results/llama-fn-25.08.14/responses/930_5.json"
+        ]
+    },
+    "1732": {
+        "num": "1732",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1732_numpy_astype.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1732.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1732_1.json",
+            "results/llama-fn-25.08.14/messages/1732_2.json",
+            "results/llama-fn-25.08.14/messages/1732_3.json",
+            "results/llama-fn-25.08.14/messages/1732_4.json",
+            "results/llama-fn-25.08.14/messages/1732_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1732_1.json",
+            "results/llama-fn-25.08.14/responses/1732_2.json",
+            "results/llama-fn-25.08.14/responses/1732_3.json",
+            "results/llama-fn-25.08.14/responses/1732_4.json",
+            "results/llama-fn-25.08.14/responses/1732_5.json"
+        ]
+    },
+    "1933": {
+        "num": "1933",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1933_numpy_amin.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1933.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1933_1.json",
+            "results/llama-fn-25.08.14/messages/1933_2.json",
+            "results/llama-fn-25.08.14/messages/1933_3.json",
+            "results/llama-fn-25.08.14/messages/1933_4.json",
+            "results/llama-fn-25.08.14/messages/1933_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1933_1.json",
+            "results/llama-fn-25.08.14/responses/1933_2.json",
+            "results/llama-fn-25.08.14/responses/1933_3.json",
+            "results/llama-fn-25.08.14/responses/1933_4.json",
+            "results/llama-fn-25.08.14/responses/1933_5.json"
+        ]
+    },
+    "1933c": {
+        "num": "1933c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1933c_numpy_amin.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1933c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1933c_1.json",
+            "results/llama-fn-25.08.14/messages/1933c_2.json",
+            "results/llama-fn-25.08.14/messages/1933c_3.json",
+            "results/llama-fn-25.08.14/messages/1933c_4.json",
+            "results/llama-fn-25.08.14/messages/1933c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1933c_1.json",
+            "results/llama-fn-25.08.14/responses/1933c_2.json",
+            "results/llama-fn-25.08.14/responses/1933c_3.json",
+            "results/llama-fn-25.08.14/responses/1933c_4.json",
+            "results/llama-fn-25.08.14/responses/1933c_5.json"
+        ]
+    },
+    "2750": {
+        "num": "2750",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2750_scikitlearn_rocauc.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/2750.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/2750_1.json",
+            "results/llama-fn-25.08.14/messages/2750_2.json",
+            "results/llama-fn-25.08.14/messages/2750_3.json",
+            "results/llama-fn-25.08.14/messages/2750_4.json",
+            "results/llama-fn-25.08.14/messages/2750_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/2750_1.json",
+            "results/llama-fn-25.08.14/responses/2750_2.json",
+            "results/llama-fn-25.08.14/responses/2750_3.json",
+            "results/llama-fn-25.08.14/responses/2750_4.json",
+            "results/llama-fn-25.08.14/responses/2750_5.json"
+        ]
+    },
+    "2750c": {
+        "num": "2750c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2750c_scikitlearn_rocauc.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/2750c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/2750c_1.json",
+            "results/llama-fn-25.08.14/messages/2750c_2.json",
+            "results/llama-fn-25.08.14/messages/2750c_3.json",
+            "results/llama-fn-25.08.14/messages/2750c_4.json",
+            "results/llama-fn-25.08.14/messages/2750c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/2750c_1.json",
+            "results/llama-fn-25.08.14/responses/2750c_2.json",
+            "results/llama-fn-25.08.14/responses/2750c_3.json",
+            "results/llama-fn-25.08.14/responses/2750c_4.json",
+            "results/llama-fn-25.08.14/responses/2750c_5.json"
+        ]
+    },
+    "3010": {
+        "num": "3010",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/3010_numpy_copyto.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3010.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3010_1.json",
+            "results/llama-fn-25.08.14/messages/3010_2.json",
+            "results/llama-fn-25.08.14/messages/3010_3.json",
+            "results/llama-fn-25.08.14/messages/3010_4.json",
+            "results/llama-fn-25.08.14/messages/3010_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3010_1.json",
+            "results/llama-fn-25.08.14/responses/3010_2.json",
+            "results/llama-fn-25.08.14/responses/3010_3.json",
+            "results/llama-fn-25.08.14/responses/3010_4.json",
+            "results/llama-fn-25.08.14/responses/3010_5.json"
+        ]
+    },
+    "3010c": {
+        "num": "3010c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/3010c_numpy_copyto.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3010c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3010c_1.json",
+            "results/llama-fn-25.08.14/messages/3010c_2.json",
+            "results/llama-fn-25.08.14/messages/3010c_3.json",
+            "results/llama-fn-25.08.14/messages/3010c_4.json",
+            "results/llama-fn-25.08.14/messages/3010c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3010c_1.json",
+            "results/llama-fn-25.08.14/responses/3010c_2.json",
+            "results/llama-fn-25.08.14/responses/3010c_3.json",
+            "results/llama-fn-25.08.14/responses/3010c_4.json",
+            "results/llama-fn-25.08.14/responses/3010c_5.json"
+        ]
+    },
+    "3046": {
+        "num": "3046",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/3046_matplotlib_gcf.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3046.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3046_1.json",
+            "results/llama-fn-25.08.14/messages/3046_2.json",
+            "results/llama-fn-25.08.14/messages/3046_3.json",
+            "results/llama-fn-25.08.14/messages/3046_4.json",
+            "results/llama-fn-25.08.14/messages/3046_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3046_1.json",
+            "results/llama-fn-25.08.14/responses/3046_2.json",
+            "results/llama-fn-25.08.14/responses/3046_3.json",
+            "results/llama-fn-25.08.14/responses/3046_4.json",
+            "results/llama-fn-25.08.14/responses/3046_5.json"
+        ]
+    },
+    "3046c": {
+        "num": "3046c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/3046c_matplotlib_gcf.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3046c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3046c_1.json",
+            "results/llama-fn-25.08.14/messages/3046c_2.json",
+            "results/llama-fn-25.08.14/messages/3046c_3.json",
+            "results/llama-fn-25.08.14/messages/3046c_4.json",
+            "results/llama-fn-25.08.14/messages/3046c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3046c_1.json",
+            "results/llama-fn-25.08.14/responses/3046c_2.json",
+            "results/llama-fn-25.08.14/responses/3046c_3.json",
+            "results/llama-fn-25.08.14/responses/3046c_4.json",
+            "results/llama-fn-25.08.14/responses/3046c_5.json"
+        ]
+    },
+    "3893": {
+        "num": "3893",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/3893_scikitlearn_predict.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3893.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3893_1.json",
+            "results/llama-fn-25.08.14/messages/3893_2.json",
+            "results/llama-fn-25.08.14/messages/3893_3.json",
+            "results/llama-fn-25.08.14/messages/3893_4.json",
+            "results/llama-fn-25.08.14/messages/3893_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3893_1.json",
+            "results/llama-fn-25.08.14/responses/3893_2.json",
+            "results/llama-fn-25.08.14/responses/3893_3.json",
+            "results/llama-fn-25.08.14/responses/3893_4.json",
+            "results/llama-fn-25.08.14/responses/3893_5.json"
+        ]
+    },
+    "3893c": {
+        "num": "3893c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/3893c_scikitlearn_predict.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/3893c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/3893c_1.json",
+            "results/llama-fn-25.08.14/messages/3893c_2.json",
+            "results/llama-fn-25.08.14/messages/3893c_3.json",
+            "results/llama-fn-25.08.14/messages/3893c_4.json",
+            "results/llama-fn-25.08.14/messages/3893c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/3893c_1.json",
+            "results/llama-fn-25.08.14/responses/3893c_2.json",
+            "results/llama-fn-25.08.14/responses/3893c_3.json",
+            "results/llama-fn-25.08.14/responses/3893c_4.json",
+            "results/llama-fn-25.08.14/responses/3893c_5.json"
+        ]
+    },
+    "4617": {
+        "num": "4617",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4617_numpy_intersect1d.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4617.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4617_1.json",
+            "results/llama-fn-25.08.14/messages/4617_2.json",
+            "results/llama-fn-25.08.14/messages/4617_3.json",
+            "results/llama-fn-25.08.14/messages/4617_4.json",
+            "results/llama-fn-25.08.14/messages/4617_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4617_1.json",
+            "results/llama-fn-25.08.14/responses/4617_2.json",
+            "results/llama-fn-25.08.14/responses/4617_3.json",
+            "results/llama-fn-25.08.14/responses/4617_4.json",
+            "results/llama-fn-25.08.14/responses/4617_5.json"
+        ]
+    },
+    "4617c": {
+        "num": "4617c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4617c_numpy_intersect1d.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4617c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4617c_1.json",
+            "results/llama-fn-25.08.14/messages/4617c_2.json",
+            "results/llama-fn-25.08.14/messages/4617c_3.json",
+            "results/llama-fn-25.08.14/messages/4617c_4.json",
+            "results/llama-fn-25.08.14/messages/4617c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4617c_1.json",
+            "results/llama-fn-25.08.14/responses/4617c_2.json",
+            "results/llama-fn-25.08.14/responses/4617c_3.json",
+            "results/llama-fn-25.08.14/responses/4617c_4.json",
+            "results/llama-fn-25.08.14/responses/4617c_5.json"
+        ]
+    },
+    "4714": {
+        "num": "4714",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4714_numpy_einsum.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4714.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4714_1.json",
+            "results/llama-fn-25.08.14/messages/4714_2.json",
+            "results/llama-fn-25.08.14/messages/4714_3.json",
+            "results/llama-fn-25.08.14/messages/4714_4.json",
+            "results/llama-fn-25.08.14/messages/4714_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4714_1.json",
+            "results/llama-fn-25.08.14/responses/4714_2.json",
+            "results/llama-fn-25.08.14/responses/4714_3.json",
+            "results/llama-fn-25.08.14/responses/4714_4.json",
+            "results/llama-fn-25.08.14/responses/4714_5.json"
+        ]
+    },
+    "4714c": {
+        "num": "4714c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4714c_numpy_einsum.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4714c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4714c_1.json",
+            "results/llama-fn-25.08.14/messages/4714c_2.json",
+            "results/llama-fn-25.08.14/messages/4714c_3.json",
+            "results/llama-fn-25.08.14/messages/4714c_4.json",
+            "results/llama-fn-25.08.14/messages/4714c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4714c_1.json",
+            "results/llama-fn-25.08.14/responses/4714c_2.json",
+            "results/llama-fn-25.08.14/responses/4714c_3.json",
+            "results/llama-fn-25.08.14/responses/4714c_4.json",
+            "results/llama-fn-25.08.14/responses/4714c_5.json"
+        ]
+    },
+    "4780c": {
+        "num": "4780c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/4780c_scikitlearn_robustscaler.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4780c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4780c_1.json",
+            "results/llama-fn-25.08.14/messages/4780c_2.json",
+            "results/llama-fn-25.08.14/messages/4780c_3.json",
+            "results/llama-fn-25.08.14/messages/4780c_4.json",
+            "results/llama-fn-25.08.14/messages/4780c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4780c_1.json",
+            "results/llama-fn-25.08.14/responses/4780c_2.json",
+            "results/llama-fn-25.08.14/responses/4780c_3.json",
+            "results/llama-fn-25.08.14/responses/4780c_4.json",
+            "results/llama-fn-25.08.14/responses/4780c_5.json"
+        ]
+    },
+    "1c": {
+        "num": "1c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/1c_scikitlearn_onehotencoder.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1c_1.json",
+            "results/llama-fn-25.08.14/messages/1c_2.json",
+            "results/llama-fn-25.08.14/messages/1c_3.json",
+            "results/llama-fn-25.08.14/messages/1c_4.json",
+            "results/llama-fn-25.08.14/messages/1c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1c_1.json",
+            "results/llama-fn-25.08.14/responses/1c_2.json",
+            "results/llama-fn-25.08.14/responses/1c_3.json",
+            "results/llama-fn-25.08.14/responses/1c_4.json",
+            "results/llama-fn-25.08.14/responses/1c_5.json"
+        ]
+    },
+    "2c": {
+        "num": "2c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2c_scikitlearn_dbscan.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/2c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/2c_1.json",
+            "results/llama-fn-25.08.14/messages/2c_2.json",
+            "results/llama-fn-25.08.14/messages/2c_3.json",
+            "results/llama-fn-25.08.14/messages/2c_4.json",
+            "results/llama-fn-25.08.14/messages/2c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/2c_1.json",
+            "results/llama-fn-25.08.14/responses/2c_2.json",
+            "results/llama-fn-25.08.14/responses/2c_3.json",
+            "results/llama-fn-25.08.14/responses/2c_4.json",
+            "results/llama-fn-25.08.14/responses/2c_5.json"
+        ]
+    },
+    "4c": {
+        "num": "4c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/4c_matplotlib_rcparams.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/4c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/4c_1.json",
+            "results/llama-fn-25.08.14/messages/4c_2.json",
+            "results/llama-fn-25.08.14/messages/4c_3.json",
+            "results/llama-fn-25.08.14/messages/4c_4.json",
+            "results/llama-fn-25.08.14/messages/4c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/4c_1.json",
+            "results/llama-fn-25.08.14/responses/4c_2.json",
+            "results/llama-fn-25.08.14/responses/4c_3.json",
+            "results/llama-fn-25.08.14/responses/4c_4.json",
+            "results/llama-fn-25.08.14/responses/4c_5.json"
+        ]
+    },
+    "6c": {
+        "num": "6c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/6c_matplotlib_setxticklabels.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/6c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/6c_1.json",
+            "results/llama-fn-25.08.14/messages/6c_2.json",
+            "results/llama-fn-25.08.14/messages/6c_3.json",
+            "results/llama-fn-25.08.14/messages/6c_4.json",
+            "results/llama-fn-25.08.14/messages/6c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/6c_1.json",
+            "results/llama-fn-25.08.14/responses/6c_2.json",
+            "results/llama-fn-25.08.14/responses/6c_3.json",
+            "results/llama-fn-25.08.14/responses/6c_4.json",
+            "results/llama-fn-25.08.14/responses/6c_5.json"
+        ]
+    },
+    "8c": {
+        "num": "8c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/8c_pandas_chainindexing.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/8c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/8c_1.json",
+            "results/llama-fn-25.08.14/messages/8c_2.json",
+            "results/llama-fn-25.08.14/messages/8c_3.json",
+            "results/llama-fn-25.08.14/messages/8c_4.json",
+            "results/llama-fn-25.08.14/messages/8c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/8c_1.json",
+            "results/llama-fn-25.08.14/responses/8c_2.json",
+            "results/llama-fn-25.08.14/responses/8c_3.json",
+            "results/llama-fn-25.08.14/responses/8c_4.json",
+            "results/llama-fn-25.08.14/responses/8c_5.json"
+        ]
+    },
+    "10c": {
+        "num": "10c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/10c_seaborn_lmplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/10c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/10c_1.json",
+            "results/llama-fn-25.08.14/messages/10c_2.json",
+            "results/llama-fn-25.08.14/messages/10c_3.json",
+            "results/llama-fn-25.08.14/messages/10c_4.json",
+            "results/llama-fn-25.08.14/messages/10c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/10c_1.json",
+            "results/llama-fn-25.08.14/responses/10c_2.json",
+            "results/llama-fn-25.08.14/responses/10c_3.json",
+            "results/llama-fn-25.08.14/responses/10c_4.json",
+            "results/llama-fn-25.08.14/responses/10c_5.json"
+        ]
+    },
+    "18c": {
+        "num": "18c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "code_file_path": "code_snippets/18c_seaborn_distplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/18c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/18c_1.json",
+            "results/llama-fn-25.08.14/messages/18c_2.json",
+            "results/llama-fn-25.08.14/messages/18c_3.json",
+            "results/llama-fn-25.08.14/messages/18c_4.json",
+            "results/llama-fn-25.08.14/messages/18c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/18c_1.json",
+            "results/llama-fn-25.08.14/responses/18c_2.json",
+            "results/llama-fn-25.08.14/responses/18c_3.json",
+            "results/llama-fn-25.08.14/responses/18c_4.json",
+            "results/llama-fn-25.08.14/responses/18c_5.json"
+        ]
+    },
+    "19c": {
+        "num": "19c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/19c_matplotlib_legend.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/19c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/19c_1.json",
+            "results/llama-fn-25.08.14/messages/19c_2.json",
+            "results/llama-fn-25.08.14/messages/19c_3.json",
+            "results/llama-fn-25.08.14/messages/19c_4.json",
+            "results/llama-fn-25.08.14/messages/19c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/19c_1.json",
+            "results/llama-fn-25.08.14/responses/19c_2.json",
+            "results/llama-fn-25.08.14/responses/19c_3.json",
+            "results/llama-fn-25.08.14/responses/19c_4.json",
+            "results/llama-fn-25.08.14/responses/19c_5.json"
+        ]
+    },
+    "22c": {
+        "num": "22c",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/22c_numpy_log.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/22c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/22c_1.json",
+            "results/llama-fn-25.08.14/messages/22c_2.json",
+            "results/llama-fn-25.08.14/messages/22c_3.json",
+            "results/llama-fn-25.08.14/messages/22c_4.json",
+            "results/llama-fn-25.08.14/messages/22c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/22c_1.json",
+            "results/llama-fn-25.08.14/responses/22c_2.json",
+            "results/llama-fn-25.08.14/responses/22c_3.json",
+            "results/llama-fn-25.08.14/responses/22c_4.json",
+            "results/llama-fn-25.08.14/responses/22c_5.json"
+        ]
+    },
+    "24c": {
+        "num": "24c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/24c_pandas_resetindex.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/24c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/24c_1.json",
+            "results/llama-fn-25.08.14/messages/24c_2.json",
+            "results/llama-fn-25.08.14/messages/24c_3.json",
+            "results/llama-fn-25.08.14/messages/24c_4.json",
+            "results/llama-fn-25.08.14/messages/24c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/24c_1.json",
+            "results/llama-fn-25.08.14/responses/24c_2.json",
+            "results/llama-fn-25.08.14/responses/24c_3.json",
+            "results/llama-fn-25.08.14/responses/24c_4.json",
+            "results/llama-fn-25.08.14/responses/24c_5.json"
+        ]
+    },
+    "26c": {
+        "num": "26c",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/26c_numpy_insert.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/26c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/26c_1.json",
+            "results/llama-fn-25.08.14/messages/26c_2.json",
+            "results/llama-fn-25.08.14/messages/26c_3.json",
+            "results/llama-fn-25.08.14/messages/26c_4.json",
+            "results/llama-fn-25.08.14/messages/26c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/26c_1.json",
+            "results/llama-fn-25.08.14/responses/26c_2.json",
+            "results/llama-fn-25.08.14/responses/26c_3.json",
+            "results/llama-fn-25.08.14/responses/26c_4.json",
+            "results/llama-fn-25.08.14/responses/26c_5.json"
+        ]
+    },
+    "28c": {
+        "num": "28c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/28c_scikitlearn_predict.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/28c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/28c_1.json",
+            "results/llama-fn-25.08.14/messages/28c_2.json",
+            "results/llama-fn-25.08.14/messages/28c_3.json",
+            "results/llama-fn-25.08.14/messages/28c_4.json",
+            "results/llama-fn-25.08.14/messages/28c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/28c_1.json",
+            "results/llama-fn-25.08.14/responses/28c_2.json",
+            "results/llama-fn-25.08.14/responses/28c_3.json",
+            "results/llama-fn-25.08.14/responses/28c_4.json",
+            "results/llama-fn-25.08.14/responses/28c_5.json"
+        ]
+    },
+    "30c": {
+        "num": "30c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/30c_matplotlib_text.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/30c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/30c_1.json",
+            "results/llama-fn-25.08.14/messages/30c_2.json",
+            "results/llama-fn-25.08.14/messages/30c_3.json",
+            "results/llama-fn-25.08.14/messages/30c_4.json",
+            "results/llama-fn-25.08.14/messages/30c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/30c_1.json",
+            "results/llama-fn-25.08.14/responses/30c_2.json",
+            "results/llama-fn-25.08.14/responses/30c_3.json",
+            "results/llama-fn-25.08.14/responses/30c_4.json",
+            "results/llama-fn-25.08.14/responses/30c_5.json"
+        ]
+    },
+    "31c": {
+        "num": "31c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/31c_matplotlib_axvspan.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/31c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/31c_1.json",
+            "results/llama-fn-25.08.14/messages/31c_2.json",
+            "results/llama-fn-25.08.14/messages/31c_3.json",
+            "results/llama-fn-25.08.14/messages/31c_4.json",
+            "results/llama-fn-25.08.14/messages/31c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/31c_1.json",
+            "results/llama-fn-25.08.14/responses/31c_2.json",
+            "results/llama-fn-25.08.14/responses/31c_3.json",
+            "results/llama-fn-25.08.14/responses/31c_4.json",
+            "results/llama-fn-25.08.14/responses/31c_5.json"
+        ]
+    },
+    "33c": {
+        "num": "33c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/33c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/33c_1.json",
+            "results/llama-fn-25.08.14/messages/33c_2.json",
+            "results/llama-fn-25.08.14/messages/33c_3.json",
+            "results/llama-fn-25.08.14/messages/33c_4.json",
+            "results/llama-fn-25.08.14/messages/33c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/33c_1.json",
+            "results/llama-fn-25.08.14/responses/33c_2.json",
+            "results/llama-fn-25.08.14/responses/33c_3.json",
+            "results/llama-fn-25.08.14/responses/33c_4.json",
+            "results/llama-fn-25.08.14/responses/33c_5.json"
+        ]
+    },
+    "34.1c": {
+        "num": "34.1c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/34_1c_scikitlearn_simpleimputer.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/34.1c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/34.1c_1.json",
+            "results/llama-fn-25.08.14/messages/34.1c_2.json",
+            "results/llama-fn-25.08.14/messages/34.1c_3.json",
+            "results/llama-fn-25.08.14/messages/34.1c_4.json",
+            "results/llama-fn-25.08.14/messages/34.1c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/34.1c_1.json",
+            "results/llama-fn-25.08.14/responses/34.1c_2.json",
+            "results/llama-fn-25.08.14/responses/34.1c_3.json",
+            "results/llama-fn-25.08.14/responses/34.1c_4.json",
+            "results/llama-fn-25.08.14/responses/34.1c_5.json"
+        ]
+    },
+    "39c": {
+        "num": "39c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/39c_seaborn_countplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/39c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/39c_1.json",
+            "results/llama-fn-25.08.14/messages/39c_2.json",
+            "results/llama-fn-25.08.14/messages/39c_3.json",
+            "results/llama-fn-25.08.14/messages/39c_4.json",
+            "results/llama-fn-25.08.14/messages/39c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/39c_1.json",
+            "results/llama-fn-25.08.14/responses/39c_2.json",
+            "results/llama-fn-25.08.14/responses/39c_3.json",
+            "results/llama-fn-25.08.14/responses/39c_4.json",
+            "results/llama-fn-25.08.14/responses/39c_5.json"
+        ]
+    },
+    "40.1c": {
+        "num": "40.1c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/40_1c_seaborn_scatterplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/40.1c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/40.1c_1.json",
+            "results/llama-fn-25.08.14/messages/40.1c_2.json",
+            "results/llama-fn-25.08.14/messages/40.1c_3.json",
+            "results/llama-fn-25.08.14/messages/40.1c_4.json",
+            "results/llama-fn-25.08.14/messages/40.1c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/40.1c_1.json",
+            "results/llama-fn-25.08.14/responses/40.1c_2.json",
+            "results/llama-fn-25.08.14/responses/40.1c_3.json",
+            "results/llama-fn-25.08.14/responses/40.1c_4.json",
+            "results/llama-fn-25.08.14/responses/40.1c_5.json"
+        ]
+    },
+    "42c": {
+        "num": "42c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/42c_pandas_replace.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/42c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/42c_1.json",
+            "results/llama-fn-25.08.14/messages/42c_2.json",
+            "results/llama-fn-25.08.14/messages/42c_3.json",
+            "results/llama-fn-25.08.14/messages/42c_4.json",
+            "results/llama-fn-25.08.14/messages/42c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/42c_1.json",
+            "results/llama-fn-25.08.14/responses/42c_2.json",
+            "results/llama-fn-25.08.14/responses/42c_3.json",
+            "results/llama-fn-25.08.14/responses/42c_4.json",
+            "results/llama-fn-25.08.14/responses/42c_5.json"
+        ]
+    },
+    "43c": {
+        "num": "43c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/43c_scikitlearn_roc.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/43c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/43c_1.json",
+            "results/llama-fn-25.08.14/messages/43c_2.json",
+            "results/llama-fn-25.08.14/messages/43c_3.json",
+            "results/llama-fn-25.08.14/messages/43c_4.json",
+            "results/llama-fn-25.08.14/messages/43c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/43c_1.json",
+            "results/llama-fn-25.08.14/responses/43c_2.json",
+            "results/llama-fn-25.08.14/responses/43c_3.json",
+            "results/llama-fn-25.08.14/responses/43c_4.json",
+            "results/llama-fn-25.08.14/responses/43c_5.json"
+        ]
+    },
+    "44c": {
+        "num": "44c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/44c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/44c_1.json",
+            "results/llama-fn-25.08.14/messages/44c_2.json",
+            "results/llama-fn-25.08.14/messages/44c_3.json",
+            "results/llama-fn-25.08.14/messages/44c_4.json",
+            "results/llama-fn-25.08.14/messages/44c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/44c_1.json",
+            "results/llama-fn-25.08.14/responses/44c_2.json",
+            "results/llama-fn-25.08.14/responses/44c_3.json",
+            "results/llama-fn-25.08.14/responses/44c_4.json",
+            "results/llama-fn-25.08.14/responses/44c_5.json"
+        ]
+    },
+    "47c": {
+        "num": "47c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/47c_matplotlib_datestr2num.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/47c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/47c_1.json",
+            "results/llama-fn-25.08.14/messages/47c_2.json",
+            "results/llama-fn-25.08.14/messages/47c_3.json",
+            "results/llama-fn-25.08.14/messages/47c_4.json",
+            "results/llama-fn-25.08.14/messages/47c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/47c_1.json",
+            "results/llama-fn-25.08.14/responses/47c_2.json",
+            "results/llama-fn-25.08.14/responses/47c_3.json",
+            "results/llama-fn-25.08.14/responses/47c_4.json",
+            "results/llama-fn-25.08.14/responses/47c_5.json"
+        ]
+    },
+    "48c": {
+        "num": "48c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/48c_matplotlib_close.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/48c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/48c_1.json",
+            "results/llama-fn-25.08.14/messages/48c_2.json",
+            "results/llama-fn-25.08.14/messages/48c_3.json",
+            "results/llama-fn-25.08.14/messages/48c_4.json",
+            "results/llama-fn-25.08.14/messages/48c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/48c_1.json",
+            "results/llama-fn-25.08.14/responses/48c_2.json",
+            "results/llama-fn-25.08.14/responses/48c_3.json",
+            "results/llama-fn-25.08.14/responses/48c_4.json",
+            "results/llama-fn-25.08.14/responses/48c_5.json"
+        ]
+    },
+    "49c": {
+        "num": "49c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/49c_seaborn_style.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/49c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/49c_1.json",
+            "results/llama-fn-25.08.14/messages/49c_2.json",
+            "results/llama-fn-25.08.14/messages/49c_3.json",
+            "results/llama-fn-25.08.14/messages/49c_4.json",
+            "results/llama-fn-25.08.14/messages/49c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/49c_1.json",
+            "results/llama-fn-25.08.14/responses/49c_2.json",
+            "results/llama-fn-25.08.14/responses/49c_3.json",
+            "results/llama-fn-25.08.14/responses/49c_4.json",
+            "results/llama-fn-25.08.14/responses/49c_5.json"
+        ]
+    },
+    "50c": {
+        "num": "50c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/50c_seaborn_lineplot.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/50c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/50c_1.json",
+            "results/llama-fn-25.08.14/messages/50c_2.json",
+            "results/llama-fn-25.08.14/messages/50c_3.json",
+            "results/llama-fn-25.08.14/messages/50c_4.json",
+            "results/llama-fn-25.08.14/messages/50c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/50c_1.json",
+            "results/llama-fn-25.08.14/responses/50c_2.json",
+            "results/llama-fn-25.08.14/responses/50c_3.json",
+            "results/llama-fn-25.08.14/responses/50c_4.json",
+            "results/llama-fn-25.08.14/responses/50c_5.json"
+        ]
+    },
+    "153c": {
+        "num": "153c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/153c_matplotlib_addaxes.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/153c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/153c_1.json",
+            "results/llama-fn-25.08.14/messages/153c_2.json",
+            "results/llama-fn-25.08.14/messages/153c_3.json",
+            "results/llama-fn-25.08.14/messages/153c_4.json",
+            "results/llama-fn-25.08.14/messages/153c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/153c_1.json",
+            "results/llama-fn-25.08.14/responses/153c_2.json",
+            "results/llama-fn-25.08.14/responses/153c_3.json",
+            "results/llama-fn-25.08.14/responses/153c_4.json",
+            "results/llama-fn-25.08.14/responses/153c_5.json"
+        ]
+    },
+    "226c": {
+        "num": "226c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/226c_matplotlib_setxticks.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/226c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/226c_1.json",
+            "results/llama-fn-25.08.14/messages/226c_2.json",
+            "results/llama-fn-25.08.14/messages/226c_3.json",
+            "results/llama-fn-25.08.14/messages/226c_4.json",
+            "results/llama-fn-25.08.14/messages/226c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/226c_1.json",
+            "results/llama-fn-25.08.14/responses/226c_2.json",
+            "results/llama-fn-25.08.14/responses/226c_3.json",
+            "results/llama-fn-25.08.14/responses/226c_4.json",
+            "results/llama-fn-25.08.14/responses/226c_5.json"
+        ]
+    },
+    "930c": {
+        "num": "930c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/930c_numpy_squeeze.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/930c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/930c_1.json",
+            "results/llama-fn-25.08.14/messages/930c_2.json",
+            "results/llama-fn-25.08.14/messages/930c_3.json",
+            "results/llama-fn-25.08.14/messages/930c_4.json",
+            "results/llama-fn-25.08.14/messages/930c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/930c_1.json",
+            "results/llama-fn-25.08.14/responses/930c_2.json",
+            "results/llama-fn-25.08.14/responses/930c_3.json",
+            "results/llama-fn-25.08.14/responses/930c_4.json",
+            "results/llama-fn-25.08.14/responses/930c_5.json"
+        ]
+    },
+    "1732c": {
+        "num": "1732c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1732c_numpy_astype.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/1732c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/1732c_1.json",
+            "results/llama-fn-25.08.14/messages/1732c_2.json",
+            "results/llama-fn-25.08.14/messages/1732c_3.json",
+            "results/llama-fn-25.08.14/messages/1732c_4.json",
+            "results/llama-fn-25.08.14/messages/1732c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/1732c_1.json",
+            "results/llama-fn-25.08.14/responses/1732c_2.json",
+            "results/llama-fn-25.08.14/responses/1732c_3.json",
+            "results/llama-fn-25.08.14/responses/1732c_4.json",
+            "results/llama-fn-25.08.14/responses/1732c_5.json"
+        ]
+    },
+    "23c": {
+        "num": "23c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/23c_seaborn_heatmap.py",
+        "prompt_file_path": "results/llama-fn-25.08.14/prompts/23c.txt",
+        "messages_file_path": [
+            "results/llama-fn-25.08.14/messages/23c_1.json",
+            "results/llama-fn-25.08.14/messages/23c_2.json",
+            "results/llama-fn-25.08.14/messages/23c_3.json",
+            "results/llama-fn-25.08.14/messages/23c_4.json",
+            "results/llama-fn-25.08.14/messages/23c_5.json"
+        ],
+        "response_file_path": [
+            "results/llama-fn-25.08.14/responses/23c_1.json",
+            "results/llama-fn-25.08.14/responses/23c_2.json",
+            "results/llama-fn-25.08.14/responses/23c_3.json",
+            "results/llama-fn-25.08.14/responses/23c_4.json",
+            "results/llama-fn-25.08.14/responses/23c_5.json"
+        ]
+    }
+}

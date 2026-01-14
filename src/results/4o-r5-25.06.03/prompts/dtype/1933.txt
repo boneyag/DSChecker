@@ -1,0 +1,38 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library NumPy.
+Check this piece of code and decide if it correctly uses library NumPy.
+
+Here is information about the variable x at line 3 used in this code snippet.
+
+type: numpy.ndarray
+
+additional information: 
+dtype: int32 shape: (2, 3)
+
+sample: 
+[[-1, 2, 3], [-4, 2, 8]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	
+3	x = np.array([[-1, 2, 3], [-4, -2, 8]], dtype=np.float32)
+4	
+5	initial_value = None
+6	where_value = None
+7	
+8	res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)
+9	print(res)
+10	
+
+Your response:

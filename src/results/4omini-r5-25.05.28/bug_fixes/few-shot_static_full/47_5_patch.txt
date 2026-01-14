@@ -1,0 +1,4 @@
+8c8
+< x = datestr2num(days)
+---
+> x = [datestr2num(day) for day in days]

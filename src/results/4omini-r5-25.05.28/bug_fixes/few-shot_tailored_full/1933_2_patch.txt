@@ -1,0 +1,4 @@
+8c8
+< res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)
+---
+> res = np.amin(a=x, axis=1, keepdims=False, initial=0, where=np.ones_like(x, dtype=bool), out=None)

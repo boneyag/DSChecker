@@ -1,0 +1,7 @@
+12c12
+< categorical_features = ['city', 'country']
+---
+> categorical_features = ['city']
+> X['country'] = X['country'].astype(str)
+> categorical_features = ['city', 'country']
+

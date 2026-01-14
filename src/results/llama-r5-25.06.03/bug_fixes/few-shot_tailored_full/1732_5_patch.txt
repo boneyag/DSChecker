@@ -1,0 +1,8 @@
+7c7
+< assert sinc_result[0] == 1, "Results not equal to one"
+---
+> assert np.isclose(sinc_result[0], 1), "Results not equal to one"
+8c8
+< assert sinc_result[1] == 0, "Results not equal to zero"
+---
+> assert np.isclose(sinc_result[1], np.sinc(1)), "Results not equal to np.sinc(1)"

@@ -1,0 +1,4 @@
+8c8,9
+<	ax.legend()
+---
+> 	ax.legend(['Total Bill vs Tip'])

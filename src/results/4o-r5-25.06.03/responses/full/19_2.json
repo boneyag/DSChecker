@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` on line 8, but there is no legend to display because no labels are provided for the scatter plot points. This will result in an empty legend box.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\tax.legend([], [], frameon=False)\"\n}"

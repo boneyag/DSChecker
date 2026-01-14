@@ -1,0 +1,5 @@
+8c8
+<ax.legend()
+---
+># ax.legend()  # Commented out since no labels are specified
+

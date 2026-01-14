@@ -1,0 +1,46 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library PyTorch.
+Check this piece of code and decide if it correctly uses library PyTorch.
+
+PyTorch documentation states this guideline "Unlike expand(), this function copies the tensor’s data." for repeat API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable input at line 6 used in this code snippet.
+
+type: torch.Tensor
+
+additional information: 
+dtype:torch.float32 shape: torch.Size([24, 2, 3, 384, 384])
+
+sample: 
+[[[[[-1.1258, -1.1524, -0.2506],
+           [ 0.2942,  0.7973,  1.2642],
+           [ 0.4974,  0.2685,  1.4769]]]]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import torch
+2	
+3	torch.manual_seed(0)
+4	
+5	n = 128
+6	input = torch.randn(24, 2, 3, 384, 384)
+7	
+8	if len(input.shape) < 1:
+9	    raise AssertionError(input.shape)
+10	
+11	identity = torch.eye(n, device=input.device, dtype=input.dtype)
+12	identity = identity[None].expand(input.shape[0], n, n)
+13	print(identity.shape)
+14	
+
+Your response:

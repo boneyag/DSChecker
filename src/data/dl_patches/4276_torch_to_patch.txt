@@ -1,0 +1,6 @@
+19a20,24
+>         dtype = hs_pad.dtype
+> 
+>         if dtype == torch.float16:
+>             hs_pad = hs_pad.to(dtype=torch.float32)
+> 

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `distplot` function used in the code is deprecated and will be removed in seaborn v0.14.0. It has been replaced by `histplot` and `displot`, which offer a modern API and more capabilities.\",\n  \"patch\": \"5c5\\n< sns.distplot(data.tip, norm_hist=False)\\n---\\n> sns.histplot(data.tip, kde=True)\"\n}"

@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code incorrectly uses the seaborn set_context and set_style functions. The rc parameter should be passed to axes_style() and set_style(), not set_context().\",\n  \"patch\": \"8c8\\n<sns.set_context(rc=scale_dict)\\n---\\n>sns.set_context()\\n14c14\\n<sns.set_style(rc=style_dict)\\n---\\n>sns.set_style(style_dict)\"\n}"

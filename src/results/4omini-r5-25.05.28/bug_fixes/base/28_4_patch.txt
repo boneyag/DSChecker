@@ -1,0 +1,6 @@
+20a21
+>if hasattr(clf, 'best_estimator_'):
+>    y_score = clf.best_estimator_.predict(X)
+>    print(f"accuracy: {accuracy_score(y, y_score)}")
+>else:
+>    print("Model has not been fitted yet.")

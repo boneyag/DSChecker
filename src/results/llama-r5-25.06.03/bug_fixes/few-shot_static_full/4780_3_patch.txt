@@ -1,0 +1,7 @@
+10,11c10,11
+< X_train_scaled = rb_scaler.fit_transform(X_train)
+< X_test_scaled = rb_scaler.fit_transform(X_test)
+---
+> X_train_scaled = rb_scaler.fit_transform(X_train)
+> X_test_scaled = rb_scaler.transform(X_test)
+

@@ -1,0 +1,5 @@
+20c20
+< sb.lineplot(data=None, x=df['X'].values.reshape(-1, 1), y=Y_pred)
+---
+> sb.lineplot(data=None, x=df['X'].values, y=Y_pred.flatten())
+

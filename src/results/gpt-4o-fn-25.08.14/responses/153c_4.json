@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code uses the `Axes3D` class directly to create a 3D axis, which is deprecated. Instead, the `add_subplot` method should be used to add a 3D subplot to the figure.\",\n  \"patch\": \"18c18\\n<ax = Axes3D(fig)\\n---\\n>ax = fig.add_subplot(111, projection='3d')\\n20d19\\n<fig.add_axes(ax)\"\n}"

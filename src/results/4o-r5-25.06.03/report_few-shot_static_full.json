@@ -1,0 +1,1142 @@
+{
+    "1": {
+        "num": "1",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/1_scikitlearn_onehotencoder.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1_5.json"
+        ]
+    },
+    "1c": {
+        "num": "1c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/1c_scikitlearn_onehotencoder.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1c_5.json"
+        ]
+    },
+    "2": {
+        "num": "2",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2_scikitlearn_dbscan.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/2.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2_5.json"
+        ]
+    },
+    "2c": {
+        "num": "2c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2c_scikitlearn_dbscan.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/2c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2c_5.json"
+        ]
+    },
+    "4": {
+        "num": "4",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/4_matplotlib_rcparams.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4_5.json"
+        ]
+    },
+    "4c": {
+        "num": "4c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/4c_matplotlib_rcparams.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4c_5.json"
+        ]
+    },
+    "6": {
+        "num": "6",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/6_matplotlib_setxticklabels.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/6.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6_5.json"
+        ]
+    },
+    "6c": {
+        "num": "6c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/6c_matplotlib_setxticklabels.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/6c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/6c_5.json"
+        ]
+    },
+    "8": {
+        "num": "8",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/8_pandas_chainindexing.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/8.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8_5.json"
+        ]
+    },
+    "8c": {
+        "num": "8c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/8c_pandas_chainindexing.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/8c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/8c_5.json"
+        ]
+    },
+    "10": {
+        "num": "10",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/10_seaborn_lmplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/10.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10_5.json"
+        ]
+    },
+    "10c": {
+        "num": "10c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/10c_seaborn_lmplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/10c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/10c_5.json"
+        ]
+    },
+    "18": {
+        "num": "18",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "code_file_path": "code_snippets/18_seaborn_distplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/18.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18_5.json"
+        ]
+    },
+    "18c": {
+        "num": "18c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.9.0",
+        "code_file_path": "code_snippets/18c_seaborn_distplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/18c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/18c_5.json"
+        ]
+    },
+    "19": {
+        "num": "19",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/19_matplotlib_legend.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/19.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19_5.json"
+        ]
+    },
+    "19c": {
+        "num": "19c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/19c_matplotlib_legend.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/19c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/19c_5.json"
+        ]
+    },
+    "22": {
+        "num": "22",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/22_numpy_log.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/22.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22_5.json"
+        ]
+    },
+    "22c": {
+        "num": "22c",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/22c_numpy_log.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/22c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/22c_5.json"
+        ]
+    },
+    "23": {
+        "num": "23",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/23_seaborn_heatmap.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/23.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23_5.json"
+        ]
+    },
+    "23c": {
+        "num": "23c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/23c_seaborn_heatmap.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/23c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/23c_5.json"
+        ]
+    },
+    "24": {
+        "num": "24",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/24_pandas_resetindex.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/24.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24_5.json"
+        ]
+    },
+    "24c": {
+        "num": "24c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/24c_pandas_resetindex.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/24c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/24c_5.json"
+        ]
+    },
+    "26": {
+        "num": "26",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/26_numpy_insert.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/26.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26_5.json"
+        ]
+    },
+    "26c": {
+        "num": "26c",
+        "source": "stackoverflow",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/26c_numpy_insert.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/26c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/26c_5.json"
+        ]
+    },
+    "28": {
+        "num": "28",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/28_scikitlearn_predict.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/28.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28_5.json"
+        ]
+    },
+    "28c": {
+        "num": "28c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/28c_scikitlearn_predict.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/28c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/28c_5.json"
+        ]
+    },
+    "30": {
+        "num": "30",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/30_matplotlib_text.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/30.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30_5.json"
+        ]
+    },
+    "30c": {
+        "num": "30c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/30c_matplotlib_text.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/30c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/30c_5.json"
+        ]
+    },
+    "31": {
+        "num": "31",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/31_matplotlib_axvspan.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/31.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31_5.json"
+        ]
+    },
+    "31c": {
+        "num": "31c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/31c_matplotlib_axvspan.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/31c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/31c_5.json"
+        ]
+    },
+    "33": {
+        "num": "33",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/33.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33_5.json"
+        ]
+    },
+    "33c": {
+        "num": "33c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/33c_scikitlearn_pipeline.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/33c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/33c_5.json"
+        ]
+    },
+    "34.1": {
+        "num": "34.1",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/34_1_scikitlearn_simpleimputer.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/34.1.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1_5.json"
+        ]
+    },
+    "34.1c": {
+        "num": "34.1c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/34_1c_scikitlearn_simpleimputer.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/34.1c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/34.1c_5.json"
+        ]
+    },
+    "39": {
+        "num": "39",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/39_seaborn_countplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/39.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39_5.json"
+        ]
+    },
+    "39c": {
+        "num": "39c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/39c_seaborn_countplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/39c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/39c_5.json"
+        ]
+    },
+    "40.1": {
+        "num": "40.1",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/40_1_seaborn_scatterplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/40.1.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1_5.json"
+        ]
+    },
+    "40.1c": {
+        "num": "40.1c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/40_1c_seaborn_scatterplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/40.1c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/40.1c_5.json"
+        ]
+    },
+    "42": {
+        "num": "42",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/42_pandas_replace.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/42.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42_5.json"
+        ]
+    },
+    "42c": {
+        "num": "42c",
+        "source": "stackoverflow",
+        "lib": "pandas",
+        "lib_version": "2.2.2",
+        "code_file_path": "code_snippets/42c_pandas_replace.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/42c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/42c_5.json"
+        ]
+    },
+    "43": {
+        "num": "43",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/43_scikitlearn_roc.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/43.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43_5.json"
+        ]
+    },
+    "43c": {
+        "num": "43c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/43c_scikitlearn_roc.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/43c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/43c_5.json"
+        ]
+    },
+    "44": {
+        "num": "44",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/44.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44_5.json"
+        ]
+    },
+    "44c": {
+        "num": "44c",
+        "source": "stackoverflow",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/44c_scikitlearn_columntransformer.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/44c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/44c_5.json"
+        ]
+    },
+    "47": {
+        "num": "47",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/47_matplotlib_datestr2num.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/47.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47_5.json"
+        ]
+    },
+    "47c": {
+        "num": "47c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/47c_matplotlib_datestr2num.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/47c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/47c_5.json"
+        ]
+    },
+    "48": {
+        "num": "48",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/48_matplotlib_close.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/48.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48_5.json"
+        ]
+    },
+    "48c": {
+        "num": "48c",
+        "source": "stackoverflow",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/48c_matplotlib_close.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/48c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/48c_5.json"
+        ]
+    },
+    "49": {
+        "num": "49",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/49_seaborn_style.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/49.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49_5.json"
+        ]
+    },
+    "49c": {
+        "num": "49c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/49c_seaborn_style.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/49c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/49c_5.json"
+        ]
+    },
+    "50": {
+        "num": "50",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/50_seaborn_lineplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/50.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50_5.json"
+        ]
+    },
+    "50c": {
+        "num": "50c",
+        "source": "stackoverflow",
+        "lib": "seaborn",
+        "lib_version": "0.13.2",
+        "code_file_path": "code_snippets/50c_seaborn_lineplot.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/50c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/50c_5.json"
+        ]
+    },
+    "153": {
+        "num": "153",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/153_matplotlib_addaxes.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/153.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153_5.json"
+        ]
+    },
+    "153c": {
+        "num": "153c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/153c_matplotlib_addaxes.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/153c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/153c_5.json"
+        ]
+    },
+    "226": {
+        "num": "226",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/226_matplotlib_setxticks.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/226.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226_5.json"
+        ]
+    },
+    "226c": {
+        "num": "226c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/226c_matplotlib_setxticks.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/226c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/226c_5.json"
+        ]
+    },
+    "930": {
+        "num": "930",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/930_numpy_squeeze.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/930.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930_5.json"
+        ]
+    },
+    "930c": {
+        "num": "930c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/930c_numpy_squeeze.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/930c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/930c_5.json"
+        ]
+    },
+    "1732": {
+        "num": "1732",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1732_numpy_astype.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1732.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732_5.json"
+        ]
+    },
+    "1732c": {
+        "num": "1732c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1732c_numpy_astype.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1732c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1732c_5.json"
+        ]
+    },
+    "1933": {
+        "num": "1933",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1933_numpy_amin.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1933.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933_5.json"
+        ]
+    },
+    "1933c": {
+        "num": "1933c",
+        "source": "github",
+        "lib": "numpy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/1933c_numpy_amin.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/1933c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/1933c_5.json"
+        ]
+    },
+    "2750": {
+        "num": "2750",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2750_scikitlearn_rocauc.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/2750.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750_5.json"
+        ]
+    },
+    "2750c": {
+        "num": "2750c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/2750c_scikitlearn_rocauc.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/2750c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/2750c_5.json"
+        ]
+    },
+    "3010": {
+        "num": "3010",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/3010_numpy_copyto.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3010.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010_5.json"
+        ]
+    },
+    "3010c": {
+        "num": "3010c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/3010c_numpy_copyto.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3010c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3010c_5.json"
+        ]
+    },
+    "3046": {
+        "num": "3046",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/3046_matplotlib_gcf.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3046.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046_5.json"
+        ]
+    },
+    "3046c": {
+        "num": "3046c",
+        "source": "github",
+        "lib": "Matplotlib",
+        "lib_version": "3.9.2",
+        "code_file_path": "code_snippets/3046c_matplotlib_gcf.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3046c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3046c_5.json"
+        ]
+    },
+    "3893": {
+        "num": "3893",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/3893_scikitlearn_predict.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3893.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893_5.json"
+        ]
+    },
+    "3893c": {
+        "num": "3893c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/3893c_scikitlearn_predict.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/3893c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/3893c_5.json"
+        ]
+    },
+    "4617": {
+        "num": "4617",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4617_numpy_intersect1d.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4617.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617_5.json"
+        ]
+    },
+    "4617c": {
+        "num": "4617c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4617c_numpy_intersect1d.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4617c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4617c_5.json"
+        ]
+    },
+    "4714": {
+        "num": "4714",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4714_numpy_einsum.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4714.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714_5.json"
+        ]
+    },
+    "4714c": {
+        "num": "4714c",
+        "source": "github",
+        "lib": "NumPy",
+        "lib_version": "2.1.1",
+        "code_file_path": "code_snippets/4714c_numpy_einsum.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4714c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4714c_5.json"
+        ]
+    },
+    "4780": {
+        "num": "4780",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/4780_scikitlearn_robustscaler.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4780.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780_5.json"
+        ]
+    },
+    "4780c": {
+        "num": "4780c",
+        "source": "github",
+        "lib": "scikit-learn",
+        "lib_version": "1.5.1",
+        "code_file_path": "code_snippets/4780c_scikitlearn_robustscaler.py",
+        "prompt_file_path": "results/4o-r5-25.06.03/prompts/few-shot_static_full/4780c.txt",
+        "response_file_path": [
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780c_1.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780c_2.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780c_3.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780c_4.json",
+            "results/4o-r5-25.06.03/responses/few-shot_static_full/4780c_5.json"
+        ]
+    }
+}

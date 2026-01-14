@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 21
+-     ('categoric', OneHotEncoder(), ['b']),
+--- 21 -----
++     ('categoric', OneHotEncoder(handle_unknown='ignore'), ['b']),

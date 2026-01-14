@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not set the grid visibility to True, so the grid will not be displayed on the plot. To ensure the grid is shown, the grid visibility must be enabled using plt.grid(True).\",\n  \"patch\": \"6a7\\n>plt.grid(True)\"\n}"

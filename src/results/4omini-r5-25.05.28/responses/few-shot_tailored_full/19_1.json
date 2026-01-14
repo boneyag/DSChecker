@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The legend is called without specifying any labels for the scatterplot. By default, seaborn's scatterplot does not create a legend unless the 'hue' parameter is used. Therefore, the legend will not display any meaningful information.\", \"patch\": \"8c8\\n< ax.legend()\\n---\\n> ax.legend(title='Legend', labels=['Tips'])\\n\"}"

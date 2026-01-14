@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function get_active_figure() returns the current active figure using plt.gcf(), but if plt.close() is called before this function, it will return None. In this code, plt.close() is called before get_active_figure(), which will lead to an attempt to use ax.text() on a None figure.\",\n  \"patch\": \"8d7\\n< plt.close()\"\n}"

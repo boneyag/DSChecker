@@ -1,0 +1,7 @@
+28c28,30
+<    fpr[i], tpr[i], thresh = roc_curve(y_test, y_score, pos_label=i)
+---
+>    fpr[i], tpr[i], thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])
+>    roc_auc.append(auc(fpr[i], tpr[i]))
+31d32
+<

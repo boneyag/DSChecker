@@ -1,0 +1,4 @@
+9c9
+---
+> sns.set_theme(rc=viz_dict)
+

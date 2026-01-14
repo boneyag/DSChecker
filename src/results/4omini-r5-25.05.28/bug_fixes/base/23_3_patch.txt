@@ -1,0 +1,5 @@
+5c5
+< g = sns.heatmap(tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+---
+> pivot_tips = tips.pivot_table(index='day', columns='time', values='total_bill', aggfunc='mean')
+> g = sns.heatmap(pivot_tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)

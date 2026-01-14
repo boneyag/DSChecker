@@ -1,0 +1,9 @@
+19c19,24
+< acc_tensor = torch.tensor(calculate_accuracy(predictions, labels))
+---
+> 
+> acc = calculate_accuracy(predictions, labels)
+> if acc is not None:
+>     acc_tensor = torch.tensor(acc)
+> else:
+>     acc_tensor = None

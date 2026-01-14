@@ -1,0 +1,7 @@
+5,6c5,6
+< initial_value = None
+< where_value = None
+---
+> initial_value = np.inf
+> where_value = np.full(x.shape, True, dtype=bool)
+

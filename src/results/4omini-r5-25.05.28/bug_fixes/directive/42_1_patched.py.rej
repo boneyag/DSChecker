@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 8
+- df['l2'].replace(to_replace=r'^+$', value=0, regex=True)
+--- 8 -----
++ df['l2'].replace(to_replace=r'^+$', value=0, regex=True, inplace=True)

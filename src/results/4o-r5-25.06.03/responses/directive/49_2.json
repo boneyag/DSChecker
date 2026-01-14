@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code incorrectly uses the set_context() function with the rc argument. According to the seaborn documentation, the rc argument should be used with axes_style() and set_style() functions, not with set_context().\",\n  \"patch\": \"9c9\\n<sns.set_context(rc=viz_dict)\\n---\\n>sns.set_style(rc=viz_dict)\"\n}"

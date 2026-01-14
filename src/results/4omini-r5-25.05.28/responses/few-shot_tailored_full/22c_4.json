@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The factorial of 21 is a large number (51090942171709440000), which exceeds the maximum value that can be represented by a 64-bit float, leading to potential overflow when converting to float.\", \"patch\": \"4c4\\n< print(np.log(float(factorial(21))))\\n---\\n> print(np.log(np.float128(factorial(21))))\\n\"}"

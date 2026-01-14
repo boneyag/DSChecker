@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code is missing a call to plt.figure() or plt.subplots() before creating a new plot for each file. Without this, the plots may overlap or display incorrectly.\",\n  \"patch\": \"15a16\\n> plt.figure()\\n\"\n}"

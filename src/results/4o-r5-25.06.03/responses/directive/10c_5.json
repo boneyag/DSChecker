@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code uses sns.lmplot() which is a figure-level function, but it does not include plt.show() to display the plot. Figure-level functions like lmplot() require plt.show() to render the plot.\",\n  \"patch\": \"6a7\\n>import matplotlib.pyplot as plt\\n8a10\\n>plt.show()\"\n}"

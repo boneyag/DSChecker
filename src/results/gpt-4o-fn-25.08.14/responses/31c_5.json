@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `ax.axvspan` method is used to add a vertical span (rectangle) across the Axes. However, the `label` parameter is used to add a label to the span for use in a legend, but the legend is not displayed because `ax.legend()` is not called.\",\n  \"patch\": \"9a10\\n>ax.legend()\\n\"\n}"

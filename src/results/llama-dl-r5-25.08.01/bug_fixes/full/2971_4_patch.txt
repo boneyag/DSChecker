@@ -1,0 +1,4 @@
+62c62
+<y_pred = (y_logits > 0.5).float()
+---
+>y_pred = (torch.sigmoid(y_logits) > 0.5).float()

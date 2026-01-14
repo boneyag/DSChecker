@@ -1,0 +1,140 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Here is information about the variable  at line 6 used in this code snippet.
+
+type: list
+
+additional information: 
+
+
+sample: 
+[1, 2]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import matplotlib.pyplot as plt
+2	import matplotlib as mpl
+3	
+4	mpl.rcParams['grid.color'] = 'black'
+5	
+6	plt.plot([1, 2])
+7	
+
+Your response:
+
+{"correct": "no", "explanation": "By default, the grid is not displayed in the plot. To visualize grid colors, first set mpl.rcParams['axes.grid'] = True, then specify the grid color. Only setting the color using mpl.rcParams['grid.color'] = 'black' has no effect.", "patch": "3a4\n> mpl.rcParams['axes.grid'] = True\n"}
+
+Example 2:
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Here is information about the variable tips at line 4 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 244 entries, 0 to 243
+Data columns (total 7 columns):
+ #   Column      Non-Null Count  Dtype   
+---  ------      --------------  -----   
+ 0   total_bill  244 non-null    float64 
+ 1   tip         244 non-null    float64 
+ 2   sex         244 non-null    category
+ 3   smoker      244 non-null    category
+ 4   day         244 non-null    category
+ 5   time        244 non-null    category
+ 6   size        244 non-null    int64   
+dtypes: category(4), float64(2), int64(1)
+
+sample: 
+ total_bill   tip     sex smoker  day    time  size
+0       16.99  1.01  Female     No  Sun  Dinner     2
+1       10.34  1.66    Male     No  Sun  Dinner     3
+2       21.01  3.50    Male     No  Sun  Dinner     3
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import matplotlib.pyplot as plt
+2	import seaborn as sbn
+3	
+4	tips = sbn.load_dataset('tips')
+5	
+6	fig, ax = plt.subplots(figsize=(5, 6))
+7	sbn.scatterplot(data=tips, x='total_bill', y='tip', ax=ax)
+8	plt.show()
+9	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable  at line 7 used in this code snippet.
+
+type: list
+
+additional information: 
+
+
+sample: 
+[0, 1, 2, 3]
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import matplotlib.pyplot as plt
+2	
+3	def get_active_figure():
+4	    return plt.gcf()
+5	
+6	fig, ax = plt.subplots()
+7	ax.plot([0, 1, 2, 3], [0, 4, 5, 6])
+8	plt.close()
+9	
+10	ac_fig = get_active_figure()
+11	
+12	if ac_fig is None:
+13	    print("No active figure")
+14	else:
+15	    ax.text(0.4, 0.4, "Add a label to the current active figure")
+16	    plt.show(block=False)
+17	    plt.close()
+18	
+
+Your response:

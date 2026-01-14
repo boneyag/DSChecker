@@ -1,0 +1,63 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Here is information about the variable df at line 12 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 4 columns):
+ #   Column    Non-Null Count  Dtype         
+---  ------    --------------  -----         
+ 0   location  8 non-null      object        
+ 1   date      8 non-null      datetime64[ns]
+ 2   type      8 non-null      object        
+ 3   total     8 non-null      int64         
+dtypes: datetime64[ns](1), int64(1), object(2)
+
+
+sample: 
+  location       date type  total
+0     loc1 2018-01-01   t2    100
+1     loc2 2018-01-02   t3    200
+2     loc2 2018-01-03   t2    250
+
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	from matplotlib.dates import MonthLocator, DateFormatter
+3	import seaborn as sbn
+4	import matplotlib.pyplot as plt
+5	import os
+6	
+7	script_dir = os.path.dirname(os.path.abspath(__file__))
+8	csv_file_path = os.path.join(script_dir, '6_data.csv')
+9	
+10	df = pd.read_csv(csv_file_path, header=0)
+11	
+12	df['date'] = pd.to_datetime(df['date'])
+13	
+14	fig, ax = plt.subplots()
+15	ax = sbn.scatterplot(data=df, x='date', y='total', hue='location', style='type')
+16	ax.legend(framealpha=0.5)
+17	ax.set_xticks(df.date.unique())
+18	ax.set_xticklabels(labels=df.date.unique(), rotation=45)
+19	ax.xaxis.set_major_locator(MonthLocator())
+20	ax.xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+21	plt.show()
+22	
+
+Your response:

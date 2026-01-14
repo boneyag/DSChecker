@@ -1,0 +1,4 @@
+9c9
+<     tf.fill(tf.shape(x), -100),
+---
+>     tf.cast(tf.fill(tf.shape(x), -100), x.dtype),

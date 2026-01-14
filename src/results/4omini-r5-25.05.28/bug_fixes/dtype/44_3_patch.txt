@@ -1,0 +1,6 @@
+35c35
+< cat_col = ['sex', 'smoker', 'region', 'healthy']
+---
+> cat_col = ['sex', 'smoker', 'region']
+> 
+> # Add the 'healthy' column after transformation

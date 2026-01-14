@@ -1,0 +1,4 @@
+23c23
+<         x_concat = torch.cat((x, self.src_attn(x, memory, memory, memory_mask)))
+---
+>         x_concat = torch.cat((x, self.src_attn(x, memory, memory, memory_mask)), dim=-1)

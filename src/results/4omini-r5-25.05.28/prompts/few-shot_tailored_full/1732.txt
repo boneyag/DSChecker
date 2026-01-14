@@ -1,0 +1,137 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library numpy.
+Check this piece of code and decide if it correctly uses library numpy.
+
+Here is information about the variable X_te at line 11 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+Index: 2 entries, 8 to 1
+Data columns (total 1 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   x       2 non-null      float64
+dtypes: float64(1)
+
+sample: 
+           x
+8 -0.103219
+1  0.400157
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	import pandas as pd
+3	from sklearn.linear_model import LinearRegression
+4	from sklearn.model_selection import train_test_split
+5	
+6	np.random.seed(0)
+7	
+8	X = pd.DataFrame({'x': np.random.randn(10)})
+9	y = np.random.randn(10).reshape(-1, 1)
+10	
+11	X_tr, X_te, y_tr, y_te = train_test_split(X, y, test_size=0.2)
+12	
+13	model = LinearRegression()
+14	model.fit(X_tr, y_tr)
+15	preds = model.predict(np.squeeze(X_te.values))
+16	
+
+Your response:
+
+{"correct": "no", "explanation": "Calling squeeze on a single feature transform 2D array to 1D array. But scikit-learn predict expects a 2D array.", "patch": "9c9\n< y = np.random.randn(10).reshape(-1, 1)\n---\n> y = np.random.randn(10)\n15c15\n< preds = model.predict(np.squeeze(X_te.values))\n---\n> preds = model.predict(X_te)\n"}
+
+Example 2:
+
+The code provided uses the library numpy.
+Check this piece of code and decide if it correctly uses library numpy.
+
+Here is information about the variable x at line 3 used in this code snippet.
+
+type: numpy.ndarray
+
+additional information: 
+dtype: int32 shape: (2, 3)
+
+sample: 
+[[-1, 2, 3], [-4, 2, 8]]
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	
+3	x = np.array([[-1, 2, 3], [-4, -2, 8]], dtype=np.float32)
+4	
+5	initial_value = None
+6	where_value = None
+7	
+8	if initial_value is not None and where_value is not None:
+9	    res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)
+10	else:
+11	    res = np.amin(a=x, axis=1, keepdims=False, out=None)
+12	print(res)
+13	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable x at line 3 used in this code snippet.
+
+type: numpy.ndarray
+
+additional information: 
+dtype: int64 shape: (4,)
+
+sample: 
+[0 1 2 3]
+
+The code provided uses the library numpy.
+Check this piece of code and decide if it correctly uses library numpy.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import numpy as np
+2	
+3	original_data = np.array([0, 1, 2, 3])
+4	
+5	sinc_result = np.sinc(original_data)
+6	
+7	assert sinc_result[0] == 1, "Results not equal to one"
+8	assert sinc_result[1] == 0, "Results not equal to zero"
+9	
+
+Your response:

@@ -1,0 +1,4 @@
+19c19
+< ax.set_xticks(df.date.unique())
+---
+> ax.set_xticks(df.date[::5])  # Set ticks at every 5th unique date

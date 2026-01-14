@@ -1,0 +1,5 @@
+19,20c19
+<ax.set_xticks(df.date.unique())
+<ax.set_xticklabels(labels=df.date.unique(), rotation=45)
+---
+>fig.autofmt_xdate(rotation=45)

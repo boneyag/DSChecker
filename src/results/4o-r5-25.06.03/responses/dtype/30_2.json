@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The plt.text() function is being used incorrectly. The x-coordinate should be a numerical value or a datetime object, not a string.\",\n  \"patch\": \"17c17\\n<\\tplt.text(\\\"2013-01-05\\\", 0.5, \\\"SAMPLE\\\")\\n---\\n>\\tplt.text(pd.Timestamp(\\\"2013-01-05\\\"), 0.5, \\\"SAMPLE\\\")\"\n}"

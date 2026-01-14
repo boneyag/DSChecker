@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The predict method of DummyClassifier should only take one argument, which is the input data. The second argument 'y' is not required and will cause an error.\",\n  \"patch\": \"10c10\\n<     predictions = clf.predict(X, y)\\n---\\n>     predictions = clf.predict(X)\"\n}"

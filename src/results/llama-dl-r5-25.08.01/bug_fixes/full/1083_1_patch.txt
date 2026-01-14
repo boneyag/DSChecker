@@ -1,0 +1,4 @@
+6c6
+< return torch.arange(gold_labels.numel())
+---
+> return torch.arange(gold_labels.numel(), device=gold_labels.device)

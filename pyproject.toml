@@ -1,0 +1,35 @@
+[project]
+name = "dschecker"
+version = "0.1.0"
+description = "LLM-based Python data-centric API misuse detection and fixing"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "black>=25.1.0",
+    "chromadb>=1.0.12",
+    "isort>=6.0.1",
+    "libcst>=1.8.2",
+    "matplotlib>=3.10.1",
+    "numpy>=2.1.3",
+    "openai>=1.68.2",
+    "pandas>=2.2.3",
+    "pytest-mock>=3.14.0",
+    "ruff>=0.12.4",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+    "selectolax>=0.3.33",
+    "sentence-transformers>=4.1.0",
+    "tensorflow>=2.19.0",
+    "tf-keras>=2.19.0",
+    "torch>=2.6.0",
+    "whoosh>=2.7.4",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-mock>=3.14.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

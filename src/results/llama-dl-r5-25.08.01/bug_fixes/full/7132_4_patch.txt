@@ -1,0 +1,5 @@
+29a30
+> if torch.isnan(loss):
+>     print('Loss is NaN, skipping this iteration.')
+>     continue
+

@@ -1,0 +1,6 @@
+14c14,15
+< ax.set_xticklabels(df['x'])
+---
+> ax.set_xticks(df['x'])
+> ax.set_xticklabels(df['x'])
+

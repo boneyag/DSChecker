@@ -1,0 +1,5 @@
+8c8
+< plt.close()
+---
+> ax.text(0.4, 0.4, "Add a label to the current active figure")
+> plt.close()

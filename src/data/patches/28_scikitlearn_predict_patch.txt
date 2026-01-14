@@ -1,0 +1,16 @@
+3c3
+< from sklearn.model_selection import GridSearchCV
+---
+> from sklearn.model_selection import GridSearchCV, train_test_split
+9a10
+> x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+20c21
+< clf.fit(X, y)
+---
+> clf.fit(x_train, y_train)
+23,24c24,25
+< y_score = clf.best_estimator_.predict(X)
+< print(f"accuracy: {accuracy_score(y, y_score)}")
+---
+> y_score = clf.best_estimator_.predict(x_test)
+> print(f"accuracy: {accuracy_score(y_test, y_score)}")

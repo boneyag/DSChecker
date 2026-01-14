@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add text to an axis of a figure that has already been closed with plt.close(). After calling plt.close(), the figure is no longer active, and any operations on it (like adding text) will not work as intended.\",\n  \"patch\": \"10c10\\n< ac_fig = get_active_figure()\\n---\\n> ac_fig = plt.gcf()\"\n}"

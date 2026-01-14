@@ -1,0 +1,16 @@
+35c35
+< cat_col = ['sex', 'smoker', 'region', 'healthy']
+---
+> cat_col = ['sex', 'smoker', 'region']
+> 
+41,42c41,42
+< transform_pipeline = ColumnTransformer([
+<     ('ss', StandardScaler(), num_col),
+---
+> num_col_plus_healthy = num_col + ['healthy']
+> transform_pipeline = ColumnTransformer([
+43c43
+<     ('ohe', OneHotEncoder(), cat_col),
+---
+>     ('ss', StandardScaler(), num_col_plus_healthy),
+>     ('ohe', OneHotEncoder(), cat_col),

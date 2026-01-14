@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The predict method of LinearRegression expects a 2D array as input. However, np.squeeze(X_te.values) converts the input to a 1D array if possible, which is not suitable for the predict method.\",\n  \"patch\": \"15c15\\n< preds = model.predict(np.squeeze(X_te.values))\\n---\\n> preds = model.predict(X_te.values)\"\n}"

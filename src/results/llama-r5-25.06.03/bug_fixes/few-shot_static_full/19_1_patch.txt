@@ -1,0 +1,6 @@
+7,8c7,8
+< sbn.scatterplot(data=tips, x='total_bill', y='tip', ax=ax)
+< ax.legend()
+---
+> sbn.scatterplot(data=tips, x='total_bill', y='tip', hue='sex', ax=ax)
+> # ax.legend()  # This line can be removed or commented out

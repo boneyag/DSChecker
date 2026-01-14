@@ -1,0 +1,7 @@
+5c5,8
+< g = sns.heatmap(tips, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)
+---
+> tips_new = tips.drop(['sex', 'smoker', 'time','total_bill'], axis=1)
+> df_heatmap = tips_new.pivot_table("tip", "day", "size")
+> 
+> g = sns.heatmap(df_heatmap, square=True, cbar_kws={'fraction': 0.01}, cmap='OrRd', linewidth=1)

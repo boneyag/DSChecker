@@ -1,0 +1,4 @@
+7a8
+> # Ensure that true_labels contains at least two classes before calculating AUC
+> if len(np.unique(true_labels)) < 2:
+>     raise ValueError('true_labels must contain at least two classes to compute AUC.')

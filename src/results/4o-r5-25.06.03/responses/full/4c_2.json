@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not correctly use the Matplotlib library because the variable 'at' is not used in the code. Additionally, the 'mpl.rcParams' settings should be applied before plotting.\",\n  \"patch\": \"6a7\\n> at = [1, 2]\\n7c8\\n< plt.plot([1, 2])\\n---\\n> plt.plot(at)\\n\"\n}"

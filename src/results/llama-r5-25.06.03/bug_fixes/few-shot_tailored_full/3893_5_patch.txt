@@ -1,0 +1,5 @@
+10c10
+<     predictions = clf.predict(X, y)
+---
+>     predictions = clf.predict(X)
+

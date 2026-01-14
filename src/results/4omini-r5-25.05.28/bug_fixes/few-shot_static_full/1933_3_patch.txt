@@ -1,0 +1,8 @@
+5c5
+< initial_value = None
+---
+> initial_value = 0
+7c7
+< where_value = None
+---
+> where_value = np.ones(x.shape, dtype=bool)

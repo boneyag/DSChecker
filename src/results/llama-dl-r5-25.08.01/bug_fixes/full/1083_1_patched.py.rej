@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 6
+- return torch.arange(gold_labels.numel())
+--- 6 -----
++ return torch.arange(gold_labels.numel(), device=gold_labels.device)

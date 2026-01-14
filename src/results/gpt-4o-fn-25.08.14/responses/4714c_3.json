@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The einsum equation 'ij,ji' is incorrect for the given matrices A and B. The correct einsum equation should be 'ij,jk' to perform matrix multiplication.\",\n  \"patch\": \"8c8\\n<\\tres = np.einsum('ij,ji', A, B)\\n---\\n>\\tres = np.einsum('ij,jk', A, B)\"\n}"

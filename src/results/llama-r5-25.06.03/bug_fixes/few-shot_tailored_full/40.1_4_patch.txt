@@ -1,0 +1,6 @@
+11c11
+< colors = ['#747FE3', '#8EE35D', '#E37346']
+---
+> df['color'] = pd.Categorical(df['color'])
+> colors = ['#747FE3', '#8EE35D', '#E37346']
+

@@ -1,0 +1,4 @@
+7c7
+<    'country': ['UK', 0.2, 'FR', 'US'],
+---
+>    'country': ['UK', 'UK', 'FR', 'US'],

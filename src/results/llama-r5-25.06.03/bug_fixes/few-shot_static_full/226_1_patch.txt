@@ -1,0 +1,8 @@
+13,14c13,14
+< ax.scatter(df['x'], df['y'])
+< ax.set_xticklabels(df['x'])
+---
+> ax.scatter(df['x'], df['y'])
+> ax.set_xticks(df['x'])
+> ax.set_xticklabels(df['x'])
+

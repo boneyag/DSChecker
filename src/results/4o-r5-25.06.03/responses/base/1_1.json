@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The 'country' column contains a numeric value (0.2) which is not suitable for OneHotEncoder as it expects categorical data. This will cause an error when fitting the transformer.\",\n  \"patch\": \"7c7\\n<         'country': ['UK', 0.2, 'FR', 'US'],\\n---\\n>         'country': ['UK', 'UK', 'FR', 'US'],\"\n}"

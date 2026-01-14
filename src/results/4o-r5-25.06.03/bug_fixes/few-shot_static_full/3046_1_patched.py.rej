@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 16
+- plt.show(block=False)
+--- 16 -----
++ plt.show()

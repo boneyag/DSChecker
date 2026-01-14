@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The 'roc_auc_score' function from scikit-learn requires that the true labels are binary (i.e., they should have exactly two unique values), but in this case, the true labels are all the same (i.e., [1, 1, 1]).\", \"patch\": \"4c4\\n< true_labels = np.array([1, 1, 1])\\n---\\n> true_labels = np.array([1, 0, 1])\\n\"}"

@@ -1,0 +1,34 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import matplotlib.pyplot as plt
+2	from matplotlib.dates import datestr2num, DateFormatter
+3	import seaborn as sns
+4	from datetime import datetime
+5	
+6	days = ['30/01/2019', '31/01/2019', '01/02/2019', '02/02/2019', '03/02/2019', '04/02/2019']
+7	y = [1, 9, 10, 3, 7, 6]
+8	
+9	x = datestr2num([datetime.strptime(day, '%d/%m/%Y').strftime('%m/%d/%Y') for day in days])
+10	
+11	fig, ax = plt.subplots()
+12	sns.lineplot(x=x, y=y, ax=ax)
+13	ax.xaxis.set_major_formatter(DateFormatter("%d/%m/%Y"))
+14	
+15	plt.show()
+16	
+
+Your response:

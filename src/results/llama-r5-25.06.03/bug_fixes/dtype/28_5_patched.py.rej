@@ -1,0 +1,7 @@
+*** /dev/null
+--- /dev/null
+***************
+*** 25
+- clf.fit(X, y)
+--- 27 -----
++ clf.fit(X_train, y_train)

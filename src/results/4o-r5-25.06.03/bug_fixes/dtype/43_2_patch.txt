@@ -1,0 +1,12 @@
+28c28,30
+<    for i in range(n_classes):
+---
+>    for i in range(n_classes):
+>        fpr_i, tpr_i, _ = roc_curve(y_onehot_test[:, i], y_score[:, i])
+>        fpr.append(fpr_i)
+>        tpr.append(tpr_i)
+>        roc_auc.append(auc(fpr_i, tpr_i))
+31c33
+<    print(roc_auc)
+---
+>print(roc_auc)

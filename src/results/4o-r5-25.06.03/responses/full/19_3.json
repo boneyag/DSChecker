@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code calls `ax.legend()` on line 8, but there are no labels provided for the scatter plot, so the legend will be empty. In Matplotlib, legends are created based on labels provided in the plot elements.\",\n  \"patch\": \"8c8\\n<\\tax.legend()\\n---\\n>\\tax.legend(['Total Bill vs Tip'])\"\n}"

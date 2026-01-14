@@ -1,0 +1,5 @@
+4c4
+< print(np.log(factorial(21)))
+---
+> print(np.log(np.float64(factorial(21))))
+

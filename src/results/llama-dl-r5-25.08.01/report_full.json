@@ -1,0 +1,452 @@
+{
+    "1988": {
+        "num": "1988",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1988_torch_maskedfill.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1988.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1988_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988_5.json"
+        ]
+    },
+    "1988c": {
+        "num": "1988c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1988c_torch_maskedfill.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1988c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1988c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1988c_5.json"
+        ]
+    },
+    "4276": {
+        "num": "4276",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/4276_torch_to.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/4276.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/4276_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276_5.json"
+        ]
+    },
+    "4276c": {
+        "num": "4276c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/4276c_torch_to.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/4276c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/4276c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/4276c_5.json"
+        ]
+    },
+    "7132": {
+        "num": "7132",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/7132_torch_isnan.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/7132.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/7132_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132_5.json"
+        ]
+    },
+    "7132c": {
+        "num": "7132c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/7132c_torch_isnan.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/7132c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/7132c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/7132c_5.json"
+        ]
+    },
+    "501": {
+        "num": "501",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/501_torch_tensor.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/501.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/501_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501_5.json"
+        ]
+    },
+    "501c": {
+        "num": "501c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/501c_torch_tensor.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/501c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/501c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/501c_5.json"
+        ]
+    },
+    "3686": {
+        "num": "3686",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/3686_torch_stack.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/3686.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/3686_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686_5.json"
+        ]
+    },
+    "3686c": {
+        "num": "3686c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/3686c_torch_stack.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/3686c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/3686c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3686c_5.json"
+        ]
+    },
+    "375": {
+        "num": "375",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/375_torch_eval.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/375.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/375_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375_5.json"
+        ]
+    },
+    "375c": {
+        "num": "375c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/375c_torch_eval.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/375c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/375c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/375c_5.json"
+        ]
+    },
+    "479": {
+        "num": "479",
+        "source": "github",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "code_file_path": "dl_code_snippets/479_tf_cast.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/479.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/479_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479_5.json"
+        ]
+    },
+    "479c": {
+        "num": "479c",
+        "source": "github",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "code_file_path": "dl_code_snippets/479c_tf_cast.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/479c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/479c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/479c_5.json"
+        ]
+    },
+    "5704": {
+        "num": "5704",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/5704_torch_to.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/5704.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/5704_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704_5.json"
+        ]
+    },
+    "5704c": {
+        "num": "5704c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/5704c_torch_to.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/5704c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/5704c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/5704c_5.json"
+        ]
+    },
+    "2971": {
+        "num": "2971",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/2971_torch_sigmoid.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/2971.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/2971_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971_5.json"
+        ]
+    },
+    "2971c": {
+        "num": "2971c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/2971c_torch_sigmoid.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/2971c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/2971c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/2971c_5.json"
+        ]
+    },
+    "524": {
+        "num": "524",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/524_torch_cuda.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/524.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/524_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524_5.json"
+        ]
+    },
+    "524c": {
+        "num": "524c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/524c_torch_cuda.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/524c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/524c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/524c_5.json"
+        ]
+    },
+    "1766": {
+        "num": "1766",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1766_torch_repeat.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1766.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1766_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766_5.json"
+        ]
+    },
+    "1766c": {
+        "num": "1766c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1766c_torch_repeat.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1766c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1766c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1766c_5.json"
+        ]
+    },
+    "937": {
+        "num": "937",
+        "source": "github",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "code_file_path": "dl_code_snippets/937_tf_cast.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/937.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/937_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937_5.json"
+        ]
+    },
+    "937c": {
+        "num": "937c",
+        "source": "github",
+        "lib": "TensorFlow",
+        "lib_version": "2.18.0",
+        "code_file_path": "dl_code_snippets/937c_tf_cast.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/937c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/937c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/937c_5.json"
+        ]
+    },
+    "3531": {
+        "num": "3531",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/3531_torch_linspace.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/3531.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/3531_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531_5.json"
+        ]
+    },
+    "3531c": {
+        "num": "3531c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/3531c_torch_linspace.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/3531c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/3531c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/3531c_5.json"
+        ]
+    },
+    "1083": {
+        "num": "1083",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1083_torch_arange.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1083.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1083_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083_5.json"
+        ]
+    },
+    "1083c": {
+        "num": "1083c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/1083c_torch_arange.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/1083c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/1083c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/1083c_5.json"
+        ]
+    },
+    "674": {
+        "num": "674",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/674_torch_cat.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/674.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/674_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674_5.json"
+        ]
+    },
+    "674c": {
+        "num": "674c",
+        "source": "github",
+        "lib": "PyTorch",
+        "lib_version": "2.6.0",
+        "code_file_path": "dl_code_snippets/674c_torch_cat.py",
+        "prompt_file_path": "results/llama-dl-r5-25.08.01/prompts/full/674c.txt",
+        "response_file_path": [
+            "results/llama-dl-r5-25.08.01/responses/full/674c_1.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674c_2.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674c_3.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674c_4.json",
+            "results/llama-dl-r5-25.08.01/responses/full/674c_5.json"
+        ]
+    }
+}

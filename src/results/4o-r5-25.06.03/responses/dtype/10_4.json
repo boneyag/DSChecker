@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The method `sns.lmplot` is a high-level function that creates its own figure and axes, and it should not be used within `FacetGrid.map`. Instead, `sns.regplot` should be used for plotting within a `FacetGrid`.\",\n  \"patch\": \"6c6\\n<\\tg.map(sns.lmplot, 'total_bill', 'tip')\\n---\\n>g.map(sns.regplot, 'total_bill', 'tip')\"\n}"

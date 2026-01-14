@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.figure() before creating a new plot with sns.scatterplot(). This can lead to all plots being drawn on the same figure, which is not the intended behavior.\",\n  \"patch\": \"13c13\\n<for file in file_list:\\n---\\n>for file in file_list:\\n14a15\\n>    plt.figure()\\n\"\n}"

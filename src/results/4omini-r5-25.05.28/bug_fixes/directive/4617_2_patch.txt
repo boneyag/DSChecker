@@ -1,0 +1,4 @@
+8c8
+< result = np.intersect1d(arr1, arr2)
+---
+> result = np.intersect1d(arr1, arr2, assume_unique=True)

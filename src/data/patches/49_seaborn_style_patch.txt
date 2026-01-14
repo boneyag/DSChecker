@@ -1,0 +1,15 @@
+5,6c5,11
+< viz_dict = {
+<     'grid.linewidth': 4,
+---
+> scale_dict = {
+>     'grid.linewidth': 4
+> }
+> sns.set_context(rc=scale_dict)
+> 
+> style_dict = {
+>     'axes.grid': True,
+9c14
+< sns.set_context(rc=viz_dict)
+---
+> sns.set_style(rc=style_dict)

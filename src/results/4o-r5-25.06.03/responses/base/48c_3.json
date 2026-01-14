@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not clear the current figure between iterations of the loop. This can lead to figures being overlaid on top of each other.\",\n  \"patch\": \"13c13\\n<for file in file_list:\\n---\\n>for file in file_list:\\n>    plt.figure()\\n\"\n}"

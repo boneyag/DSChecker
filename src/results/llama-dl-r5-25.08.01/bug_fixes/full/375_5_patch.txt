@@ -1,0 +1,5 @@
+48c48
+<accuracy_eval = evaluate_accuracy(model, data_iter)
+---
+>model.eval()
+>accuracy_eval = evaluate_accuracy(model, data_iter)

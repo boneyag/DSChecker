@@ -1,0 +1,5 @@
+15c15
+<print(imp_array[:, 1])
+---
+>print('Column B was discarded during imputation')
+

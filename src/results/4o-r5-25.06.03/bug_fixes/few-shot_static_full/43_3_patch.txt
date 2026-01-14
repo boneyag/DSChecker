@@ -1,0 +1,9 @@
+28,29c28,29
+< for i in range(n_classes):
+<     fpr[i], tpr[i], thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])
+---
+> for i in range(n_classes):
+>     fpr.append(dict())
+>     tpr.append(dict())
+>     roc_auc.append(dict())
+>     fpr[i], tpr[i], thresh = roc_curve(y_onehot_test[:, i], y_score[:, i])

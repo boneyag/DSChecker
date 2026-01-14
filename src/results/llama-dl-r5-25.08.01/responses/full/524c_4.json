@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not correctly move the mask to the same device as the image before performing operations on it. It should be moved to the same device before calling the expand method.\",\n  \"patch\": \"8c8\\n< mask = torch.randn(b, 1, h, w).to(device=img.device)\\n---\\n> mask = torch.randn(b, 1, h, w, device=img.device)\\n\"\n}"

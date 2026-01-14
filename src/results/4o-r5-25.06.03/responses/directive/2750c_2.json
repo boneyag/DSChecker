@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code checks if there are at least two unique labels in true_labels before calling roc_auc_score. However, the check should ensure that there are both positive and negative samples, not just unique labels.\",\n  \"patch\": \"7c7\\n<    if len(np.unique(true_labels)) < 2:\\n---\\n>    if len(np.unique(true_labels)) != 2:\\n\"\n}"

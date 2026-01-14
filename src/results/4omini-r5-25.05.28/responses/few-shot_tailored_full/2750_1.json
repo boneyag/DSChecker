@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The true_labels array contains only positive class labels (1), which is not valid for calculating the ROC AUC score. The ROC AUC score requires both positive and negative class labels to compute the area under the curve.\", \"patch\": \"4c4\\n< true_labels = np.array([1, 1, 1])\\n---\\n> true_labels = np.array([1, 0, 1])\\n\"}"

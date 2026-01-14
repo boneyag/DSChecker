@@ -1,0 +1,4 @@
+19c19
+< ax.set_xticks(df.date.unique())
+---
+> ax.set_xticks(df.date.unique()[:10])  # Limit to first 10 unique dates

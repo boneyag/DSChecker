@@ -1,0 +1,174 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+Here are some examples of determining if a code uses API correctly.
+
+Example 1:
+
+The code provided uses the library pandas.
+Check this piece of code and decide if it correctly uses library pandas.
+
+pandas documentation states this guideline "bool, default: False. Whether to modify the DataFrame rather than creating a new one." for inplace parameter of set_index API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable df at line 3 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   A       4 non-null      int64 
+ 1   B       4 non-null      object
+ 2   C       4 non-null      bool  
+dtypes: bool(1), int64(1), object(1)
+
+sample: 
+   A   B      C
+0  1  10   True
+1  2  20  False
+2  3  30   True
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	
+3	df = pd.DataFrame({
+4	    'A': [1, 2, 3, 4],
+5	    'B': ['10', '20', '30', '40'],
+6	    'C': [True, False, True, True]
+7	})
+8	
+9	df.set_index('A')
+10	print(df.loc[4])
+11	
+
+Your response:
+
+{"correct": "no", "explanation": "set_index() returns a new DataFrame with the specified column as the index. The original DataFrame is not modified. Therefore, the correct way to access the 4th row of the DataFrame is to use the new DataFrame returned by set_index() and use the iloc[] method to access the 4th row.", "patch": "8,9c8,9\n< df.set_index(\\\"A\\\")\n< print(df.loc[4])\n---\n> new_df = df.set_index(\\\"A\\\")\n> print(new_df.iloc[4])\n"}
+
+Example 2:
+
+The code provided uses the library scikit-learn.
+Check this piece of code and decide if it correctly uses library scikit-learn.
+
+scikit-learn documentation states this guideline "MinMaxScaler doesn’t reduce the effect of outliers, but it linearly scales them down into a fixed range, where the largest occurring data point corresponds to the maximum value and the smallest one corresponds to the minimum value." for  parameter of MinMaxScaler API, which could be useful to decide if the code correctly uses the library.
+
+Here is information about the variable df at line 4 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 4 entries, 0 to 3
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype 
+---  ------  --------------  ----- 
+ 0   Age     4 non-null      int64
+ 1   Income  4 non-null      int64
+ 2   Gender  4 non-null      object
+dtypes: int64(2), object(1)
+
+sample: 
+   Age  Income  Gender
+0   20   40000    Male
+1   25   50000  Female
+2   30   60000  Female
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	from sklearn.preprocessing import MinMaxScaler
+2	import pandas as pd
+3	
+4	df = pd.DataFrame({
+5	    'Age': [20, 25, 30, 35],
+6	    'Income': [40000, 50000, 60000, 1500000],
+7	    'Gender': ['Male', 'Female', 'Female', 'Male']
+8	})
+9	 
+10	scaler = MinMaxScaler()
+11	scaled_data = scaler.fit_transform(df[['Age', 'Income']])
+12	
+
+Your response:
+
+{"correct": "yes"}
+
+Based on the examples above, focus on the following task.
+
+Here is information about the variable df at line 12 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 8 entries, 0 to 7
+Data columns (total 4 columns):
+ #   Column    Non-Null Count  Dtype         
+---  ------    --------------  -----         
+ 0   location  8 non-null      object        
+ 1   date      8 non-null      datetime64[ns]
+ 2   type      8 non-null      object        
+ 3   total     8 non-null      int64         
+dtypes: datetime64[ns](1), int64(1), object(2)
+
+
+sample: 
+  location       date type  total
+0     loc1 2018-01-01   t2    100
+1     loc2 2018-01-02   t3    200
+2     loc2 2018-01-03   t2    250
+
+
+The code provided uses the library Matplotlib.
+Check this piece of code and decide if it correctly uses library Matplotlib.
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	from matplotlib.dates import MonthLocator, DateFormatter
+3	import seaborn as sbn
+4	import matplotlib.pyplot as plt
+5	import os
+6	
+7	script_dir = os.path.dirname(os.path.abspath(__file__))
+8	csv_file_path = os.path.join(script_dir, '6_data.csv')
+9	
+10	df = pd.read_csv(csv_file_path, header=0)
+11	
+12	df['date'] = pd.to_datetime(df['date'])
+13	
+14	fig, ax = plt.subplots()
+15	ax = sbn.scatterplot(data=df, x='date', y='total', hue='location', style='type')
+16	ax.legend(framealpha=0.5)
+17	ax.xaxis.set_major_locator(MonthLocator())
+18	ax.xaxis.set_major_formatter(DateFormatter('%Y-%m'))
+19	ax.set_xticks(df.date.unique())
+20	ax.set_xticklabels(labels=df.date.unique(), rotation=45)
+21	plt.show()
+22	
+
+Your response:

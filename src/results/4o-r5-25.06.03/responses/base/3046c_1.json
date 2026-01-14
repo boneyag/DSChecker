@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code attempts to add text to an axis object 'ax' after the figure it belongs to has been closed. Once a figure is closed using plt.close(), any operations on its axes will not be valid.\",\n  \"patch\": \"11c11\\n<plt.close()\\n---\\n>plt.show(block=False)\\n20d19\\n<plt.close()\\n\"\n}"

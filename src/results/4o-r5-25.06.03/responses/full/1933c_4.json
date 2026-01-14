@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The `initial` and `where` parameters are not available in the `np.amin` function in numpy. These parameters will cause an error if used.\",\n  \"patch\": \"8c8\\n<    res = np.amin(a=x, axis=1, keepdims=False, initial=initial_value, where=where_value, out=None)\\n---\\n>    res = np.amin(a=x, axis=1, keepdims=False, out=None)\"\n}"

@@ -1,0 +1,1 @@
+"{\"correct\": \"no\", \"explanation\": \"The seaborn scatterplot function automatically adds a legend if the data contains a 'hue' parameter. Since no 'hue' parameter is provided in the scatterplot call, the legend is unnecessary and may lead to confusion. The ax.legend() call is redundant and should be removed.\", \"patch\": \"8d7\\n< ax.legend()\"}"

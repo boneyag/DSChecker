@@ -1,0 +1,9 @@
+6a7
+> if len(np.unique(true_labels)) == 1:
+>     print('ROC AUC score is not defined for this case.')
+> else:
+7c10
+< roc_auc = roc_auc_score(true_labels, predicted_scores)
+---
+>     roc_auc = roc_auc_score(true_labels, predicted_scores)
+>     print(roc_auc)

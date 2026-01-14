@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The function `distplot` from seaborn library is deprecated since seaborn 0.11.0. It is recommended to use `histplot`, `ecdfplot`, or `kdeplot` instead.\",\n  \"patch\": \"5c5\\n---\\nsns.distplot(data.tip, norm_hist=False)\\n+++ \\nsns.histplot(data.tip, stat='density', kde=True)\\n\"\n}"

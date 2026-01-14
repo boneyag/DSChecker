@@ -1,0 +1,1 @@
+"{\n  \"correct\": \"no\",\n  \"explanation\": \"The code does not call plt.figure() before creating a new plot in the loop. This can lead to issues when multiple plots are created in a loop, as the same figure is reused.\",\n  \"patch\": \"16a17\\n>        plt.figure()\\n\"\n}"

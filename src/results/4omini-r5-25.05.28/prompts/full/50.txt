@@ -1,0 +1,59 @@
+Libraries have certain usage constraints that ensure their correct usage.
+For example, in Java, developers need to check if `it.haNext() == True` before calling `it.next()` on iterator `it`.
+
+The code provided uses the library seaborn.
+Check this piece of code and decide if it correctly uses library seaborn.
+
+Here is information about the variable df_new at line 11 used in this code snippet.
+
+type: pandas.core.frame.DataFrame
+
+additional information: 
+RangeIndex: 10 entries, 0 to 9
+Data columns (total 3 columns):
+ #   Column  Non-Null Count  Dtype  
+---  ------  --------------  -----  
+ 0   ones    10 non-null     float64
+ 1   X       10 non-null     int64 
+ 2   Y       10 non-null     int64  
+dtypes: float64(1), int64(2)
+
+sample: 
+   ones  X  Y
+0   1.0  0  1
+1   1.0  1  3
+2   1.0  2  2
+
+Respond exactly in the following JSON format. If the code is correct, leave the remaining fields empty after setting field "correct" to yes:
+{
+  "correct": "yes/no",
+  "explanation": "explanation of why the code is incorrect",
+  "patch": "Provide normal diff format output that can be used to patch the buggy code (e.g., 19c19,20\n<foo()\n---\n>foo(bass='bazz')\n>bar()). Consider indentation when creating the patch."
+}
+
+Here is the code to inspect.
+The numbers on the left-hand side of the code represent line numbers (as shown in an IDE or text editor) and are not part of the actual code.
+
+1	import pandas as pd
+2	import numpy as np
+3	import seaborn as sb
+4	
+5	data = {
+6	    'X': list(np.arange(0, 10, 1)),
+7	    'Y': [1, 3, 2, 5, 7, 8, 8, 9, 10, 12]
+8	    }
+9	df = pd.DataFrame(data)
+10	df2 = pd.DataFrame(np.ones(10), columns=['ones'])
+11	df_new = pd.concat([df2, df], axis=1)
+12	
+13	X = df_new.loc[:, ['ones', 'X']].values
+14	Y = df_new['Y'].values.reshape(-1, 1)
+15	
+16	theta = np.array([0.5, 0.2]).reshape(-1, 1)
+17	
+18	Y_pred = X.dot(theta)
+19	
+20	sb.lineplot(data=None, x=df['X'].values.reshape(-1, 1), y=Y_pred)
+21	
+
+Your response:
