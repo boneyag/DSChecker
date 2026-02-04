@@ -1,11 +1,10 @@
 ## DSChecker
 
-LLM-based Python DS (data science) API misuse detector and fixer
+LLM-based Python DS (data science) API misuse detector and fixer. The prototype takes a code snippet that use Python data science libraries like pandas, NumPy, etc. and check if those library APIs are used correctly in the code. 
 
 ### Steps to run the project
 1. Clone this repo `git clone <repo-url>`.
 2. We use [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies and run the project. To start, run `uv pip install -r pyproject.toml` to install dependencies in the virtual environment (you will see a directory `.venv` after running this). You can also create a virtual environment (`python3 -m venv <your-venv-name>`) and then install the dependencies using `pip install -r requirements.txt` from the requirement file given.
-3. 
 
 ### Project content
 
