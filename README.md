@@ -1,10 +1,20 @@
 ## DSChecker
 
-LLM-based Python DS (data science) API misuse detector and fixer. The prototype takes a code snippet that use Python data science libraries like pandas, NumPy, etc. and check if those library APIs are used correctly in the code. 
+LLM-based Python DS (data science) API misuse detector and fixer. The prototype takes a code snippet that use Python data science libraries like pandas, NumPy, etc., and checks if those library APIs are used correctly in the code. 
+
+There are two parts in this repo: `dschecker` and `dschecker_agent`. In `dschecker`, we run initial experiments to design the prompt content. For example, we experiment with four different zero-shot prompts: base, data, directive, and full. The full prompt contains all possible information, such as the variable processed by the API (e.g., a pandas dataframe, its column names/types, and 3 rows as sample), API directive extracted from the official API documentation, and library name. From this experiment, we identify the most effective prompt variation.
+
+In the previous experiment setup, we knew the exact misused API and the variable processed by that API. Therefore, we could plug the specific information into the prompt. However, in real-worl scenarios, we would not know the misused API and the variable processed by it. Since a code snippet could contain multiple APIs and variables, providing information about all of them is not cost effective. To fetch only the necessary information, we created `dschecker_agent` which uses function calling to get variable information and the entire API documentation. The LLM has sole authority to determine which API or variable it is interested in, then the `dschecker_agent` calls the function and appends the results back to the original prompt. 
+
+#### Evaluation
+Since LLMs are non-deterministic, we ran each prompt 5 times, and then used `pass@1` metric to evaluate the detection and fixing rates. 
+
+#### Cost
+To run the experiments on the entire dataset, using one model (e.g., GPT-4o), it would cost ~$15. The experiments contain 4 different prompt variations of zero-shot prompts, 2 variations of few-shot promts, and function calling. In reality, it would cost less than that to use it as we would not run each prompt 5x times and would not use different prompt variations. However, our code snippets are small, hence the context is small. For long Python scripts, the cost could be higher depending on the input context (initial code size and various function calling requests).
 
 ### Steps to run the project
 1. Clone this repo `git clone <repo-url>`.
-2. We use [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies and run the project. To start, run `uv pip install -r pyproject.toml` to install dependencies in the virtual environment (you will see a directory `.venv` after running this). You can also create a virtual environment (`python3 -m venv <your-venv-name>`) and then install the dependencies using `pip install -r requirements.txt` from the requirement file given.
+2. We use [uv](https://docs.astral.sh/uv/getting-started/installation/) to manage dependencies and run the project. To start, run `uv pip install -r pyproject.toml` to install dependencies in the virtual environment (you will see a directory `.venv` after running this). 
 
 ### Project content
 
